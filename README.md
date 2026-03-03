@@ -1,7 +1,7 @@
 # spring-2026-pesticide-exposure
 Team project: spring-2026-pesticide-exposure
 
-# Problem & Objective
+# Problem & Objective:
 Agricultural pesticide use varies widely by crop and region and may contribute to localized increases in preventable healthcare utilization (e.g., asthma, respiratory distress). Public health agencies and Medicaid programs need data-driven tools to target preventative interventions, such as Integrated Pest Management (IPM), under constrained budgets.
 
 # Objective:
