@@ -1,12 +1,13 @@
 # spring-2026-pesticide-exposure
 Team project: spring-2026-pesticide-exposure
 
-# Problem & Objective:
+# Problem:
 Agricultural pesticide use varies widely by crop and region and may contribute to localized increases in preventable healthcare utilization (e.g., asthma, respiratory distress). Public health agencies and Medicaid programs need data-driven tools to target preventative interventions, such as Integrated Pest Management (IPM), under constrained budgets.
 
 # Objective:
 Build a county/region-level predictive risk model to identify regions in the United States where pesticide exposure is associated with elevated healthcare burden, enabling targeted, high-ROI public health and IPM investments.  Real world stakeholders include insurers, policy makers, hospital systems, public health departments.
 
+# Modeling Approach:
 Our predictive model will forecast the respiratory illnesses present in each geographic region from pesticide usage, as well as crop data and weather patterns. Our metric will therefore be Mean Squared Error (MSE), since we are predicting the raw case numbers. To make the map, we might categorize each region into bins based on several thresholds such as "high risk", "low risk", etc. which can then be used to create the risk map which could be presented to stakeholders to inform decisionmaking. If our model struggles with MSE regression, then we could potentially categorize the target variables in this way first, and then train a categorical regression such as logistic regression instead. 
 
 Our primary datasets are:
