@@ -103,4 +103,4 @@ For modeling, rows with missing targets (CASTHMA, COPD) are typically dropped. R
 
 ## Legal & Ethical Considerations
 
-Same as individual sources: public, aggregated data; no PII. See individual datasheets for details. The joint dataset inherits limitations of each source (modeled estimates, ecological design, temporal mismatch).
+Same as individual sources: public, aggregated data; no PII. See individual datasheets for details. The joint dataset inherits limitations of each source (modeled estimates, ecological design).

@@ -19,7 +19,7 @@
 ## Intended Use
 
 **Primary intended use:**  
-Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use estimates, cropland composition, and demographic/health confounders. Intended to support resource allocation, policy targeting, and research—not individual diagnosis.
+Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use estimates, cropland composition, and demographic/health confounders. Intended to support resource allocation, policy targeting, and research—not individual diagnosis or legal evidence.
 
 **Intended users:**  
 - Public health agencies and policymakers  
@@ -88,7 +88,7 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 - Ecological design: county-level associations do not imply individual-level causation  
 - Pesticide estimates are modeled, not measured  
 - PLACES outcomes are model-based (MRP)  
-- Temporal mismatch: PLACES 2021 vs. pesticide 2016–2019, ACS 2019
+- Temporal alignment: PLACES release 2021 (2019 BRFSS) aligns with census/cropland 2019 and pesticide 2016–2019
 
 ---
 
@@ -126,5 +126,5 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 
 - **Ecological fallacy:** County-level associations do not apply to individuals.  
 - **Data quality:** Pesticide and PLACES data are estimates with uncertainty.  
-- **Temporal alignment:** Consider retraining when newer PLACES and pesticide data become available.  
+- **Temporal alignment:** Data aligned to 2019 (PLACES 2019 BRFSS, census ACS 2019, cropland 2019; pesticide 2016–2019 mean). Consider retraining when newer data become available.  
 - **Recommendation:** Treat this as a research and planning tool; validate findings with domain experts and additional data sources.
