@@ -1,0 +1,3 @@
+county_fips,error
+48505,502 Server Error: Proxy Error for url: https://nassgeodata.gmu.edu/axis2/services/CDLService/GetCDLStat?year=2016&fips=48505&format=csv
+55061,"HTTPSConnectionPool(host='nassgeodata.gmu.edu', port=443): Read timed out. (read timeout=120)"
