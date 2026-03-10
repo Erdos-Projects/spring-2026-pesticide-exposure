@@ -32,3 +32,11 @@ Association of pesticide exposure with respiratory health outcomes and rhinitis 
 And many others. We will however attempt to validate our predictive model by performing hypothesis testing on the coefficients and determining their statistical significance.
 
 
+**Documentation:**  
+- `docs/` — Datasheets for datasets (USGS Pesticide, CDC PLACES, USDA Cropland, Census ACS), a combined datasheet for the joint dataset, and a model card template. See Gebru et al. (2018) and Mitchell et al. (2019).
+
+TO DO: 
+1. PCA? 
+2. Additional lit review digestion
+3. ~~Model card and data card!~~ (templates in `docs/`)
+4. A point in there some where about the alarming paucity of public data on this topic as of 2020!
