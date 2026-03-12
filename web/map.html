@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>County Risk Map — Pesticide Exposure &amp; Respiratory Health</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Pesticide Exposure &amp; Respiratory Health</h1>
+      <p class="tagline">County-level risk estimates for preventable health burden</p>
+      <nav class="main-nav">
+        <a href="index.html">About</a>
+        <a href="map.html">Interactive Map</a>
+        <a href="https://github.com/your-org/spring-2026-pesticide-exposure" target="_blank" rel="noopener">Repository</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="map-page">
+    <div class="container map-header">
+      <h1>County-level risk map</h1>
+      <p>Preventive health burden risk index by county (model-based estimates). Click a county for details. Replace <code>data/risk_estimates.json</code> with your model output to show real results.</p>
+    </div>
+    <div class="container">
+      <div id="map"></div>
+      <div class="map-legend">
+        <strong>Risk index</strong> — Higher values indicate higher estimated preventable burden (asthma/COPD) associated with pesticide and cropland exposure. Scale: 0 (low) to 1 (high). Data: placeholder until model results are exported; see <code>web/README.md</code> for format.
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Spring 2026 — Pesticide Exposure &amp; Respiratory Health. Estimates are for population-level planning only.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="map.js"></script>
+</body>
+</html>

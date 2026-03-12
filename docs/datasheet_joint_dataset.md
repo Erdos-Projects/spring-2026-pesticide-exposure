@@ -19,7 +19,6 @@ To support county-level predictive modeling of respiratory outcomes (asthma, COP
 **What tasks should it NOT be used for?**  
 - Individual-level inference  
 - Causal inference (ecological design; associations only)
-
 ---
 
 ## Dataset Composition
