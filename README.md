@@ -35,6 +35,9 @@ And many others. We will however attempt to validate our predictive model by per
 **Documentation:**  
 - `docs/` — Datasheets for datasets (USGS Pesticide, CDC PLACES, USDA Cropland, Census ACS), a combined datasheet for the joint dataset, and a model card template. See Gebru et al. (2018) and Mitchell et al. (2019).
 
+**Website (after modeling):**  
+- `web/` — Static site with project overview and an interactive county-level risk map. Deploy to GitHub Pages (see `web/README.md`). Replace `web/data/risk_estimates.json` with your model output to show real results.
+
 TO DO: 
 1. PCA? 
 2. Additional lit review digestion
