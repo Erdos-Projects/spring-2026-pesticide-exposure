@@ -50,7 +50,7 @@ Estimates are model-based (MRP) and may vary in reliability by county size and d
 Model-based estimates using multilevel regression and poststratification (MRP) applied to Behavioral Risk Factor Surveillance System (BRFSS) and American Community Survey (ACS) data. Not direct surveys at county level.
 
 **Over what time-frame?**  
-PLACES releases map to BRFSS years (e.g., release 2021 → 2019 BRFSS, release 2023 → 2021 BRFSS). This project uses **release 2021 (2019 BRFSS)** for temporal alignment with pesticide, census, and cropland data.
+PLACES releases map to BRFSS years (e.g., release 2020 → 2018 BRFSS, release 2021 → 2019 BRFSS). This project uses **releases 2020 (2018 BRFSS) and 2021 (2019 BRFSS)**; merged on FIPS + YEAR so the joint dataset has one PLACES row per county per year for 2018 and 2019.
 
 **Does the dataset contain all possible instances?**  
 All U.S. counties included in PLACES. Some counties may have higher uncertainty.

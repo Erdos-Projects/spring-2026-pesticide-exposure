@@ -66,13 +66,13 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 ## Evaluation Data
 
 **Training data:**  
-- USGS Pesticide Use Estimates (2016–2019)  
-- CDC PLACES (county-level CASTHMA, COPD, CSMOKING, OBESITY, DIABETES)  
+- USGS Pesticide Use Estimates (2018–2019, county–year)  
+- CDC PLACES (2018 and 2019 BRFSS; CASTHMA, COPD, CSMOKING, OBESITY, DIABETES; merged on FIPS + YEAR)  
 - USDA Cropland Data Layer (2019)  
 - US Census ACS 5-year (2019)
 
 **Evaluation data:**  
-- *TBD* (e.g., temporal holdout 2019, or spatial holdout by region)  
+- *TBD* (e.g., temporal holdout by year, or spatial holdout by region)  
 - See datasheets in `docs/` for dataset details.
 
 ---
@@ -80,15 +80,15 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 ## Training Data
 
 **Data preprocessing:**  
-- Joint county-level dataset: `data/joint_county_2016_2019.csv`  
-- FIPS standardized; pesticide aggregated by chemical class and respiratory-relevant compounds  
-- Cropland and demographic features merged by FIPS  
+- Joint county–year dataset: `data/joint_county_year_2018_2019.csv` (one row per county per year for 2018 and 2019)  
+- FIPS standardized; pesticide filtered to 2018–2019, aggregated by chemical class and respiratory-relevant compounds  
+- Census and cropland merged by FIPS; PLACES and county_year_collapsed merged by FIPS + YEAR  
 
 **Known limitations:**  
 - Ecological design: county-level associations do not imply individual-level causation  
 - Pesticide estimates are modeled, not measured  
 - PLACES outcomes are model-based (MRP)  
-- Temporal alignment: PLACES release 2021 (2019 BRFSS) aligns with census/cropland 2019 and pesticide 2016–2019
+- Temporal alignment: 2018 and 2019 (PLACES releases 2020 and 2021); census and cropland are county-level and repeated by year
 
 ---
 
@@ -126,5 +126,5 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 
 - **Ecological fallacy:** County-level associations do not apply to individuals.  
 - **Data quality:** Pesticide and PLACES data are estimates with uncertainty.  
-- **Temporal alignment:** Data aligned to 2019 (PLACES 2019 BRFSS, census ACS 2019, cropland 2019; pesticide 2016–2019 mean). Consider retraining when newer data become available.  
+- **Temporal alignment:** Data aligned to 2018 and 2019 (PLACES releases 2020 and 2021; pesticide county–year; census and cropland county-level). Consider retraining when newer data become available.  
 - **Recommendation:** Treat this as a research and planning tool; validate findings with domain experts and additional data sources.

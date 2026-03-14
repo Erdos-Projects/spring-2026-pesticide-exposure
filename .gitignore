@@ -1,0 +1,22 @@
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+venv/
+.venv/
+env/
+
+# IDE / OS
+.DS_Store
+.idea/
+*.swp
+*.swo
+
+# Optional: uncomment to avoid committing large data
+# data/*.csv
+# !data/README.md

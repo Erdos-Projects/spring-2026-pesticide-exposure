@@ -41,7 +41,7 @@ Each instance is a county–year–compound combination. Counties are identified
 No; this is an input/feature dataset. Targets (asthma, COPD) come from CDC PLACES.
 
 **Are there recommended data splits?**  
-No. We aggregate across 2016–2019 as a single time instance for modeling.
+In the joint pipeline, pesticide is filtered to 2018–2019 and kept at county–year level (one row per county per year). Temporal or spatial holdouts can be used for evaluation.
 
 ---
 
