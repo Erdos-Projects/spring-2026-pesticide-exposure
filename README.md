@@ -17,7 +17,7 @@ Our primary datasets are:
 
 Our target years are **2018 and 2019**, the years with CDC PLACES county-level data (releases 2020 and 2021). The joint dataset is in county–year form (one row per county per year); time (YEAR) can be used as a feature or for temporal splits. 
 
-The (two?) respiratory illness that our model targets are COPD and Asthma, as these diseases have the most direct link to pesticide exposure in literature. These illness may have causes other than pesticide exposure but we'll try to control for that when building our model.
+The two respiratory illness that our model targets are COPD and Asthma, as these diseases have the most direct link to pesticide exposure in literature. These illness may have causes other than pesticide exposure but we control for that when building our model.
 
 
 # Anti-goals: 
