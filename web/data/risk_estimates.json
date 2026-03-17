@@ -1,0 +1,10 @@
+{
+  "01001": { "risk_index": 0.35, "CASTHMA_prev": 8.2, "COPD_prev": 5.1, "county_name": "Autauga County, AL" },
+  "01009": { "risk_index": 0.42, "CASTHMA_prev": 9.1, "COPD_prev": 6.0, "county_name": "Blount County, AL" },
+  "01073": { "risk_index": 0.58, "CASTHMA_prev": 11.2, "COPD_prev": 7.8, "county_name": "Jefferson County, AL" },
+  "04013": { "risk_index": 0.72, "CASTHMA_prev": 12.5, "COPD_prev": 8.9, "county_name": "Maricopa County, AZ" },
+  "06037": { "risk_index": 0.65, "CASTHMA_prev": 10.8, "COPD_prev": 7.2, "county_name": "Los Angeles County, CA" },
+  "06067": { "risk_index": 0.81, "CASTHMA_prev": 13.1, "COPD_prev": 9.4, "county_name": "Sacramento County, CA" },
+  "17031": { "risk_index": 0.55, "CASTHMA_prev": 9.8, "COPD_prev": 6.5, "county_name": "Cook County, IL" },
+  "48201": { "risk_index": 0.68, "CASTHMA_prev": 11.0, "COPD_prev": 7.6, "county_name": "Harris County, TX" }
+}

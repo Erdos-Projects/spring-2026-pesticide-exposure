@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pesticide Exposure &amp; Respiratory Health — County Risk</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Pesticide Exposure &amp; Respiratory Health</h1>
+      <p class="tagline">County-level risk estimates for preventable health burden</p>
+      <nav class="main-nav">
+        <a href="index.html">About</a>
+        <a href="map.html">Interactive Map</a>
+        <a href="https://github.com/your-org/spring-2026-pesticide-exposure" target="_blank" rel="noopener">Repository</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Project Overview</h2>
+      <p>
+        Agricultural pesticide use varies widely by crop and region and may contribute to localized increases in preventable healthcare utilization (e.g., asthma, respiratory distress). Public health agencies and Medicaid programs need data-driven tools to target preventative interventions, such as Integrated Pest Management (IPM), under constrained budgets.
+      </p>
+      <p>
+        This project builds a <strong>county-level predictive risk model</strong> to identify regions in the United States where pesticide exposure is associated with elevated healthcare burden, enabling targeted, high-ROI public health and IPM investments.
+      </p>
+    </section>
+
+    <section class="objectives">
+      <h2>Objectives</h2>
+      <ul>
+        <li>Predict county-level prevalence of <strong>asthma (CASTHMA)</strong> and <strong>COPD</strong> from pesticide use, cropland composition, and demographic/health confounders.</li>
+        <li>Produce county-based risk estimates for preventable health burden.</li>
+        <li>Support resource allocation, policy targeting, and research—not individual diagnosis or legal evidence.</li>
+      </ul>
+    </section>
+
+    <section class="data-sources">
+      <h2>Data Sources</h2>
+      <ul>
+        <li><strong>CDC PLACES</strong> — County-level health indicators (asthma, COPD, smoking, obesity, diabetes)</li>
+        <li><strong>USGS / EPA</strong> — Pesticide use estimates by county and year</li>
+        <li><strong>USDA Cropland Data Layer</strong> — Crop coverage and land use</li>
+        <li><strong>US Census ACS</strong> — Demographics (age, income, race/ethnicity)</li>
+      </ul>
+      <p>Target years: <strong>2018–2019</strong> (CDC PLACES county-level releases 2020 and 2021).</p>
+    </section>
+
+    <section class="cta">
+      <h2>Explore the Results</h2>
+      <p>View county-level risk estimates on an interactive map.</p>
+      <a href="map.html" class="button">Open Interactive Map</a>
+    </section>
+
+    <section class="disclaimer">
+      <h2>Disclaimer</h2>
+      <p>
+        This work does not seek to definitively prove causation between respiratory illness and pesticide use; such associations are supported by prior literature. The model is associative (ecological design); county-level associations do not imply individual-level causation. Estimates are for population-level planning and research only—not for individual diagnosis or legal evidence.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Spring 2026 — Pesticide Exposure &amp; Respiratory Health. Documentation and datasheets in the <a href="https://github.com/your-org/spring-2026-pesticide-exposure/tree/main/docs" target="_blank" rel="noopener">repository <code>docs/</code></a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
