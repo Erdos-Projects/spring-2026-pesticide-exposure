@@ -7,6 +7,7 @@ notebook>=6.0
 
 # Modeling train_test_split map (choropleth)
 plotly>=5.0
+scikit-learn>=1.1
 
 # Optional: EDA/build_joint_dataset and joint_eda (CropScape, plotting, etc.)
 # Uncomment if you run the full EDA pipeline:

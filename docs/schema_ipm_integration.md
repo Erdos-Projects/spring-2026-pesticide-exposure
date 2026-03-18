@@ -66,11 +66,22 @@ IPM document-derived scores per crop × geography × document year.
    SOURCEDATE is a string like `"August, 01 2000 00:00:00"`. Parse the 4-digit year (e.g. with a regex `\b(19|20)\d{2}\b`) so every document has a numeric year when possible.
 
 3. **Scores (ipm_breadth_index, chemical_reliance_index, subscales)**  
-   The API does not return pre-computed scores. Options in `joint_eda.ipynb`: (a) **Metadata-based (default):** heuristic from document_type, year, crop; (b) **PDF keyword-based (optional):** set `USE_PDF_SCORING=True`, install `pdfminer.six`, fetch PDFs and count keywords. (c) **Manually code** a sample into subscales and impute, or use placeholders so county-year collapse is non-NaN.
+   The API does not return pre-computed scores. We **always use PDF when available** as the primary content source; see **PDF scraping (content-based scoring)** below. When PDF (or HTML fallback) is missing, scores use metadata-based priors. Manual coding of a sample is an optional extension.
 
-**Source:** National IPM Database API (`https://ipmdata.ipmcenters.org/rest/...`). Crop Profiles (sourcetypeid=3), PMSPs (sourcetypeid=4).  
-**Implementation:** Inline in `EDA/joint_eda.ipynb` Section 3b. Lexicons tightened (ambiguous terms like organic, application, treatment, timing, pollinator, integrated, reduced-risk removed). Raw indices kept; optional 0–1 rescaled columns added. PDF via pdfminer + PyMuPDF fallback; HTML source report when PDF fails. Optional `USE_MOST_RECENT_DOC_ONLY`: fetch only the newest document per (crop, state_fips) to speed run. Document-level rows are aggregated by **recency-weighted mean** per (crop, state_fips, analysis_year), not simple mean, so document_year is not averaged away.  
+**Source:** National IPM Database API (`https://ipmdata.ipmcenters.org/rest/...`). Document types included: Crop Profiles (3), PMSPs (4), Timeline (5), Pest-centric PMSP (10), Priority (11), and Element (fetched from full source list and filtered by SOURCETYPE). Config: `IPM_SOURCE_TYPE_IDS`, `IPM_INCLUDE_ELEMENT_FROM_ALL` in the notebook.  
+**Implementation:** Inline in `EDA/build_joint_dataset.ipynb`. Lexicons tightened (ambiguous terms like organic, application, treatment, timing, pollinator, integrated, reduced-risk removed). Raw indices kept; optional 0–1 rescaled columns added. **PDF when available:** we always fetch and score document PDFs when the API provides a URL (pdfminer.six with PyMuPDF fallback); if PDF fails or is too short, we fetch the HTML source report and strip tags. Optional `USE_MOST_RECENT_DOC_ONLY`: fetch only the newest document per (crop, state_fips) to speed run. Document-level rows are aggregated by **recency-weighted mean** per (crop, state_fips, analysis_year), not simple mean, so document_year is not averaged away.  
 **Status:** Fetched from API; geography and year from REGION and SOURCEDATE; scores from content (and priors when text is missing).
+
+---
+
+#### PDF scraping (content-based scoring)
+
+We **always use PDF when a document URL is available** so that IPM scores reflect actual document content rather than metadata alone.
+
+- **When we fetch:** For each API source (Crop Profile, PMSP, Element, Timeline, Pest-centric PMSP, or Priority) that has a `url`, we attempt to download the PDF. This is controlled by `USE_PDF_WHEN_AVAILABLE = True` in the notebook. The only exception is **LIGHT_RUN**: if `LIGHT_RUN=True` and `IPM_SKIP_PDF_IN_LIGHT_RUN=True`, we skip PDF/HTML fetches and use metadata-only priors to keep runtime short.
+- **Extraction:** Text is extracted with **pdfminer.six**; if that yields little or fails, we fall back to **PyMuPDF (fitz)**. If the PDF is still unusable (e.g. scanned image, corrupt), we fetch the **HTML source report** (`source_report.cfm?sourceid=...`), strip tags, and score that text.
+- **Scoring:** The pipeline splits the document into sections (e.g. monitoring, chemical control, cultural controls) via regex heading detection, then counts lexicon hits (monitoring, nonchemical, chemical, decision support, dependency, resistance management) in the full text and in relevant sections. Counts are normalized and combined into **ipm_breadth_index** and **chemical_reliance_index**; when text is missing or low quality, these are blended with **metadata priors** (document type, year, crop).
+- **Dependencies:** `pdfminer.six` (required for PDF text). Optional: `PyMuPDF` (`fitz`) for a second extraction path when pdfminer fails.
 
 ---
 
