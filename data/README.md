@@ -4,6 +4,7 @@ Generated and intermediate data for the pesticide–respiratory modeling pipelin
 
 | File | Producer | Description |
 |------|----------|-------------|
+| `pesticide_2016_17.tsv`, `pesticide_2018.tsv`, `pesticide_2019.tsv` | `scripts/download_pesticide_data.py` | USGS pesticide data (optional). If ScienceBase times out, run the download script and the build notebook will use these. |
 | `joint_county_year_2018_2019.csv` | `EDA/build_joint_dataset.ipynb` | Joint county–year table (2018–2019): pesticide, PLACES, census, cropland, IPM indices. Primary input for EDA and modeling. |
 | `train.csv` | `modeling/train_test_split.ipynb` | Training set (60% by default; spatial split by state or county). |
 | `validation.csv` | `modeling/train_test_split.ipynb` | Validation set (20%); use for hyperparameter tuning. |
