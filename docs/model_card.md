@@ -73,7 +73,7 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 
 **Evaluation data:**  
 - *TBD* (e.g., temporal holdout by year, or spatial holdout by region)  
-- See datasheets in `docs/` for dataset details.
+- See [`datasheets.md`](datasheets.md) for dataset summary and source links.
 
 ---
 

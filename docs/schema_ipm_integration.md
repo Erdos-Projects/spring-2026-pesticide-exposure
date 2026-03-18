@@ -146,7 +146,7 @@ County–year roll-up from county_crop_year_ipm (or county_crop_year_ag when IPM
 
 - **Primary crop representation for IPM:** Use the collapsed indices from `county_year_collapsed` (acreage-weighted IPM breadth and chemical reliance as main; value-weighted as sensitivity; risk-weighted as exploratory).
 - **Exposure denominators:** Keep or add: total kg, kg per cropland acre, respiratory-relevant kg per crop acre, and crop-weighted IPM scores as above.
-- **Temporal clarity:** Census and single-year CDL are merged on FIPS and repeated across 2018–2019; PLACES and county_year_collapsed are merged on FIPS + YEAR. See the joint datasheet for which variables are time-varying (pesticide, PLACES, county_year_collapsed) vs static (census, cropland).
+- **Temporal clarity:** Census and single-year CDL are merged on FIPS and repeated across 2018–2019; PLACES and county_year_collapsed are merged on FIPS + YEAR. See [`datasheets.md`](datasheets.md) for time-varying vs static variables.
 
 ---
 
