@@ -6,11 +6,22 @@ Static site: **project overview** and **interactive county-level risk map**. Hos
 
 - **index.html** — About the project, objectives, data sources, link to map
 - **map.html** + **map.js** — US county choropleth; colors by `risk_index`, popup with county details
-- **data/risk_estimates.json** — Placeholder; replace with your model output
+- **data/xgboost_map_data.json** — Built from XGBoost prediction CSVs (see below)
+- **scripts/build_xgboost_map_data.py** — Regenerates map data from `modeling/results/*/xgboost_predictions.csv`
 
-## Risk data format (for the map)
+## XGBoost map data (default)
 
-After modeling, export county-level results to `data/risk_estimates.json` in this shape:
+From the repo root:
+
+```bash
+python web/scripts/build_xgboost_map_data.py
+```
+
+This reads `modeling/results/CASTHMA/xgboost_predictions.csv` and `modeling/results/COPD/xgboost_predictions.csv` (year **2019**), writes `web/data/xgboost_map_data.json`, and the map colors by min–max normalized predicted prevalence per outcome.
+
+## Legacy risk data format (optional)
+
+You can instead use a single `data/risk_estimates.json` if you wire a custom `map.js`; shape:
 
 ```json
 {
@@ -44,14 +55,27 @@ Then commit and push; the map will use the new file on the next deploy.
 
 ## Local preview
 
-Map and data load via `fetch()`. To avoid CORS with `file://`, run a local server from the repo root:
+The map uses `fetch()` — opening HTML as `file://` will not load data. You **must** run a local server and **keep it running** while you use the site.
+
+**Recommended (serves the `web/` folder as the site root):**
 
 ```bash
 cd /path/to/spring-2026-pesticide-exposure
-python -m http.server 8000
+python3 web/serve.py
 ```
 
-Open **http://localhost:8000/web/index.html** and **http://localhost:8000/web/map.html**.
+Then open **http://127.0.0.1:8765/map.html** (not `localhost` if that misbehaves on your machine).
+
+- **ERR_EMPTY_RESPONSE** → nothing is listening: start `python3 web/serve.py` first, leave the terminal open, then refresh the browser.
+- **Port in use:** `PORT=9000 python3 web/serve.py` and use **http://127.0.0.1:9000/map.html**
+
+Alternative from repo root (site lives under `/web/`):
+
+```bash
+python3 -m http.server 8000
+```
+
+Open **http://127.0.0.1:8000/web/map.html**.
 
 ## Deploy to GitHub Pages (free)
 

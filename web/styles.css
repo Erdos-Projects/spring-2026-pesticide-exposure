@@ -148,9 +148,45 @@ main p {
 }
 
 .map-header p {
-  margin: 0;
+  margin: 0 0 1rem 0;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+.map-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.map-toolbar-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.map-select {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.95rem;
+  min-width: 220px;
+  cursor: pointer;
+}
+
+.map-select:hover,
+.map-select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.map-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 #map {
@@ -191,8 +227,21 @@ main p {
 }
 
 .info-panel p {
-  margin: 0;
+  margin: 0 0 0.35rem 0;
   color: var(--text-muted);
+}
+
+.info-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.info-panel .fips {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.info-panel .muted {
+  font-size: 0.85rem;
 }
 
 /* Footer */

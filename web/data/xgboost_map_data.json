@@ -1,0 +1,9376 @@
+{
+"01013": {
+"year": 2019,
+"casthma": {
+"actual": 10.9,
+"prediction": 10.525462,
+"risk_index": 0.527157787395198
+}
+},
+"01027": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.118834,
+"risk_index": 0.4474098988869934
+}
+},
+"01045": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.938678,
+"risk_index": 0.41207770188608805
+},
+"copd": {
+"actual": 8.2,
+"prediction": 9.108849,
+"risk_index": 0.40646690651866824
+}
+},
+"01057": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.346506,
+"risk_index": 0.4920609344094857
+}
+},
+"01061": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.203639,
+"risk_index": 0.46404185656068625
+}
+},
+"01063": {
+"year": 2019,
+"casthma": {
+"actual": 12.4,
+"prediction": 11.655696,
+"risk_index": 0.7488192937847785
+}
+},
+"01073": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 10.124363,
+"risk_index": 0.44849424643699476
+}
+},
+"01075": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.4252205,
+"risk_index": 0.5074984231460682
+}
+},
+"01085": {
+"year": 2019,
+"casthma": {
+"actual": 11.8,
+"prediction": 11.753645,
+"risk_index": 0.7680290529048837
+}
+},
+"01089": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.270875,
+"risk_index": 0.28110816907121905
+}
+},
+"01091": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 11.092293,
+"risk_index": 0.6383246902916887
+}
+},
+"01095": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.61519,
+"risk_index": 0.34863523123049606
+}
+},
+"01097": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 10.082653,
+"risk_index": 0.4403140807089159
+}
+},
+"01107": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.428956,
+"risk_index": 0.5082310294533623
+}
+},
+"01119": {
+"year": 2019,
+"casthma": {
+"actual": 11.7,
+"prediction": 11.735581,
+"risk_index": 0.7644863409961802
+}
+},
+"01123": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.144469,
+"risk_index": 0.4524374354115513
+},
+"copd": {
+"actual": 8.9,
+"prediction": 9.735467,
+"risk_index": 0.4532704633075435
+}
+},
+"01133": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.169866,
+"risk_index": 0.45741829537309564
+},
+"copd": {
+"actual": 12.6,
+"prediction": 13.07053,
+"risk_index": 0.7023740806868347
+}
+},
+"04009": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 10.010976,
+"risk_index": 0.426256786561433
+}
+},
+"04021": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.1153755,
+"risk_index": 0.250611605162483
+}
+},
+"05025": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.830938,
+"risk_index": 0.39094773172202174
+}
+},
+"05031": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.850362,
+"risk_index": 0.3947571668479438
+},
+"copd": {
+"actual": 7.9,
+"prediction": 7.915714,
+"risk_index": 0.3173488765078888
+}
+},
+"05043": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.0184555,
+"risk_index": 0.427723666196129
+},
+"copd": {
+"actual": 8.3,
+"prediction": 9.008633,
+"risk_index": 0.3989815402394456
+}
+},
+"05045": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 9.304281,
+"risk_index": 0.28765975421416307
+}
+},
+"05061": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 9.910047,
+"risk_index": 0.40646258980359906
+},
+"copd": {
+"actual": 8.8,
+"prediction": 10.854218,
+"risk_index": 0.5368325792395962
+}
+},
+"05071": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 9.7956915,
+"risk_index": 0.38403518769577566
+}
+},
+"05081": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.36451,
+"risk_index": 0.49559187911742925
+},
+"copd": {
+"actual": 8.8,
+"prediction": 9.710739,
+"risk_index": 0.45142347143645895
+}
+},
+"05093": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 10.710472,
+"risk_index": 0.5634419509375584
+}
+},
+"05105": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.839566,
+"risk_index": 0.39263985519125844
+}
+},
+"05127": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.95916,
+"risk_index": 0.41609463198540525
+}
+},
+"05135": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.325016,
+"risk_index": 0.4878463153374067
+}
+},
+"05143": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.367303,
+"risk_index": 0.3000196296520672
+}
+},
+"06021": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.546734,
+"risk_index": 0.3352096396437937
+}
+},
+"06029": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.771478,
+"risk_index": 0.3792864357692152
+}
+},
+"06043": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.929282,
+"risk_index": 0.41023495824712813
+}
+},
+"06049": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.050908,
+"risk_index": 0.4340882509070011
+}
+},
+"06053": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.542124,
+"risk_index": 0.13818551372470397
+}
+},
+"06055": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 8.493328,
+"risk_index": 0.1286156415869114
+}
+},
+"06057": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.584631,
+"risk_index": 0.34264199976359694
+}
+},
+"06065": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 8.959412,
+"risk_index": 0.22002404156787214
+},
+"copd": {
+"actual": 5.2,
+"prediction": 5.1430683,
+"risk_index": 0.11025351621600307
+}
+},
+"06067": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 8.617719,
+"risk_index": 0.15301120608179133
+}
+},
+"06077": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.015144,
+"risk_index": 0.2309542021134794
+}
+},
+"06089": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.863812,
+"risk_index": 0.3973949810182303
+}
+},
+"06103": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.62188,
+"risk_index": 0.34994727411519644
+}
+},
+"06111": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.043855,
+"risk_index": 0.04046499113625816
+}
+},
+"08007": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.324791,
+"risk_index": 0.2916821756738345
+}
+},
+"08023": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.148658,
+"risk_index": 0.2571389694838632
+}
+},
+"08027": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.243599,
+"risk_index": 0.27575879960588506
+}
+},
+"08031": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 9.241605,
+"risk_index": 0.2753677363006396
+}
+},
+"08037": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.582099,
+"risk_index": 0.14602541123081642
+}
+},
+"08039": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 8.580306,
+"risk_index": 0.14567376804811588
+}
+},
+"08043": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.606807,
+"risk_index": 0.34699115716436113
+}
+},
+"08051": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.512811,
+"risk_index": 0.32855666045430365
+}
+},
+"08077": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.653001,
+"risk_index": 0.3560507250292106
+}
+},
+"08085": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.768774,
+"risk_index": 0.3787561272549807
+}
+},
+"08095": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.293657,
+"risk_index": 0.28557617519965556
+}
+},
+"08109": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.408213,
+"risk_index": 0.30804289937001744
+},
+"copd": {
+"actual": 5.9,
+"prediction": 6.414968,
+"risk_index": 0.20525466498399791
+}
+},
+"09005": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.733048,
+"risk_index": 0.3717495436826636
+}
+},
+"09007": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.829533,
+"risk_index": 0.3906721831042334
+}
+},
+"09009": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 9.9758625,
+"risk_index": 0.4193703264968708
+}
+},
+"10001": {
+"year": 2019,
+"casthma": {
+"actual": 11.2,
+"prediction": 9.800922,
+"risk_index": 0.3850609934219975
+}
+},
+"12005": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 9.252214,
+"risk_index": 0.2774483735149573
+}
+},
+"12019": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 9.005832,
+"risk_index": 0.22912793255558284
+}
+},
+"12029": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 10.077705,
+"risk_index": 0.43934367888627057
+}
+},
+"12041": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.674162,
+"risk_index": 0.3602008206171244
+}
+},
+"12043": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 8.698144,
+"risk_index": 0.16878415810003
+}
+},
+"12045": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.534059,
+"risk_index": 0.3327238184833187
+},
+"copd": {
+"actual": 8.9,
+"prediction": 10.15224,
+"risk_index": 0.4844002086604858
+}
+},
+"12049": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 8.716682,
+"risk_index": 0.17241983089473475
+},
+"copd": {
+"actual": 10.4,
+"prediction": 9.319308,
+"risk_index": 0.4221865790436035
+}
+},
+"12053": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 9.010414,
+"risk_index": 0.23002655445359446
+}
+},
+"12055": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.819255,
+"risk_index": 0.19253644895338307
+},
+"copd": {
+"actual": 8.6,
+"prediction": 10.406621,
+"risk_index": 0.5034005175879517
+}
+},
+"12069": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.57352,
+"risk_index": 0.1443428976422002
+}
+},
+"12071": {
+"year": 2019,
+"casthma": {
+"actual": 8.1,
+"prediction": 8.114218,
+"risk_index": 0.05426458358710438
+}
+},
+"12073": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.301466,
+"risk_index": 0.28710767637852314
+}
+},
+"12077": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 10.128067,
+"risk_index": 0.44922067496388984
+}
+},
+"12095": {
+"year": 2019,
+"casthma": {
+"actual": 8.3,
+"prediction": 8.426041,
+"risk_index": 0.11541931429500925
+}
+},
+"12099": {
+"year": 2019,
+"casthma": {
+"actual": 7.8,
+"prediction": 8.08851,
+"risk_index": 0.04922273030162253
+}
+},
+"12107": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.614877,
+"risk_index": 0.3485738456665332
+},
+"copd": {
+"actual": 10.8,
+"prediction": 11.028409,
+"risk_index": 0.5498433104356534
+}
+},
+"12123": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 10.224265,
+"risk_index": 0.4680870279418264
+}
+},
+"12125": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 10.076184,
+"risk_index": 0.4390453803470135
+}
+},
+"12127": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.924581,
+"risk_index": 0.2131929854068864
+}
+},
+"13019": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.13431,
+"risk_index": 0.4504450522029307
+}
+},
+"13033": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.671827,
+"risk_index": 0.5558628930482851
+}
+},
+"13043": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.059038,
+"risk_index": 0.4356827066099327
+}
+},
+"13047": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.320161,
+"risk_index": 0.29077414001521557
+},
+"copd": {
+"actual": 8.4,
+"prediction": 8.44195,
+"risk_index": 0.3566546680911987
+}
+},
+"13055": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.228059,
+"risk_index": 0.468831107269861
+}
+},
+"13061": {
+"year": 2019,
+"casthma": {
+"actual": 12.1,
+"prediction": 11.5929575,
+"risk_index": 0.7365150183704636
+},
+"copd": {
+"actual": 11.3,
+"prediction": 11.885509,
+"risk_index": 0.6138621042202957
+}
+},
+"13079": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.989214,
+"risk_index": 0.42198882284591055
+}
+},
+"13149": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.5371685,
+"risk_index": 0.33333365366268736
+}
+},
+"13165": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.376754,
+"risk_index": 0.4979931725524473
+}
+},
+"13169": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.68043,
+"risk_index": 0.36143010085648153
+},
+"copd": {
+"actual": 7.6,
+"prediction": 8.886524,
+"risk_index": 0.38986093483721845
+}
+},
+"13189": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.333768,
+"risk_index": 0.4895627576882132
+}
+},
+"13225": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.234605,
+"risk_index": 0.4701149088727381
+}
+},
+"13237": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.418324,
+"risk_index": 0.31002586881803007
+},
+"copd": {
+"actual": 9.8,
+"prediction": 9.313784,
+"risk_index": 0.42177397862723864
+}
+},
+"13249": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 10.0248785,
+"risk_index": 0.42898334503744884
+}
+},
+"13251": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.672285,
+"risk_index": 0.5559527160140837
+},
+"copd": {
+"actual": 8.9,
+"prediction": 10.183282,
+"risk_index": 0.4867188078865537
+}
+},
+"13265": {
+"year": 2019,
+"casthma": {
+"actual": 10.8,
+"prediction": 10.287609,
+"risk_index": 0.48051005402380703
+},
+"copd": {
+"actual": 12.0,
+"prediction": 10.07118,
+"risk_index": 0.47834564860426926
+}
+},
+"13281": {
+"year": 2019,
+"casthma": {
+"actual": 8.8,
+"prediction": 9.503379,
+"risk_index": 0.326706856494888
+}
+},
+"13285": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.10203,
+"risk_index": 0.44411429819424253
+},
+"copd": {
+"actual": 8.4,
+"prediction": 8.531944,
+"risk_index": 0.363376529400095
+}
+},
+"13299": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.29691,
+"risk_index": 0.48233416626156456
+}
+},
+"13307": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 9.516277,
+"risk_index": 0.32923641241818596
+},
+"copd": {
+"actual": 8.4,
+"prediction": 9.739233,
+"risk_index": 0.4535517546124006
+}
+},
+"13311": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 9.223584,
+"risk_index": 0.27183345755248084
+}
+},
+"13319": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.272083,
+"risk_index": 0.47746509470723675
+},
+"copd": {
+"actual": 11.0,
+"prediction": 9.932027,
+"risk_index": 0.46795198717443104
+}
+},
+"16001": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.608934,
+"risk_index": 0.34740830443129045
+},
+"copd": {
+"actual": 4.8,
+"prediction": 5.5189204,
+"risk_index": 0.13832678431006995
+}
+},
+"16011": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.909729,
+"risk_index": 0.40640022363957296
+},
+"copd": {
+"actual": 6.3,
+"prediction": 6.4527063,
+"risk_index": 0.20807342644180093
+}
+},
+"16027": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 9.752787,
+"risk_index": 0.37562075661257355
+},
+"copd": {
+"actual": 6.3,
+"prediction": 6.7527366,
+"risk_index": 0.2304833878288554
+}
+},
+"16055": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.484638,
+"risk_index": 0.32303137133761334
+}
+},
+"16063": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.495978,
+"risk_index": 0.3252553722811857
+}
+},
+"16073": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.756287,
+"risk_index": 0.37630717665688623
+}
+},
+"16075": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.923873,
+"risk_index": 0.40917414509864625
+}
+},
+"16077": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.3884535,
+"risk_index": 0.304167665979848
+},
+"copd": {
+"actual": 6.5,
+"prediction": 6.6866136,
+"risk_index": 0.22554450706649173
+}
+},
+"16085": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.250146,
+"risk_index": 0.277042797328775
+}
+},
+"17005": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.7218485,
+"risk_index": 0.36955309760086985
+}
+},
+"17023": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.524914,
+"risk_index": 0.3309303009675367
+},
+"copd": {
+"actual": 7.2,
+"prediction": 7.889504,
+"risk_index": 0.315391190607649
+}
+},
+"17035": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.435949,
+"risk_index": 0.31348248404117546
+}
+},
+"17039": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 8.95389,
+"risk_index": 0.21894106685795944
+}
+},
+"17045": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.169766,
+"risk_index": 0.2612786707111058
+}
+},
+"17061": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.537802,
+"risk_index": 0.33345789569070783
+}
+},
+"17067": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 9.055662,
+"risk_index": 0.2389005927864667
+}
+},
+"17077": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.550706,
+"risk_index": 0.5321086409948055
+}
+},
+"17089": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.749378,
+"risk_index": 0.17883217082868968
+}
+},
+"17091": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.298715,
+"risk_index": 0.2865681502236935
+}
+},
+"17101": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.914095,
+"risk_index": 0.4072564836148495
+}
+},
+"17111": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 8.639725,
+"risk_index": 0.15732702308040342
+},
+"copd": {
+"actual": 5.1,
+"prediction": 4.864587,
+"risk_index": 0.08945309979133953
+}
+},
+"17113": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.774787,
+"risk_index": 0.183815384230386
+}
+},
+"17117": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.529613,
+"risk_index": 0.33185186890702917
+}
+},
+"17139": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.408486,
+"risk_index": 0.3080964401334738
+}
+},
+"17163": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.944656,
+"risk_index": 0.413250107321774
+}
+},
+"17165": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.304708,
+"risk_index": 0.4838635101202927
+}
+},
+"17193": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 10.24341,
+"risk_index": 0.47184174558421593
+}
+},
+"17201": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.283324,
+"risk_index": 0.28354966710883245
+}
+},
+"18023": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.063566,
+"risk_index": 0.24045072536653703
+},
+"copd": {
+"actual": 9.1,
+"prediction": 7.507976,
+"risk_index": 0.28689397633269037
+}
+},
+"18027": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 9.826035,
+"risk_index": 0.3899861552999461
+}
+},
+"18037": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.506491,
+"risk_index": 0.3273171819742881
+}
+},
+"18039": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.905012,
+"risk_index": 0.4054751255398521
+}
+},
+"18041": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.474727,
+"risk_index": 0.5172076385528562
+},
+"copd": {
+"actual": 11.8,
+"prediction": 10.599574,
+"risk_index": 0.5178126262300332
+}
+},
+"18047": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.11384,
+"risk_index": 0.44643047554376575
+},
+"copd": {
+"actual": 9.6,
+"prediction": 8.249619,
+"risk_index": 0.3422890180767382
+}
+},
+"18053": {
+"year": 2019,
+"casthma": {
+"actual": 10.9,
+"prediction": 10.290966,
+"risk_index": 0.48116842890630895
+}
+},
+"18055": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.57397,
+"risk_index": 0.34055116430862087
+}
+},
+"18059": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.365611,
+"risk_index": 0.2996877945906452
+},
+"copd": {
+"actual": 6.7,
+"prediction": 7.5007463,
+"risk_index": 0.28635397321353884
+}
+},
+"18061": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.965619,
+"risk_index": 0.41736137114718075
+}
+},
+"18063": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 8.932155,
+"risk_index": 0.21467839838277872
+}
+},
+"18067": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.733254,
+"risk_index": 0.3717899444052718
+}
+},
+"18087": {
+"year": 2019,
+"casthma": {
+"actual": 10.8,
+"prediction": 9.9078665,
+"risk_index": 0.40603495011599244
+}
+},
+"18095": {
+"year": 2019,
+"casthma": {
+"actual": 11.2,
+"prediction": 10.347655,
+"risk_index": 0.4922862763040328
+},
+"copd": {
+"actual": 9.0,
+"prediction": 8.857575,
+"risk_index": 0.3876986666523258
+}
+},
+"18097": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.015171,
+"risk_index": 0.42707951001454497
+}
+},
+"18105": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.722554,
+"risk_index": 0.36969146026980204
+}
+},
+"18107": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.765862,
+"risk_index": 0.37818502577811264
+},
+"copd": {
+"actual": 9.4,
+"prediction": 7.400449,
+"risk_index": 0.2788625344481014
+}
+},
+"18139": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 9.238516,
+"risk_index": 0.2747619215815308
+},
+"copd": {
+"actual": 10.4,
+"prediction": 8.18326,
+"risk_index": 0.3373325099251165
+}
+},
+"18147": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.592964,
+"risk_index": 0.3442762678290988
+}
+},
+"18155": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 10.400472,
+"risk_index": 0.5026447470127344
+}
+},
+"18159": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.611054,
+"risk_index": 0.34782407885813116
+}
+},
+"18175": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.566109,
+"risk_index": 0.5351294775498188
+}
+},
+"19007": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 10.007889,
+"risk_index": 0.4256513640823496
+}
+},
+"19029": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 9.061217,
+"risk_index": 0.23999003945679687
+},
+"copd": {
+"actual": 8.3,
+"prediction": 7.893332,
+"risk_index": 0.31567711283680266
+}
+},
+"19033": {
+"year": 2019,
+"casthma": {
+"actual": 8.1,
+"prediction": 8.582586,
+"risk_index": 0.14612092167698212
+}
+},
+"19035": {
+"year": 2019,
+"casthma": {
+"actual": 8.3,
+"prediction": 8.248352,
+"risk_index": 0.08057094536533813
+},
+"copd": {
+"actual": 5.8,
+"prediction": 5.937382,
+"risk_index": 0.16958265512700088
+}
+},
+"19037": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 8.326894,
+"risk_index": 0.09597460339973643
+},
+"copd": {
+"actual": 7.3,
+"prediction": 6.79586,
+"risk_index": 0.23370437493875232
+}
+},
+"19043": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.494666,
+"risk_index": 0.12887805016385157
+}
+},
+"19061": {
+"year": 2019,
+"casthma": {
+"actual": 8.3,
+"prediction": 8.721267,
+"risk_index": 0.17331904115278393
+}
+},
+"19071": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.271334,
+"risk_index": 0.08507817549630667
+}
+},
+"19087": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.210595,
+"risk_index": 0.073166042047307
+}
+},
+"19129": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.617008,
+"risk_index": 0.15287176475278974
+}
+},
+"19135": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.807389,
+"risk_index": 0.19020928888315103
+},
+"copd": {
+"actual": 7.6,
+"prediction": 7.6863885,
+"risk_index": 0.3002200211887194
+}
+},
+"19139": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.911805,
+"risk_index": 0.21068735612513287
+}
+},
+"19155": {
+"year": 2019,
+"casthma": {
+"actual": 8.8,
+"prediction": 8.457399,
+"risk_index": 0.12156924565202439
+}
+},
+"19163": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.65653,
+"risk_index": 0.16062281989316682
+},
+"copd": {
+"actual": 5.4,
+"prediction": 5.7748446,
+"risk_index": 0.15744235843712578
+}
+},
+"19177": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 9.615833,
+"risk_index": 0.34876133639863693
+}
+},
+"19179": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 9.076807,
+"risk_index": 0.2430475504541778
+}
+},
+"19185": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.829921,
+"risk_index": 0.39074827766914594
+}
+},
+"19193": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.352489,
+"risk_index": 0.10099429512378783
+}
+},
+"19195": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.606683,
+"risk_index": 0.1508468256220678
+},
+"copd": {
+"actual": 5.6,
+"prediction": 7.1967874,
+"risk_index": 0.26365057554919774
+}
+},
+"20003": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.75845,
+"risk_index": 0.3767313842442713
+}
+},
+"20011": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.158782,
+"risk_index": 0.4552445011527641
+}
+},
+"20021": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.304791,
+"risk_index": 0.4838797880813436
+}
+},
+"20031": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.1563225,
+"risk_index": 0.25864213132090147
+},
+"copd": {
+"actual": 6.2,
+"prediction": 6.9866424,
+"risk_index": 0.24795435641505512
+}
+},
+"20039": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.112,
+"risk_index": 0.2499496020597466
+}
+},
+"20055": {
+"year": 2019,
+"casthma": {
+"actual": 8.8,
+"prediction": 9.061689,
+"risk_index": 0.2400826081027728
+}
+},
+"20063": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 8.764647,
+"risk_index": 0.18182672730200627
+},
+"copd": {
+"actual": 8.5,
+"prediction": 7.3471766,
+"risk_index": 0.2748834949077759
+}
+},
+"20067": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.305332,
+"risk_index": 0.2878658763474695
+}
+},
+"20087": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 8.890286,
+"risk_index": 0.20646704957268686
+},
+"copd": {
+"actual": 7.1,
+"prediction": 6.129495,
+"risk_index": 0.18393202221409571
+}
+},
+"20107": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.967704,
+"risk_index": 0.4177702813735782
+}
+},
+"20109": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.125239,
+"risk_index": 0.252546034907362
+}
+},
+"20113": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.2280655,
+"risk_index": 0.27271236938921967
+}
+},
+"20149": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 8.981909,
+"risk_index": 0.22443615349270035
+},
+"copd": {
+"actual": 6.0,
+"prediction": 5.743064,
+"risk_index": 0.15506859145806598
+}
+},
+"20151": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.430965,
+"risk_index": 0.31250502189807433
+}
+},
+"20153": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 8.971842,
+"risk_index": 0.22246181332524498
+}
+},
+"20157": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.500284,
+"risk_index": 0.32609986505570304
+}
+},
+"20159": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.288953,
+"risk_index": 0.2846536266600994
+},
+"copd": {
+"actual": 7.0,
+"prediction": 6.630978,
+"risk_index": 0.22138895461813696
+}
+},
+"20169": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.2951765,
+"risk_index": 0.2858741795588936
+}
+},
+"20177": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.185484,
+"risk_index": 0.2643612850701073
+}
+},
+"20183": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 9.357718,
+"risk_index": 0.29813981933071426
+}
+},
+"20191": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.508298,
+"risk_index": 0.32767157083716597
+}
+},
+"21003": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.378382,
+"risk_index": 0.49831245593305895
+}
+},
+"21023": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.402405,
+"risk_index": 0.5030238469972075
+}
+},
+"21029": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.879298,
+"risk_index": 0.4004320955342945
+},
+"copd": {
+"actual": 9.6,
+"prediction": 8.2579975,
+"risk_index": 0.3429148277415669
+}
+},
+"21031": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.396907,
+"risk_index": 0.501945579167599
+}
+},
+"21035": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.503225,
+"risk_index": 0.5227966666736618
+}
+},
+"21053": {
+"year": 2019,
+"casthma": {
+"actual": 11.3,
+"prediction": 10.956448,
+"risk_index": 0.6116827671717927
+}
+},
+"21065": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 11.079198,
+"risk_index": 0.6357564987258966
+}
+},
+"21067": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.60657,
+"risk_index": 0.34694467672136053
+}
+},
+"21073": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.556118,
+"risk_index": 0.3370500298426017
+}
+},
+"21079": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.053507,
+"risk_index": 0.4345979668199063
+}
+},
+"21083": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.270536,
+"risk_index": 0.47716169704765055
+}
+},
+"21085": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.697958,
+"risk_index": 0.5609877050991223
+},
+"copd": {
+"actual": 11.7,
+"prediction": 12.409219,
+"risk_index": 0.6529792229846815
+}
+},
+"21087": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.754677,
+"risk_index": 0.5721114360972257
+}
+},
+"21091": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.635734,
+"risk_index": 0.3526643207705978
+}
+},
+"21095": {
+"year": 2019,
+"casthma": {
+"actual": 11.5,
+"prediction": 12.296218,
+"risk_index": 0.8744384765342502
+}
+},
+"21097": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.250599,
+"risk_index": 0.4732516523552336
+}
+},
+"21103": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.053351,
+"risk_index": 0.43456737209793117
+}
+},
+"21119": {
+"year": 2019,
+"casthma": {
+"actual": 11.4,
+"prediction": 11.48616,
+"risk_index": 0.7155698913183299
+}
+},
+"21125": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.575323,
+"risk_index": 0.5369365273464743
+}
+},
+"21165": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 10.691023,
+"risk_index": 0.5596276128113201
+}
+},
+"21185": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.787944,
+"risk_index": 0.18639573523696304
+},
+"copd": {
+"actual": 6.1,
+"prediction": 6.2910013,
+"risk_index": 0.19599530364522455
+}
+},
+"21215": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.069801,
+"risk_index": 0.2416735336454767
+}
+},
+"21235": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.707846,
+"risk_index": 0.5629269397843115
+},
+"copd": {
+"actual": 11.1,
+"prediction": 12.310462,
+"risk_index": 0.6456028328110845
+}
+},
+"21237": {
+"year": 2019,
+"casthma": {
+"actual": 11.8,
+"prediction": 11.423905,
+"risk_index": 0.7033604399301365
+}
+},
+"22005": {
+"year": 2019,
+"casthma": {
+"actual": 8.8,
+"prediction": 9.072661,
+"risk_index": 0.24223443688168636
+}
+},
+"22011": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.386318,
+"risk_index": 0.3037488516928108
+}
+},
+"22025": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.306655,
+"risk_index": 0.48424535578494304
+}
+},
+"22027": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 11.255076,
+"risk_index": 0.6702496943126394
+}
+},
+"22037": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.7337055,
+"risk_index": 0.3718784925909879
+}
+},
+"22059": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 10.050492,
+"risk_index": 0.43400666498173435
+},
+"copd": {
+"actual": 9.1,
+"prediction": 9.423636,
+"risk_index": 0.42997908017295156
+}
+},
+"22069": {
+"year": 2019,
+"casthma": {
+"actual": 10.8,
+"prediction": 10.9095545,
+"risk_index": 0.6024860133580872
+}
+},
+"22081": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.783432,
+"risk_index": 0.5777508670612849
+}
+},
+"22085": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.104218,
+"risk_index": 0.4445434087819442
+},
+"copd": {
+"actual": 10.2,
+"prediction": 10.510326,
+"risk_index": 0.5111464853973511
+}
+},
+"22109": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 10.0184555,
+"risk_index": 0.427723666196129
+}
+},
+"22125": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 9.331158,
+"risk_index": 0.29293087179444544
+}
+},
+"23023": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.18955,
+"risk_index": 0.46127872170230927
+}
+},
+"23027": {
+"year": 2019,
+"casthma": {
+"actual": 11.5,
+"prediction": 10.669587,
+"risk_index": 0.5554235842199249
+}
+},
+"23029": {
+"year": 2019,
+"casthma": {
+"actual": 11.2,
+"prediction": 11.150172,
+"risk_index": 0.6496759205044786
+}
+},
+"23031": {
+"year": 2019,
+"casthma": {
+"actual": 11.1,
+"prediction": 10.193768,
+"risk_index": 0.4621059559157122
+},
+"copd": {
+"actual": 6.8,
+"prediction": 6.505195,
+"risk_index": 0.21199392960517036
+}
+},
+"24003": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 9.116858,
+"risk_index": 0.25090235308125247
+}
+},
+"24035": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 9.0879135,
+"risk_index": 0.2452257573747942
+}
+},
+"25003": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.105569,
+"risk_index": 0.4448083669190488
+}
+},
+"25005": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 9.937985,
+"risk_index": 0.4119417907173142
+}
+},
+"25007": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.810853,
+"risk_index": 0.38700866126773115
+}
+},
+"25009": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 9.618366,
+"risk_index": 0.3492581083907065
+},
+"copd": {
+"actual": 4.9,
+"prediction": 5.7476974,
+"risk_index": 0.15541467088767946
+}
+},
+"25013": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.037192,
+"risk_index": 0.43139826881334653
+}
+},
+"25015": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.898559,
+"risk_index": 0.4042095630981527
+}
+},
+"25021": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 9.25667,
+"risk_index": 0.2783222842913734
+}
+},
+"26019": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.202332,
+"risk_index": 0.4637855277041386
+},
+"copd": {
+"actual": 9.4,
+"prediction": 8.879665,
+"risk_index": 0.3893486201638211
+}
+},
+"26029": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.380246,
+"risk_index": 0.4986780236366585
+}
+},
+"26045": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.229921,
+"risk_index": 0.4691962827334351
+}
+},
+"26097": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 10.5350065,
+"risk_index": 0.5290296548560384
+}
+},
+"26105": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 10.666023,
+"risk_index": 0.554724612494802
+}
+},
+"26111": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.066011,
+"risk_index": 0.43705025145821597
+}
+},
+"26123": {
+"year": 2019,
+"casthma": {
+"actual": 10.9,
+"prediction": 10.765258,
+"risk_index": 0.5741865819511889
+}
+},
+"26135": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 10.761047,
+"risk_index": 0.5733607205778746
+}
+},
+"26137": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.413877,
+"risk_index": 0.5052737357824512
+}
+},
+"26165": {
+"year": 2019,
+"casthma": {
+"actual": 11.2,
+"prediction": 10.793282,
+"risk_index": 0.579682649185993
+}
+},
+"27003": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 8.867015,
+"risk_index": 0.20190314075805926
+},
+"copd": {
+"actual": 4.6,
+"prediction": 4.6213274,
+"risk_index": 0.07128347411343197
+}
+},
+"27009": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.730625,
+"risk_index": 0.37127434489198663
+}
+},
+"27013": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 8.798563,
+"risk_index": 0.1884783336514073
+},
+"copd": {
+"actual": 5.3,
+"prediction": 5.1476984,
+"risk_index": 0.1105993491609363
+}
+},
+"27023": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.038221,
+"risk_index": 0.23548006364565105
+}
+},
+"27039": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.835405,
+"risk_index": 0.1957037871578537
+}
+},
+"27045": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 8.83665,
+"risk_index": 0.19594795657361644
+}
+},
+"27049": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.096283,
+"risk_index": 0.2468671838207579
+}
+},
+"27065": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.71454,
+"risk_index": 0.36811975448833884
+}
+},
+"27071": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.651309,
+"risk_index": 0.3557188899677886
+},
+"copd": {
+"actual": 8.1,
+"prediction": 7.783783,
+"risk_index": 0.3074946430662813
+}
+},
+"27075": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.788032,
+"risk_index": 0.3825330064588007
+},
+"copd": {
+"actual": 5.1,
+"prediction": 6.8705244,
+"risk_index": 0.23928123274607238
+}
+},
+"27079": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.167179,
+"risk_index": 0.26077130823835276
+}
+},
+"27081": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 8.654397,
+"risk_index": 0.1602044959061614
+}
+},
+"27085": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 9.055516,
+"risk_index": 0.2388719592646184
+},
+"copd": {
+"actual": 6.3,
+"prediction": 6.231664,
+"risk_index": 0.1915632626086624
+}
+},
+"27093": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.06131,
+"risk_index": 0.2400082786179746
+}
+},
+"27111": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 8.781171,
+"risk_index": 0.18506741439121216
+}
+},
+"27117": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 8.8990755,
+"risk_index": 0.2081908464239684
+},
+"copd": {
+"actual": 5.8,
+"prediction": 6.973237,
+"risk_index": 0.24695307588979476
+}
+},
+"27125": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.188364,
+"risk_index": 0.26492611070657
+}
+},
+"27129": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 8.850514,
+"risk_index": 0.1986669644291447
+}
+},
+"27139": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 8.15815,
+"risk_index": 0.06288052798331525
+},
+"copd": {
+"actual": 4.1,
+"prediction": 3.666966,
+"risk_index": 0.0
+}
+},
+"27147": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.748437,
+"risk_index": 0.17864762189677577
+}
+},
+"28015": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.262605,
+"risk_index": 0.4756062692272385
+}
+},
+"28017": {
+"year": 2019,
+"casthma": {
+"actual": 10.8,
+"prediction": 10.78894,
+"risk_index": 0.5788310960910203
+}
+},
+"28021": {
+"year": 2019,
+"casthma": {
+"actual": 12.1,
+"prediction": 11.677477,
+"risk_index": 0.7530909837805415
+}
+},
+"28033": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.307301,
+"risk_index": 0.2882520366523987
+},
+"copd": {
+"actual": 6.2,
+"prediction": 6.780077,
+"risk_index": 0.23252550593594867
+}
+},
+"28035": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.370698,
+"risk_index": 0.4968054697557741
+}
+},
+"28045": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.681184,
+"risk_index": 0.3615779753460278
+},
+"copd": {
+"actual": 7.4,
+"prediction": 9.396042,
+"risk_index": 0.42791802009163843
+}
+},
+"28067": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.387144,
+"risk_index": 0.5000308594839921
+}
+},
+"28069": {
+"year": 2019,
+"casthma": {
+"actual": 11.3,
+"prediction": 11.114769,
+"risk_index": 0.6427326836962513
+}
+},
+"28075": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.382971,
+"risk_index": 0.4992124506711589
+},
+"copd": {
+"actual": 8.7,
+"prediction": 9.066981,
+"risk_index": 0.40333968815654553
+}
+},
+"28085": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.48051,
+"risk_index": 0.5183418005860734
+}
+},
+"28095": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.503097,
+"risk_index": 0.5227715633120411
+}
+},
+"28107": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 11.02504,
+"risk_index": 0.6251350310802172
+}
+},
+"28119": {
+"year": 2019,
+"casthma": {
+"actual": 12.7,
+"prediction": 12.189712,
+"risk_index": 0.8535505184658073
+}
+},
+"28123": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.13646,
+"risk_index": 0.4508667102301513
+}
+},
+"28129": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.253048,
+"risk_index": 0.47373195026623977
+}
+},
+"28135": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 10.405579,
+"risk_index": 0.5036463319173925
+}
+},
+"28159": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 11.044831,
+"risk_index": 0.6290164422507856
+}
+},
+"29001": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.258398,
+"risk_index": 0.47478119233397464
+}
+},
+"29007": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 9.945961,
+"risk_index": 0.4135060439382963
+}
+},
+"29015": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.429765,
+"risk_index": 0.5083896905436048
+}
+},
+"29019": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.738106,
+"risk_index": 0.3727415187067015
+},
+"copd": {
+"actual": 6.8,
+"prediction": 7.078341,
+"risk_index": 0.2548035382651781
+}
+},
+"29021": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.675749,
+"risk_index": 0.3605120630772167
+}
+},
+"29029": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.535769,
+"risk_index": 0.33305918370496873
+}
+},
+"29037": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.186746,
+"risk_index": 0.2646087885260849
+}
+},
+"29045": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 9.579814,
+"risk_index": 0.3416972896626104
+}
+},
+"29055": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 10.306869,
+"risk_index": 0.48428732546765274
+}
+},
+"29061": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 9.695843,
+"risk_index": 0.36445289861162133
+},
+"copd": {
+"actual": 11.4,
+"prediction": 8.842334,
+"risk_index": 0.3865602808909539
+}
+},
+"29069": {
+"year": 2019,
+"casthma": {
+"actual": 11.2,
+"prediction": 10.479663,
+"risk_index": 0.5181756869353498
+}
+},
+"29097": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 9.918644,
+"risk_index": 0.4081486335524433
+}
+},
+"29103": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.099314,
+"risk_index": 0.4435816362398561
+}
+},
+"29109": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.418084,
+"risk_index": 0.506098812675715
+}
+},
+"29119": {
+"year": 2019,
+"casthma": {
+"actual": 10.8,
+"prediction": 10.057632,
+"risk_index": 0.43540696187213185
+}
+},
+"29123": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.357117,
+"risk_index": 0.49414196386382875
+}
+},
+"29131": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.303221,
+"risk_index": 0.4835718796614664
+},
+"copd": {
+"actual": 8.7,
+"prediction": 10.148424,
+"risk_index": 0.4841151827392604
+}
+},
+"29135": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.645801,
+"risk_index": 0.3546386609380535
+}
+},
+"29143": {
+"year": 2019,
+"casthma": {
+"actual": 11.3,
+"prediction": 10.610005,
+"risk_index": 0.5437383616255735
+}
+},
+"29151": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.738034,
+"risk_index": 0.3727273980657901
+}
+},
+"29157": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.887838,
+"risk_index": 0.40210696044241706
+}
+},
+"29173": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.731361,
+"risk_index": 0.3714186892213049
+}
+},
+"29181": {
+"year": 2019,
+"casthma": {
+"actual": 11.2,
+"prediction": 10.887288,
+"risk_index": 0.5981191070961771
+},
+"copd": {
+"actual": 14.1,
+"prediction": 12.594854,
+"risk_index": 0.6668447331751051
+}
+},
+"29186": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.564221,
+"risk_index": 0.3386391903051916
+}
+},
+"29217": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.325159,
+"risk_index": 0.4878743604992171
+}
+},
+"29219": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.740811,
+"risk_index": 0.37327202334094894
+}
+},
+"29223": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 10.829775,
+"risk_index": 0.5868396568080209
+}
+},
+"30005": {
+"year": 2019,
+"casthma": {
+"actual": 11.8,
+"prediction": 11.915653,
+"risk_index": 0.7998020639160222
+}
+},
+"30019": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 9.131295,
+"risk_index": 0.2537337377040352
+}
+},
+"30027": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.321396,
+"risk_index": 0.4871363608915749
+}
+},
+"30029": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.445149,
+"risk_index": 0.3152867881576541
+}
+},
+"30035": {
+"year": 2019,
+"casthma": {
+"actual": 12.3,
+"prediction": 12.011284,
+"risk_index": 0.8185572168467796
+}
+},
+"30037": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.737597,
+"risk_index": 0.37264169362025706
+},
+"copd": {
+"actual": 6.6,
+"prediction": 8.230876,
+"risk_index": 0.3408890597849339
+}
+},
+"30045": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.943906,
+"risk_index": 0.41310301731227844
+}
+},
+"30051": {
+"year": 2019,
+"casthma": {
+"actual": 11.4,
+"prediction": 9.721909,
+"risk_index": 0.3695649628616358
+}
+},
+"30059": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.738097,
+"risk_index": 0.3727397536265875
+}
+},
+"30061": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.900598,
+"risk_index": 0.4046094518039679
+}
+},
+"30085": {
+"year": 2019,
+"casthma": {
+"actual": 12.1,
+"prediction": 11.812394,
+"risk_index": 0.7795509075286883
+}
+},
+"30097": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.313947,
+"risk_index": 0.28955545025654184
+}
+},
+"31001": {
+"year": 2019,
+"casthma": {
+"actual": 8.1,
+"prediction": 8.646214,
+"risk_index": 0.1585996458425589
+}
+},
+"31013": {
+"year": 2019,
+"casthma": {
+"actual": 8.3,
+"prediction": 8.703473,
+"risk_index": 0.1698292816474993
+}
+},
+"31023": {
+"year": 2019,
+"casthma": {
+"actual": 7.8,
+"prediction": 8.122205,
+"risk_index": 0.05583099412822557
+}
+},
+"31049": {
+"year": 2019,
+"casthma": {
+"actual": 8.1,
+"prediction": 8.893417,
+"risk_index": 0.20708110133232752
+}
+},
+"31059": {
+"year": 2019,
+"casthma": {
+"actual": 7.9,
+"prediction": 8.030792,
+"risk_index": 0.03790307541087099
+}
+},
+"31061": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 8.118235,
+"risk_index": 0.05505239767796271
+}
+},
+"31065": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.895673,
+"risk_index": 0.2075235480808903
+},
+"copd": {
+"actual": 8.4,
+"prediction": 6.9409866,
+"risk_index": 0.24454421845533875
+}
+},
+"31071": {
+"year": 2019,
+"casthma": {
+"actual": 8.1,
+"prediction": 8.577612,
+"risk_index": 0.14514542073400788
+}
+},
+"31073": {
+"year": 2019,
+"casthma": {
+"actual": 7.7,
+"prediction": 8.153128,
+"risk_index": 0.06189561327973339
+}
+},
+"31079": {
+"year": 2019,
+"casthma": {
+"actual": 7.7,
+"prediction": 8.08589,
+"risk_index": 0.048708895868451375
+}
+},
+"31099": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.46197,
+"risk_index": 0.12246571022989662
+}
+},
+"31109": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.218048,
+"risk_index": 0.07462772450166737
+}
+},
+"31113": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.702413,
+"risk_index": 0.16962139443407878
+}
+},
+"31125": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 9.17634,
+"risk_index": 0.26256796367433743
+}
+},
+"31137": {
+"year": 2019,
+"casthma": {
+"actual": 7.9,
+"prediction": 8.342012,
+"risk_index": 0.09893954575114146
+}
+},
+"31161": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 8.982354,
+"risk_index": 0.22452342689833457
+}
+},
+"31167": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.16195,
+"risk_index": 0.063625784031426
+}
+},
+"32011": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 8.768524,
+"risk_index": 0.18258708459109174
+}
+},
+"32015": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 8.419704,
+"risk_index": 0.1141765017747782
+}
+},
+"32017": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.009845,
+"risk_index": 0.2299149621663904
+}
+},
+"33003": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 10.411368,
+"risk_index": 0.5047816706706855
+}
+},
+"35011": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 8.948564,
+"risk_index": 0.21789653167052841
+}
+},
+"35013": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.045149,
+"risk_index": 0.2368387830933646
+},
+"copd": {
+"actual": 5.5,
+"prediction": 6.2812257,
+"risk_index": 0.19526514132983416
+}
+},
+"35021": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.936894,
+"risk_index": 0.21560781112277802
+}
+},
+"35025": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 8.413018,
+"risk_index": 0.11286524337012856
+}
+},
+"35049": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.303363,
+"risk_index": 0.09135970338181691
+}
+},
+"35055": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.776285,
+"risk_index": 0.1841091720093517
+},
+"copd": {
+"actual": 4.8,
+"prediction": 5.5509295,
+"risk_index": 0.14071761848593273
+}
+},
+"35057": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.261812,
+"risk_index": 0.279330733396475
+}
+},
+"36009": {
+"year": 2019,
+"casthma": {
+"actual": 10.8,
+"prediction": 10.673997,
+"risk_index": 0.5562884734757587
+}
+},
+"36021": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.936442,
+"risk_index": 0.4116391775377787
+}
+},
+"36023": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.536483,
+"risk_index": 0.529319226054732
+},
+"copd": {
+"actual": 7.9,
+"prediction": 8.154469,
+"risk_index": 0.33518204312794736
+}
+},
+"36025": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.517612,
+"risk_index": 0.5256182452958114
+}
+},
+"36031": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 10.358205,
+"risk_index": 0.4943553424376035
+}
+},
+"36035": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 10.483948,
+"risk_index": 0.5190160611896009
+}
+},
+"36045": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.523384,
+"risk_index": 0.5267502500088892
+}
+},
+"36083": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 10.023722,
+"risk_index": 0.4287565322428066
+}
+},
+"36087": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 8.806276,
+"risk_index": 0.1899910073090596
+}
+},
+"36099": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.533599,
+"risk_index": 0.5287536159382186
+}
+},
+"36105": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.84425,
+"risk_index": 0.3935584813305615
+}
+},
+"36117": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.4720545,
+"risk_index": 0.5166835078190206
+}
+},
+"36119": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 8.725548,
+"risk_index": 0.1741586309269846
+}
+},
+"36121": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 10.364685,
+"risk_index": 0.4956262001196449
+}
+},
+"37011": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 10.015875,
+"risk_index": 0.42721757850345793
+}
+},
+"37017": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 10.346159,
+"risk_index": 0.49199288076509246
+},
+"copd": {
+"actual": 8.9,
+"prediction": 10.018762,
+"risk_index": 0.47443042618844455
+}
+},
+"37023": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.765424,
+"risk_index": 0.37809912521256706
+}
+},
+"37053": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 9.525777,
+"risk_index": 0.3310995525384627
+},
+"copd": {
+"actual": 7.8,
+"prediction": 7.7366247,
+"risk_index": 0.30397227988469894
+}
+},
+"37065": {
+"year": 2019,
+"casthma": {
+"actual": 11.1,
+"prediction": 10.799474,
+"risk_index": 0.5808970243043883
+}
+},
+"37069": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.734536,
+"risk_index": 0.3720413702615028
+},
+"copd": {
+"actual": 8.1,
+"prediction": 7.916352,
+"risk_index": 0.3173965302127476
+}
+},
+"37105": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.658548,
+"risk_index": 0.3571386027394396
+}
+},
+"37109": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.356489,
+"risk_index": 0.29789878783515417
+}
+},
+"37129": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.590944,
+"risk_index": 0.3438801054035242
+}
+},
+"37135": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.973944,
+"risk_index": 0.2228740575918576
+}
+},
+"37137": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.666677,
+"risk_index": 0.3587328623223587
+}
+},
+"37147": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.266057,
+"risk_index": 0.4762832755109432
+}
+},
+"37157": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.238514,
+"risk_index": 0.4708815420022289
+}
+},
+"37161": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.648782,
+"risk_index": 0.35522329469579517
+}
+},
+"37163": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.948448,
+"risk_index": 0.41399379440978357
+}
+},
+"37181": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 10.524368,
+"risk_index": 0.5269432321013475
+},
+"copd": {
+"actual": 8.9,
+"prediction": 9.028508,
+"risk_index": 0.4004660502458274
+}
+},
+"37195": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.140741,
+"risk_index": 0.45170630000435197
+}
+},
+"37197": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.913566,
+"risk_index": 0.40715273612815195
+}
+},
+"38015": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.724127,
+"risk_index": 0.1738799443889936
+}
+},
+"38017": {
+"year": 2019,
+"casthma": {
+"actual": 8.3,
+"prediction": 8.603349,
+"risk_index": 0.1501929614998568
+}
+},
+"38021": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 8.385289,
+"risk_index": 0.10742703153905955
+}
+},
+"38031": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.533143,
+"risk_index": 0.1364241598909983
+}
+},
+"38057": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.410238,
+"risk_index": 0.11232002973493184
+}
+},
+"38065": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.4354,
+"risk_index": 0.11725480149350094
+},
+"copd": {
+"actual": 7.1,
+"prediction": 5.3346524,
+"risk_index": 0.1245633785311545
+}
+},
+"38069": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 8.453767,
+"risk_index": 0.12085693776604037
+},
+"copd": {
+"actual": 6.2,
+"prediction": 6.2882915,
+"risk_index": 0.19579290237653058
+}
+},
+"38079": {
+"year": 2019,
+"casthma": {
+"actual": 11.7,
+"prediction": 11.699724,
+"risk_index": 0.7574540657022046
+}
+},
+"38081": {
+"year": 2019,
+"casthma": {
+"actual": 8.1,
+"prediction": 8.387738,
+"risk_index": 0.10790732945006573
+}
+},
+"38089": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.7582,
+"risk_index": 0.18056234158038267
+}
+},
+"39009": {
+"year": 2019,
+"casthma": {
+"actual": 11.2,
+"prediction": 10.713379,
+"risk_index": 0.5640120718143633
+},
+"copd": {
+"actual": 9.0,
+"prediction": 9.450221,
+"risk_index": 0.43196477569595326
+}
+},
+"39011": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.212841,
+"risk_index": 0.2697265402564664
+}
+},
+"39023": {
+"year": 2019,
+"casthma": {
+"actual": 11.1,
+"prediction": 10.100096,
+"risk_index": 0.44373500208975697
+}
+},
+"39035": {
+"year": 2019,
+"casthma": {
+"actual": 11.1,
+"prediction": 10.411559,
+"risk_index": 0.5048191295931038
+}
+},
+"39069": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.634188,
+"risk_index": 0.3523611192310244
+},
+"copd": {
+"actual": 9.0,
+"prediction": 7.81333,
+"risk_index": 0.3097015772629385
+}
+},
+"39077": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.221448,
+"risk_index": 0.46753455786616105
+}
+},
+"39081": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.658328,
+"risk_index": 0.5532154689973776
+}
+},
+"39085": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.722665,
+"risk_index": 0.3697132295912071
+}
+},
+"39087": {
+"year": 2019,
+"casthma": {
+"actual": 11.3,
+"prediction": 10.598459,
+"risk_index": 0.541473959959393
+}
+},
+"39091": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.918504,
+"risk_index": 0.4081211767506708
+},
+"copd": {
+"actual": 8.6,
+"prediction": 8.966544,
+"risk_index": 0.39583781487297526
+}
+},
+"39099": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.444305,
+"risk_index": 0.5112412755276918
+}
+},
+"39117": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.090773,
+"risk_index": 0.441906575211721
+}
+},
+"39133": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.957301,
+"risk_index": 0.41573004488186865
+}
+},
+"39137": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.7239,
+"risk_index": 0.36995543780684337
+}
+},
+"39141": {
+"year": 2019,
+"casthma": {
+"actual": 11.1,
+"prediction": 10.156341,
+"risk_index": 0.4547657722018591
+},
+"copd": {
+"actual": 9.9,
+"prediction": 9.156051,
+"risk_index": 0.40999253375495653
+}
+},
+"39157": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.405687,
+"risk_index": 0.5036675128787601
+},
+"copd": {
+"actual": 9.2,
+"prediction": 9.199321,
+"risk_index": 0.41322447076004515
+}
+},
+"39165": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 9.04923,
+"risk_index": 0.23763914886503287
+}
+},
+"39173": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.71345,
+"risk_index": 0.3679059836745387
+}
+},
+"40015": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.360047,
+"risk_index": 0.4947165955009245
+}
+},
+"40017": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.3740225,
+"risk_index": 0.30133745807714113
+}
+},
+"40025": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.220498,
+"risk_index": 0.2712282311934096
+}
+},
+"40031": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 9.577217,
+"risk_index": 0.3411879659897302
+},
+"copd": {
+"actual": 7.4,
+"prediction": 7.1276174,
+"risk_index": 0.2584841072653526
+}
+},
+"40041": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 10.740422,
+"risk_index": 0.5693157453167473
+}
+},
+"40057": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 8.775033,
+"risk_index": 0.18386362975350065
+}
+},
+"40059": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.340933,
+"risk_index": 0.29484794491820393
+}
+},
+"40071": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 9.966138,
+"risk_index": 0.4174631574337518
+}
+},
+"40075": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 10.351318,
+"risk_index": 0.4930046639104089
+}
+},
+"40081": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 10.100628,
+"risk_index": 0.4438393379364924
+}
+},
+"40099": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 9.799609,
+"risk_index": 0.38480348784537405
+}
+},
+"40115": {
+"year": 2019,
+"casthma": {
+"actual": 11.4,
+"prediction": 10.900343,
+"risk_index": 0.6006794538614627
+}
+},
+"40125": {
+"year": 2019,
+"casthma": {
+"actual": 11.1,
+"prediction": 10.494897,
+"risk_index": 0.5211633792082231
+}
+},
+"40129": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.497359,
+"risk_index": 0.3255262140186702
+}
+},
+"40145": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.516645,
+"risk_index": 0.3293085845828451
+}
+},
+"40149": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.464843,
+"risk_index": 0.31914917568699425
+}
+},
+"41007": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.301468,
+"risk_index": 0.483228081279272
+}
+},
+"41019": {
+"year": 2019,
+"casthma": {
+"actual": 10.9,
+"prediction": 10.49681,
+"risk_index": 0.5215385567924431
+}
+},
+"41025": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.704407,
+"risk_index": 0.5622524830607712
+}
+},
+"41043": {
+"year": 2019,
+"casthma": {
+"actual": 11.1,
+"prediction": 10.677392,
+"risk_index": 0.5569543009187418
+}
+},
+"41049": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.2657,
+"risk_index": 0.47621326066642344
+}
+},
+"41051": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.812697,
+"risk_index": 0.38737030657107757
+}
+},
+"41055": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 9.967167,
+"risk_index": 0.41766496492677946
+}
+},
+"41069": {
+"year": 2019,
+"casthma": {
+"actual": 10.8,
+"prediction": 10.001887,
+"risk_index": 0.42447425176635983
+}
+},
+"42001": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.931589,
+"risk_index": 0.4106874071163364
+}
+},
+"42021": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 10.620029,
+"risk_index": 0.5457042686324849
+}
+},
+"42027": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 10.043155,
+"risk_index": 0.43256773244884267
+}
+},
+"42077": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.9706335,
+"risk_index": 0.4183448149506679
+}
+},
+"42097": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.814188,
+"risk_index": 0.5837827341706782
+}
+},
+"42103": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.838908,
+"risk_index": 0.3925108082229278
+}
+},
+"42107": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.505654,
+"risk_index": 0.5232730421844145
+},
+"copd": {
+"actual": 7.4,
+"prediction": 8.664418,
+"risk_index": 0.37327132077546166
+}
+},
+"42111": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.40135,
+"risk_index": 0.5028169403838506
+}
+},
+"42119": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 10.362758,
+"risk_index": 0.4952482768552477
+}
+},
+"42129": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 10.080476,
+"risk_index": 0.4398871274413536
+}
+},
+"44001": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.639768,
+"risk_index": 0.3534554689016713
+}
+},
+"45005": {
+"year": 2019,
+"casthma": {
+"actual": 11.3,
+"prediction": 11.877861,
+"risk_index": 0.7923902963975479
+}
+},
+"45013": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 9.01523,
+"risk_index": 0.2309710684345685
+}
+},
+"45031": {
+"year": 2019,
+"casthma": {
+"actual": 10.9,
+"prediction": 10.873691,
+"risk_index": 0.5954524632840295
+}
+},
+"45055": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.841153,
+"risk_index": 0.39295109765135117
+},
+"copd": {
+"actual": 7.1,
+"prediction": 7.943104,
+"risk_index": 0.3193946993544192
+}
+},
+"45061": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 11.486792,
+"risk_index": 0.7156938391663313
+}
+},
+"45069": {
+"year": 2019,
+"casthma": {
+"actual": 11.2,
+"prediction": 11.2596855,
+"risk_index": 0.6711537095109988
+}
+},
+"45077": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.734885,
+"risk_index": 0.37210981614592137
+}
+},
+"45081": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.401353,
+"risk_index": 0.3066975160831649
+}
+},
+"45083": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.544205,
+"risk_index": 0.3347136521317745
+}
+},
+"46003": {
+"year": 2019,
+"casthma": {
+"actual": 8.3,
+"prediction": 8.450366,
+"risk_index": 0.12018993360298155
+}
+},
+"46009": {
+"year": 2019,
+"casthma": {
+"actual": 8.3,
+"prediction": 8.837797,
+"risk_index": 0.1961729062281382
+}
+},
+"46021": {
+"year": 2019,
+"casthma": {
+"actual": 7.8,
+"prediction": 8.151047,
+"risk_index": 0.06148748753338634
+},
+"copd": {
+"actual": 4.8,
+"prediction": 6.1464214,
+"risk_index": 0.18519629442400865
+}
+},
+"46023": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 10.229849,
+"risk_index": 0.4691821620925236
+}
+},
+"46025": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.701707,
+"risk_index": 0.16948293370514048
+}
+},
+"46029": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.602346,
+"risk_index": 0.1499962531271583
+}
+},
+"46033": {
+"year": 2019,
+"casthma": {
+"actual": 8.3,
+"prediction": 8.904223,
+"risk_index": 0.20920037418913942
+},
+"copd": {
+"actual": 5.3,
+"prediction": 6.740006,
+"risk_index": 0.22953250968610103
+}
+},
+"46059": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.446683,
+"risk_index": 0.119467623596352
+}
+},
+"46079": {
+"year": 2019,
+"casthma": {
+"actual": 8.3,
+"prediction": 8.482414,
+"risk_index": 0.12647518776873234
+},
+"copd": {
+"actual": 5.0,
+"prediction": 5.3788056,
+"risk_index": 0.12786128379977196
+}
+},
+"46091": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.474252,
+"risk_index": 0.12487445622539543
+}
+},
+"46095": {
+"year": 2019,
+"casthma": {
+"actual": 11.7,
+"prediction": 11.635874,
+"risk_index": 0.7449318028938173
+}
+},
+"46102": {
+"year": 2019,
+"casthma": {
+"actual": 13.8,
+"prediction": 12.936446,
+"risk_index": 1.0
+},
+"copd": {
+"actual": 11.3,
+"prediction": 10.715768,
+"risk_index": 0.5264914265158958
+}
+},
+"46111": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.863105,
+"risk_index": 0.2011363115085556
+}
+},
+"47003": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.853617,
+"risk_index": 0.39539553748915435
+},
+"copd": {
+"actual": 9.4,
+"prediction": 9.395956,
+"risk_index": 0.4279115965514851
+}
+},
+"47021": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.550477,
+"risk_index": 0.3359437168511828
+}
+},
+"47063": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.682231,
+"risk_index": 0.36178331299928357
+},
+"copd": {
+"actual": 9.8,
+"prediction": 9.5673065,
+"risk_index": 0.44071016419166176
+}
+},
+"47079": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.466935,
+"risk_index": 0.5156794714142039
+}
+},
+"47097": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 10.682963,
+"risk_index": 0.558046885509275
+},
+"copd": {
+"actual": 11.3,
+"prediction": 10.36735,
+"risk_index": 0.5004672751999961
+}
+},
+"47099": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.274567,
+"risk_index": 0.4779522568186858
+},
+"copd": {
+"actual": 11.9,
+"prediction": 10.906007,
+"risk_index": 0.5407008201815083
+}
+},
+"47107": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.171855,
+"risk_index": 0.45780837807827784
+}
+},
+"47123": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.173157,
+"risk_index": 0.4580637263347619
+}
+},
+"47135": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 10.397578,
+"risk_index": 0.502077175696094
+}
+},
+"47137": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.296585,
+"risk_index": 0.4822704272574498
+}
+},
+"47141": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 10.101686,
+"risk_index": 0.44404683290988756
+}
+},
+"47143": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.134192,
+"risk_index": 0.45042191004143695
+},
+"copd": {
+"actual": 10.3,
+"prediction": 9.76884,
+"risk_index": 0.4557631703486997
+}
+},
+"47155": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.924717,
+"risk_index": 0.40933967038933167
+}
+},
+"47157": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.779313,
+"risk_index": 0.380823036068412
+}
+},
+"48001": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 9.391816,
+"risk_index": 0.30482711952241964
+},
+"copd": {
+"actual": 7.8,
+"prediction": 8.856614,
+"risk_index": 0.38762688732572786
+}
+},
+"48005": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 8.900817,
+"risk_index": 0.20853238942601698
+}
+},
+"48009": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.813406,
+"risk_index": 0.19138934299933058
+}
+},
+"48013": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.111992,
+"risk_index": 0.0538280204389219
+}
+},
+"48023": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 9.419285,
+"risk_index": 0.31021434015019705
+}
+},
+"48033": {
+"year": 2019,
+"casthma": {
+"actual": 7.7,
+"prediction": 8.459338,
+"risk_index": 0.12194952235657355
+}
+},
+"48035": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.879558,
+"risk_index": 0.20436307407686255
+}
+},
+"48039": {
+"year": 2019,
+"casthma": {
+"actual": 7.7,
+"prediction": 7.9101653,
+"risk_index": 0.014245765479649718
+}
+},
+"48041": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.501983,
+"risk_index": 0.1303130602964898
+}
+},
+"48055": {
+"year": 2019,
+"casthma": {
+"actual": 8.4,
+"prediction": 8.1825,
+"risk_index": 0.06765605029160389
+}
+},
+"48057": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.272437,
+"risk_index": 0.08529449587027155
+}
+},
+"48063": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 8.956707,
+"risk_index": 0.21949353693362478
+}
+},
+"48077": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.922379,
+"risk_index": 0.21276112913900738
+}
+},
+"48081": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.297725,
+"risk_index": 0.09025397875043588
+}
+},
+"48083": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 9.075633,
+"risk_index": 0.242817305559314
+},
+"copd": {
+"actual": 9.2,
+"prediction": 8.185601,
+"risk_index": 0.3375073646634782
+}
+},
+"48099": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.184498,
+"risk_index": 0.26416791073762363
+}
+},
+"48107": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.375664,
+"risk_index": 0.10553937641720013
+}
+},
+"48125": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.589147,
+"risk_index": 0.14740766508004938
+}
+},
+"48131": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.292531,
+"risk_index": 0.08923533140467618
+}
+},
+"48133": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.305919,
+"risk_index": 0.2879809987949013
+}
+},
+"48135": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.107276,
+"risk_index": 0.052903118459213895
+}
+},
+"48151": {
+"year": 2019,
+"casthma": {
+"actual": 8.2,
+"prediction": 8.587192,
+"risk_index": 0.14702425045529754
+}
+},
+"48165": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.462432,
+"risk_index": 0.12255631767574565
+},
+"copd": {
+"actual": 7.0,
+"prediction": 6.008952,
+"risk_index": 0.17492838499652233
+}
+},
+"48169": {
+"year": 2019,
+"casthma": {
+"actual": 7.9,
+"prediction": 8.346451,
+"risk_index": 0.09981012248734233
+}
+},
+"48173": {
+"year": 2019,
+"casthma": {
+"actual": 8.3,
+"prediction": 7.8375273,
+"risk_index": 0.0
+}
+},
+"48179": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 9.001974,
+"risk_index": 0.2283713015467379
+}
+},
+"48185": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 8.788212,
+"risk_index": 0.18644829540035615
+}
+},
+"48189": {
+"year": 2019,
+"casthma": {
+"actual": 8.1,
+"prediction": 8.389805,
+"risk_index": 0.1083127095162355
+}
+},
+"48195": {
+"year": 2019,
+"casthma": {
+"actual": 8.8,
+"prediction": 9.1654625,
+"risk_index": 0.26043466823662054
+},
+"copd": {
+"actual": 8.1,
+"prediction": 7.2011094,
+"risk_index": 0.2639733957880698
+}
+},
+"48219": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.537012,
+"risk_index": 0.13718294821998261
+}
+},
+"48267": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.554462,
+"risk_index": 0.1406052424409119
+}
+},
+"48275": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.732388,
+"risk_index": 0.17550009181358403
+}
+},
+"48281": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.607915,
+"risk_index": 0.15108844547766578
+}
+},
+"48297": {
+"year": 2019,
+"casthma": {
+"actual": 8.1,
+"prediction": 8.218554,
+"risk_index": 0.07472696122807362
+}
+},
+"48299": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.747373,
+"risk_index": 0.17843895020330486
+}
+},
+"48303": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.754209,
+"risk_index": 0.17977962660985353
+}
+},
+"48307": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.570007,
+"risk_index": 0.14365392803772312
+}
+},
+"48311": {
+"year": 2019,
+"casthma": {
+"actual": 7.3,
+"prediction": 8.337166,
+"risk_index": 0.09798914816978749
+}
+},
+"48315": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.889508,
+"risk_index": 0.40243448086356026
+},
+"copd": {
+"actual": 11.4,
+"prediction": 10.799597,
+"risk_index": 0.5327528096265861
+}
+},
+"48327": {
+"year": 2019,
+"casthma": {
+"actual": 8.1,
+"prediction": 8.584736,
+"risk_index": 0.14654257970420273
+}
+},
+"48331": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 8.698045,
+"risk_index": 0.16876474221877685
+}
+},
+"48339": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.530239,
+"risk_index": 0.13585462737423137
+}
+},
+"48361": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 8.843953,
+"risk_index": 0.19738022102607777
+}
+},
+"48363": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 9.46478,
+"risk_index": 0.3191368201261965
+}
+},
+"48373": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 9.091615,
+"risk_index": 0.24595169560165753
+}
+},
+"48395": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 8.995634,
+"risk_index": 0.22712790066646896
+}
+},
+"48421": {
+"year": 2019,
+"casthma": {
+"actual": 8.1,
+"prediction": 8.276487,
+"risk_index": 0.08608878192154737
+}
+},
+"48429": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 8.838526,
+"risk_index": 0.19631587771736783
+}
+},
+"48441": {
+"year": 2019,
+"casthma": {
+"actual": 8.6,
+"prediction": 8.564293,
+"risk_index": 0.14253329828537953
+},
+"copd": {
+"actual": 6.3,
+"prediction": 6.240222,
+"risk_index": 0.19220247954625308
+}
+},
+"48447": {
+"year": 2019,
+"casthma": {
+"actual": 8.7,
+"prediction": 9.227602,
+"risk_index": 0.27262146776335133
+},
+"copd": {
+"actual": 9.7,
+"prediction": 9.282822,
+"risk_index": 0.41946135478735985
+}
+},
+"48449": {
+"year": 2019,
+"casthma": {
+"actual": 8.8,
+"prediction": 8.649849,
+"risk_index": 0.15931254208858045
+}
+},
+"48451": {
+"year": 2019,
+"casthma": {
+"actual": 8.0,
+"prediction": 8.307645,
+"risk_index": 0.09219948927603046
+}
+},
+"48467": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.015663,
+"risk_index": 0.23105598840005043
+}
+},
+"49011": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.300919,
+"risk_index": 0.2870003987315979
+}
+},
+"49019": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.399147,
+"risk_index": 0.30626487533523516
+}
+},
+"49037": {
+"year": 2019,
+"casthma": {
+"actual": 11.9,
+"prediction": 11.619823,
+"risk_index": 0.7417838805706003
+},
+"copd": {
+"actual": 7.8,
+"prediction": 8.277156,
+"risk_index": 0.3443458206953915
+}
+},
+"49041": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 9.625551,
+"risk_index": 0.3506672306816737
+}
+},
+"49053": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 9.380847,
+"risk_index": 0.30267587910354393
+}
+},
+"49057": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 9.157723,
+"risk_index": 0.25891679739863294
+},
+"copd": {
+"actual": 5.0,
+"prediction": 4.8999915,
+"risk_index": 0.09209754429553779
+}
+},
+"50001": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 10.148119,
+"risk_index": 0.45315327345776263
+}
+},
+"50005": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 10.538456,
+"risk_index": 0.5297061708397116
+}
+},
+"50007": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 10.047843,
+"risk_index": 0.4334871430681961
+}
+},
+"51005": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.298323,
+"risk_index": 0.48261128383945406
+},
+"copd": {
+"actual": 11.2,
+"prediction": 9.982358,
+"risk_index": 0.4717113267030448
+}
+},
+"51007": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.91684,
+"risk_index": 0.4077948330496034
+}
+},
+"51017": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.88786,
+"risk_index": 0.4021112750826955
+}
+},
+"51029": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 10.322504,
+"risk_index": 0.4873536618656031
+},
+"copd": {
+"actual": 8.7,
+"prediction": 9.099948,
+"risk_index": 0.4058020701127913
+}
+},
+"51051": {
+"year": 2019,
+"casthma": {
+"actual": 10.7,
+"prediction": 11.098897,
+"risk_index": 0.6396198668552999
+},
+"copd": {
+"actual": 13.4,
+"prediction": 14.396105,
+"risk_index": 0.8013843625338506
+}
+},
+"51071": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.38572,
+"risk_index": 0.30363157192523965
+}
+},
+"51081": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 10.333323,
+"risk_index": 0.4894754842825794
+}
+},
+"51087": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.244449,
+"risk_index": 0.27592550161664664
+},
+"copd": {
+"actual": 5.4,
+"prediction": 5.400536,
+"risk_index": 0.12948437795034692
+}
+},
+"51109": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 9.482107,
+"risk_index": 0.3225349915855688
+}
+},
+"51111": {
+"year": 2019,
+"casthma": {
+"actual": 10.4,
+"prediction": 10.287237,
+"risk_index": 0.4804370973790971
+}
+},
+"51113": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.830316,
+"risk_index": 0.3908257450741468
+}
+},
+"51125": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.4002075,
+"risk_index": 0.30647286060866213
+}
+},
+"51133": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 9.86439,
+"risk_index": 0.3975083383855484
+}
+},
+"51141": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.157398,
+"risk_index": 0.4549730710552417
+}
+},
+"51145": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.029514,
+"risk_index": 0.23377244669541425
+},
+"copd": {
+"actual": 6.1,
+"prediction": 7.016551,
+"risk_index": 0.2501882993572874
+}
+},
+"51155": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 10.028708,
+"risk_index": 0.4297343866259331
+},
+"copd": {
+"actual": 7.8,
+"prediction": 9.115088,
+"risk_index": 0.40693291194909925
+}
+},
+"51167": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.756126,
+"risk_index": 0.5723956139955713
+},
+"copd": {
+"actual": 12.3,
+"prediction": 12.086928,
+"risk_index": 0.6289065581058504
+}
+},
+"51169": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.694809,
+"risk_index": 0.5603701231792536
+}
+},
+"51173": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.5808935,
+"risk_index": 0.5380290138770011
+}
+},
+"51175": {
+"year": 2019,
+"casthma": {
+"actual": 10.2,
+"prediction": 9.608096,
+"risk_index": 0.3472439558606808
+}
+},
+"51177": {
+"year": 2019,
+"casthma": {
+"actual": 9.1,
+"prediction": 8.828006,
+"risk_index": 0.1942526951841771
+}
+},
+"51191": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 10.296984,
+"risk_index": 0.4823486791425014
+}
+},
+"51199": {
+"year": 2019,
+"casthma": {
+"actual": 8.5,
+"prediction": 8.908573,
+"risk_index": 0.21005349624421366
+}
+},
+"51800": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 9.485094,
+"risk_index": 0.32312080206338656
+}
+},
+"51810": {
+"year": 2019,
+"casthma": {
+"actual": 9.0,
+"prediction": 8.947048,
+"risk_index": 0.217599213731335
+}
+},
+"53005": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 9.433705,
+"risk_index": 0.3130423907327646
+}
+},
+"53007": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 10.122681,
+"risk_index": 0.4481643725756993
+},
+"copd": {
+"actual": 5.6,
+"prediction": 7.2711005,
+"risk_index": 0.2692011939419145
+}
+},
+"53013": {
+"year": 2019,
+"casthma": {
+"actual": 10.5,
+"prediction": 10.162733,
+"risk_index": 0.4560193713227864
+},
+"copd": {
+"actual": 6.1,
+"prediction": 7.1965637,
+"risk_index": 0.2636338668755661
+}
+},
+"53025": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 10.019245,
+"risk_index": 0.4278785029461246
+}
+},
+"53031": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 10.1821575,
+"risk_index": 0.4598289045087149
+}
+},
+"53033": {
+"year": 2019,
+"casthma": {
+"actual": 8.8,
+"prediction": 8.402028,
+"risk_index": 0.11070988443098728
+}
+},
+"53067": {
+"year": 2019,
+"casthma": {
+"actual": 9.7,
+"prediction": 9.883614,
+"risk_index": 0.401278549508938
+}
+},
+"54001": {
+"year": 2019,
+"casthma": {
+"actual": 11.5,
+"prediction": 11.183174,
+"risk_index": 0.6561482731623078
+}
+},
+"54011": {
+"year": 2019,
+"casthma": {
+"actual": 11.0,
+"prediction": 11.187732,
+"risk_index": 0.6570421881800156
+},
+"copd": {
+"actual": 10.6,
+"prediction": 10.238102,
+"risk_index": 0.49081344127270937
+}
+},
+"54035": {
+"year": 2019,
+"casthma": {
+"actual": 10.8,
+"prediction": 10.630539,
+"risk_index": 0.5477654899655491
+}
+},
+"54045": {
+"year": 2019,
+"casthma": {
+"actual": 11.6,
+"prediction": 11.142543,
+"risk_index": 0.64817972092789
+}
+},
+"54049": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.5554695,
+"risk_index": 0.5330428586751147
+}
+},
+"54065": {
+"year": 2019,
+"casthma": {
+"actual": 10.8,
+"prediction": 10.379411,
+"risk_index": 0.4985142634260867
+}
+},
+"54071": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.559351,
+"risk_index": 0.5338040985042573
+}
+},
+"54093": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.3920555,
+"risk_index": 0.5009941029261753
+}
+},
+"54095": {
+"year": 2019,
+"casthma": {
+"actual": 10.6,
+"prediction": 10.739943,
+"risk_index": 0.5692218038306829
+}
+},
+"54101": {
+"year": 2019,
+"casthma": {
+"actual": 11.7,
+"prediction": 11.638488,
+"risk_index": 0.7454444606069127
+}
+},
+"54109": {
+"year": 2019,
+"casthma": {
+"actual": 11.6,
+"prediction": 10.8869095,
+"risk_index": 0.598044875671385
+}
+},
+"55007": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.90349,
+"risk_index": 0.40517663088058253
+}
+},
+"55019": {
+"year": 2019,
+"casthma": {
+"actual": 10.1,
+"prediction": 10.164185,
+"risk_index": 0.4563041375811699
+}
+},
+"55029": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.531999,
+"risk_index": 0.3323198112572379
+},
+"copd": {
+"actual": 4.8,
+"prediction": 6.99977,
+"risk_index": 0.24893488741177341
+}
+},
+"55031": {
+"year": 2019,
+"casthma": {
+"actual": 9.8,
+"prediction": 10.185732,
+"risk_index": 0.4605299354939705
+}
+},
+"55045": {
+"year": 2019,
+"casthma": {
+"actual": 9.3,
+"prediction": 9.279668,
+"risk_index": 0.28283265234254457
+}
+},
+"55059": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 9.453792,
+"risk_index": 0.3169818534270806
+},
+"copd": {
+"actual": 5.2,
+"prediction": 6.3167944,
+"risk_index": 0.1979218503141858
+}
+},
+"55061": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.505811,
+"risk_index": 0.32718382036567867
+}
+},
+"55075": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.195998,
+"risk_index": 0.4625433035439454
+}
+},
+"55085": {
+"year": 2019,
+"casthma": {
+"actual": 9.4,
+"prediction": 9.808145,
+"risk_index": 0.38647756827344587
+}
+},
+"55089": {
+"year": 2019,
+"casthma": {
+"actual": 8.8,
+"prediction": 8.944576,
+"risk_index": 0.2171144050600375
+}
+},
+"55105": {
+"year": 2019,
+"casthma": {
+"actual": 9.5,
+"prediction": 9.33939,
+"risk_index": 0.2945453317386684
+}
+},
+"55113": {
+"year": 2019,
+"casthma": {
+"actual": 10.0,
+"prediction": 10.356544,
+"risk_index": 0.49402958709657396
+}
+},
+"55119": {
+"year": 2019,
+"casthma": {
+"actual": 9.6,
+"prediction": 10.053328,
+"risk_index": 0.4345628613376402
+}
+},
+"55123": {
+"year": 2019,
+"casthma": {
+"actual": 9.9,
+"prediction": 9.858638,
+"risk_index": 0.39638025607272365
+}
+},
+"55131": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 9.144163,
+"risk_index": 0.25625741002695357
+}
+},
+"55141": {
+"year": 2019,
+"casthma": {
+"actual": 9.2,
+"prediction": 9.559676,
+"risk_index": 0.33774782484764854
+}
+},
+"56005": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 8.932192,
+"risk_index": 0.2146856548232473
+}
+},
+"56027": {
+"year": 2019,
+"casthma": {
+"actual": 10.3,
+"prediction": 9.637729,
+"risk_index": 0.3530555801958561
+}
+},
+"56043": {
+"year": 2019,
+"casthma": {
+"actual": 8.9,
+"prediction": 9.087816,
+"risk_index": 0.24520663567355963
+}
+},
+"01005": {
+"year": 2019,
+"copd": {
+"actual": 10.7,
+"prediction": 9.782792,
+"risk_index": 0.45680527770009777
+}
+},
+"01019": {
+"year": 2019,
+"copd": {
+"actual": 9.5,
+"prediction": 10.626714,
+"risk_index": 0.5198397759947225
+}
+},
+"01023": {
+"year": 2019,
+"copd": {
+"actual": 9.5,
+"prediction": 9.310147,
+"risk_index": 0.4215023226326118
+}
+},
+"01025": {
+"year": 2019,
+"copd": {
+"actual": 9.4,
+"prediction": 9.481232,
+"risk_index": 0.4342810594598729
+}
+},
+"01031": {
+"year": 2019,
+"copd": {
+"actual": 7.5,
+"prediction": 8.2744465,
+"risk_index": 0.3441434418343957
+}
+},
+"01033": {
+"year": 2019,
+"copd": {
+"actual": 9.6,
+"prediction": 9.888614,
+"risk_index": 0.4647093691665292
+}
+},
+"01051": {
+"year": 2019,
+"copd": {
+"actual": 8.1,
+"prediction": 7.610894,
+"risk_index": 0.2945811612804536
+}
+},
+"01055": {
+"year": 2019,
+"copd": {
+"actual": 8.7,
+"prediction": 9.713042,
+"risk_index": 0.45159548786638076
+}
+},
+"01067": {
+"year": 2019,
+"copd": {
+"actual": 8.5,
+"prediction": 9.501558,
+"risk_index": 0.43579925570589617
+}
+},
+"01069": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 9.602301,
+"risk_index": 0.4433239848416403
+}
+},
+"01071": {
+"year": 2019,
+"copd": {
+"actual": 11.6,
+"prediction": 10.809345,
+"risk_index": 0.5334809104337414
+}
+},
+"01077": {
+"year": 2019,
+"copd": {
+"actual": 9.2,
+"prediction": 9.828724,
+"risk_index": 0.46023604568063226
+}
+},
+"01105": {
+"year": 2019,
+"copd": {
+"actual": 11.8,
+"prediction": 10.466641,
+"risk_index": 0.5078835510764059
+}
+},
+"01109": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 8.416113,
+"risk_index": 0.3547248424290661
+}
+},
+"01131": {
+"year": 2019,
+"copd": {
+"actual": 12.6,
+"prediction": 9.744717,
+"risk_index": 0.45396136733567083
+}
+},
+"05015": {
+"year": 2019,
+"copd": {
+"actual": 9.8,
+"prediction": 8.953854,
+"risk_index": 0.39488996923871184
+}
+},
+"05029": {
+"year": 2019,
+"copd": {
+"actual": 8.8,
+"prediction": 9.93173,
+"risk_index": 0.4679298035532036
+}
+},
+"05047": {
+"year": 2019,
+"copd": {
+"actual": 12.0,
+"prediction": 12.089134,
+"risk_index": 0.6290713293800178
+}
+},
+"05059": {
+"year": 2019,
+"copd": {
+"actual": 8.9,
+"prediction": 10.198693,
+"risk_index": 0.48786989134357756
+}
+},
+"05063": {
+"year": 2019,
+"copd": {
+"actual": 10.0,
+"prediction": 9.446931,
+"risk_index": 0.4317190379389219
+}
+},
+"05067": {
+"year": 2019,
+"copd": {
+"actual": 11.9,
+"prediction": 11.360521,
+"risk_index": 0.5746495286615374
+}
+},
+"05077": {
+"year": 2019,
+"copd": {
+"actual": 11.0,
+"prediction": 11.649282,
+"risk_index": 0.5962177598038161
+}
+},
+"05079": {
+"year": 2019,
+"copd": {
+"actual": 9.5,
+"prediction": 9.250555,
+"risk_index": 0.41705125746026966
+}
+},
+"05089": {
+"year": 2019,
+"copd": {
+"actual": 12.2,
+"prediction": 11.16746,
+"risk_index": 0.5602293532481004
+}
+},
+"05103": {
+"year": 2019,
+"copd": {
+"actual": 9.3,
+"prediction": 9.700273,
+"risk_index": 0.45064174153825554
+}
+},
+"05109": {
+"year": 2019,
+"copd": {
+"actual": 8.9,
+"prediction": 11.480976,
+"risk_index": 0.5836465929543027
+}
+},
+"05117": {
+"year": 2019,
+"copd": {
+"actual": 8.8,
+"prediction": 10.32849,
+"risk_index": 0.4975647313585877
+}
+},
+"05133": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 8.050703,
+"risk_index": 0.3274315190865786
+}
+},
+"06003": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 5.962808,
+"risk_index": 0.17148178224258634
+}
+},
+"06019": {
+"year": 2019,
+"copd": {
+"actual": 5.6,
+"prediction": 6.179627,
+"risk_index": 0.18767649796956376
+}
+},
+"06025": {
+"year": 2019,
+"copd": {
+"actual": 5.3,
+"prediction": 5.7625656,
+"risk_index": 0.15652521134940953
+}
+},
+"06033": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 7.8817606,
+"risk_index": 0.3148128180399299
+}
+},
+"06073": {
+"year": 2019,
+"copd": {
+"actual": 4.6,
+"prediction": 4.512775,
+"risk_index": 0.06317544271636279
+}
+},
+"06109": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 6.65339,
+"risk_index": 0.22306295905904397
+}
+},
+"08001": {
+"year": 2019,
+"copd": {
+"actual": 4.7,
+"prediction": 4.870096,
+"risk_index": 0.08986457982279397
+}
+},
+"08019": {
+"year": 2019,
+"copd": {
+"actual": 4.4,
+"prediction": 6.585132,
+"risk_index": 0.21796461017775579
+}
+},
+"08045": {
+"year": 2019,
+"copd": {
+"actual": 4.9,
+"prediction": 4.9492702,
+"risk_index": 0.09577828508806524
+}
+},
+"08053": {
+"year": 2019,
+"copd": {
+"actual": 6.5,
+"prediction": 5.6279783,
+"risk_index": 0.1464725726786222
+}
+},
+"08067": {
+"year": 2019,
+"copd": {
+"actual": 4.5,
+"prediction": 5.205656,
+"risk_index": 0.11492833719343283
+}
+},
+"08069": {
+"year": 2019,
+"copd": {
+"actual": 4.5,
+"prediction": 4.9080815,
+"risk_index": 0.0927018052239216
+}
+},
+"08079": {
+"year": 2019,
+"copd": {
+"actual": 4.6,
+"prediction": 6.1567087,
+"risk_index": 0.18596467680331183
+}
+},
+"08093": {
+"year": 2019,
+"copd": {
+"actual": 4.9,
+"prediction": 4.7756124,
+"risk_index": 0.08280737984095912
+}
+},
+"08105": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 6.449902,
+"risk_index": 0.20786396674817093
+}
+},
+"08115": {
+"year": 2019,
+"copd": {
+"actual": 8.5,
+"prediction": 8.266839,
+"risk_index": 0.3435752199539655
+}
+},
+"08119": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 5.148598,
+"risk_index": 0.11066654237863392
+}
+},
+"08123": {
+"year": 2019,
+"copd": {
+"actual": 4.8,
+"prediction": 4.8482585,
+"risk_index": 0.08823348612395819
+}
+},
+"09013": {
+"year": 2019,
+"copd": {
+"actual": 5.1,
+"prediction": 4.905324,
+"risk_index": 0.09249584113121233
+}
+},
+"10003": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 5.481,
+"risk_index": 0.13549442137945375
+}
+},
+"12001": {
+"year": 2019,
+"copd": {
+"actual": 7.3,
+"prediction": 7.515668,
+"risk_index": 0.2874685097147828
+}
+},
+"12003": {
+"year": 2019,
+"copd": {
+"actual": 9.9,
+"prediction": 7.5369043,
+"risk_index": 0.2890546983864067
+}
+},
+"12011": {
+"year": 2019,
+"copd": {
+"actual": 6.7,
+"prediction": 6.2748427,
+"risk_index": 0.1947883802042626
+}
+},
+"12013": {
+"year": 2019,
+"copd": {
+"actual": 11.4,
+"prediction": 10.815048,
+"risk_index": 0.5339068807767047
+}
+},
+"12017": {
+"year": 2019,
+"copd": {
+"actual": 9.2,
+"prediction": 9.545259,
+"risk_index": 0.4390633851040792
+}
+},
+"12031": {
+"year": 2019,
+"copd": {
+"actual": 7.5,
+"prediction": 7.197787,
+"risk_index": 0.26372523799963193
+}
+},
+"12033": {
+"year": 2019,
+"copd": {
+"actual": 7.9,
+"prediction": 7.9756393,
+"risk_index": 0.32182483663294165
+}
+},
+"12083": {
+"year": 2019,
+"copd": {
+"actual": 10.9,
+"prediction": 9.969058,
+"risk_index": 0.47071791874908875
+}
+},
+"12086": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 8.482713,
+"risk_index": 0.359699351431583
+}
+},
+"12119": {
+"year": 2019,
+"copd": {
+"actual": 6.7,
+"prediction": 9.437215,
+"risk_index": 0.4309933272862425
+}
+},
+"12133": {
+"year": 2019,
+"copd": {
+"actual": 11.2,
+"prediction": 10.839721,
+"risk_index": 0.5357497645697842
+}
+},
+"13003": {
+"year": 2019,
+"copd": {
+"actual": 10.7,
+"prediction": 10.05218,
+"risk_index": 0.476926494384332
+}
+},
+"13015": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 8.068937,
+"risk_index": 0.3287934589837541
+}
+},
+"13021": {
+"year": 2019,
+"copd": {
+"actual": 8.7,
+"prediction": 8.926527,
+"risk_index": 0.3928488520088053
+}
+},
+"13031": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 8.018071,
+"risk_index": 0.32499415906000007
+}
+},
+"13035": {
+"year": 2019,
+"copd": {
+"actual": 9.7,
+"prediction": 10.003024,
+"risk_index": 0.4732549183403723
+}
+},
+"13049": {
+"year": 2019,
+"copd": {
+"actual": 10.8,
+"prediction": 9.510607,
+"risk_index": 0.4364751465762232
+}
+},
+"13051": {
+"year": 2019,
+"copd": {
+"actual": 6.5,
+"prediction": 6.6991634,
+"risk_index": 0.22648188083645845
+}
+},
+"13063": {
+"year": 2019,
+"copd": {
+"actual": 6.8,
+"prediction": 6.5868874,
+"risk_index": 0.21809572508921252
+}
+},
+"13067": {
+"year": 2019,
+"copd": {
+"actual": 5.2,
+"prediction": 5.1888657,
+"risk_index": 0.11367423060927428
+}
+},
+"13071": {
+"year": 2019,
+"copd": {
+"actual": 10.0,
+"prediction": 9.993404,
+"risk_index": 0.4725363781511199
+}
+},
+"13077": {
+"year": 2019,
+"copd": {
+"actual": 6.3,
+"prediction": 6.609786,
+"risk_index": 0.21980607481661538
+}
+},
+"13087": {
+"year": 2019,
+"copd": {
+"actual": 8.7,
+"prediction": 9.471372,
+"risk_index": 0.43354459311205285
+}
+},
+"13115": {
+"year": 2019,
+"copd": {
+"actual": 8.2,
+"prediction": 9.034686,
+"risk_index": 0.4009274994442891
+}
+},
+"13137": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 7.9475956,
+"risk_index": 0.31973018741201237
+}
+},
+"13153": {
+"year": 2019,
+"copd": {
+"actual": 6.8,
+"prediction": 6.2148485,
+"risk_index": 0.1903072737778543
+}
+},
+"13185": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 7.7731266,
+"risk_index": 0.3066986917489478
+}
+},
+"13187": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 8.013033,
+"risk_index": 0.32461785911473456
+}
+},
+"13197": {
+"year": 2019,
+"copd": {
+"actual": 8.8,
+"prediction": 9.191704,
+"risk_index": 0.41265553930250504
+}
+},
+"13201": {
+"year": 2019,
+"copd": {
+"actual": 11.1,
+"prediction": 10.425219,
+"risk_index": 0.5047896454922881
+}
+},
+"13205": {
+"year": 2019,
+"copd": {
+"actual": 9.7,
+"prediction": 10.525143,
+"risk_index": 0.5122532016119201
+}
+},
+"13207": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 8.813682,
+"risk_index": 0.3844201963272886
+}
+},
+"13213": {
+"year": 2019,
+"copd": {
+"actual": 8.9,
+"prediction": 9.561281,
+"risk_index": 0.4402601055731231
+}
+},
+"13229": {
+"year": 2019,
+"copd": {
+"actual": 10.6,
+"prediction": 10.216654,
+"risk_index": 0.4892114402353824
+}
+},
+"13245": {
+"year": 2019,
+"copd": {
+"actual": 8.1,
+"prediction": 7.9893937,
+"risk_index": 0.3228521847804524
+}
+},
+"13253": {
+"year": 2019,
+"copd": {
+"actual": 8.7,
+"prediction": 10.835053,
+"risk_index": 0.5354011007856437
+}
+},
+"13267": {
+"year": 2019,
+"copd": {
+"actual": 9.3,
+"prediction": 9.866036,
+"risk_index": 0.46302296579927954
+}
+},
+"13275": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 9.657225,
+"risk_index": 0.44742638622984204
+}
+},
+"13283": {
+"year": 2019,
+"copd": {
+"actual": 11.6,
+"prediction": 10.5222435,
+"risk_index": 0.512036631208725
+}
+},
+"13287": {
+"year": 2019,
+"copd": {
+"actual": 9.8,
+"prediction": 9.96514,
+"risk_index": 0.4704252742104722
+}
+},
+"13291": {
+"year": 2019,
+"copd": {
+"actual": 7.6,
+"prediction": 9.261978,
+"risk_index": 0.4179044679157613
+}
+},
+"13305": {
+"year": 2019,
+"copd": {
+"actual": 9.0,
+"prediction": 9.553509,
+"risk_index": 0.4396795968048415
+}
+},
+"16003": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 7.5341477,
+"risk_index": 0.28884880151679204
+}
+},
+"16019": {
+"year": 2019,
+"copd": {
+"actual": 5.5,
+"prediction": 5.4979954,
+"risk_index": 0.13676384735995487
+}
+},
+"16029": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 6.239018,
+"risk_index": 0.19211254998410546
+}
+},
+"16033": {
+"year": 2019,
+"copd": {
+"actual": 7.3,
+"prediction": 7.2959323,
+"risk_index": 0.2710559388765796
+}
+},
+"16037": {
+"year": 2019,
+"copd": {
+"actual": 6.7,
+"prediction": 8.669748,
+"risk_index": 0.3736694308803178
+}
+},
+"16039": {
+"year": 2019,
+"copd": {
+"actual": 6.4,
+"prediction": 6.396491,
+"risk_index": 0.20387457485127264
+}
+},
+"16043": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 6.352932,
+"risk_index": 0.20062105176357548
+}
+},
+"16051": {
+"year": 2019,
+"copd": {
+"actual": 5.3,
+"prediction": 5.8310285,
+"risk_index": 0.16163886468857486
+}
+},
+"16057": {
+"year": 2019,
+"copd": {
+"actual": 5.1,
+"prediction": 6.71533,
+"risk_index": 0.22768940181603936
+}
+},
+"16069": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 6.37216,
+"risk_index": 0.20205723583415197
+}
+},
+"16071": {
+"year": 2019,
+"copd": {
+"actual": 7.6,
+"prediction": 7.5838933,
+"risk_index": 0.2925644161569662
+}
+},
+"17015": {
+"year": 2019,
+"copd": {
+"actual": 8.6,
+"prediction": 7.3584867,
+"risk_index": 0.2757282725995081
+}
+},
+"17029": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 8.713127,
+"risk_index": 0.3769095093490892
+}
+},
+"17031": {
+"year": 2019,
+"copd": {
+"actual": 5.2,
+"prediction": 5.6484847,
+"risk_index": 0.14800424342050228
+}
+},
+"17033": {
+"year": 2019,
+"copd": {
+"actual": 8.5,
+"prediction": 8.971237,
+"risk_index": 0.3961883459652997
+}
+},
+"17049": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 8.356846,
+"risk_index": 0.3502980522631178
+}
+},
+"17053": {
+"year": 2019,
+"copd": {
+"actual": 7.2,
+"prediction": 7.300462,
+"risk_index": 0.27139427271184535
+}
+},
+"17059": {
+"year": 2019,
+"copd": {
+"actual": 8.9,
+"prediction": 9.494862,
+"risk_index": 0.4352991158818594
+}
+},
+"17087": {
+"year": 2019,
+"copd": {
+"actual": 8.9,
+"prediction": 9.319042,
+"risk_index": 0.4221667108845244
+}
+},
+"17095": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 8.630885,
+"risk_index": 0.3707666629619271
+}
+},
+"17121": {
+"year": 2019,
+"copd": {
+"actual": 9.7,
+"prediction": 9.450208,
+"risk_index": 0.43196380469569745
+}
+},
+"17129": {
+"year": 2019,
+"copd": {
+"actual": 6.3,
+"prediction": 7.4321423,
+"risk_index": 0.28122978078698224
+}
+},
+"17197": {
+"year": 2019,
+"copd": {
+"actual": 5.5,
+"prediction": 4.9289393,
+"risk_index": 0.09425972284963775
+}
+},
+"18029": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 7.9405766,
+"risk_index": 0.31920592196623665
+}
+},
+"18065": {
+"year": 2019,
+"copd": {
+"actual": 10.3,
+"prediction": 9.843769,
+"risk_index": 0.4613597917458405
+}
+},
+"18069": {
+"year": 2019,
+"copd": {
+"actual": 9.0,
+"prediction": 8.448965,
+"risk_index": 0.357178634767665
+}
+},
+"18071": {
+"year": 2019,
+"copd": {
+"actual": 9.6,
+"prediction": 8.410546,
+"risk_index": 0.35430903024262456
+}
+},
+"18073": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 6.47973,
+"risk_index": 0.21009188948881766
+}
+},
+"18077": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 9.466094,
+"risk_index": 0.4331503670082197
+}
+},
+"18079": {
+"year": 2019,
+"copd": {
+"actual": 9.9,
+"prediction": 9.599554,
+"risk_index": 0.44311880501836826
+}
+},
+"18099": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 8.914617,
+"risk_index": 0.3919592663898867
+}
+},
+"18103": {
+"year": 2019,
+"copd": {
+"actual": 9.0,
+"prediction": 9.317637,
+"risk_index": 0.4220617681645764
+}
+},
+"18111": {
+"year": 2019,
+"copd": {
+"actual": 10.0,
+"prediction": 8.017887,
+"risk_index": 0.32498041567176483
+}
+},
+"18113": {
+"year": 2019,
+"copd": {
+"actual": 9.0,
+"prediction": 7.671716,
+"risk_index": 0.2991240980154547
+}
+},
+"18125": {
+"year": 2019,
+"copd": {
+"actual": 10.4,
+"prediction": 8.346303,
+"risk_index": 0.3495105710557074
+}
+},
+"18145": {
+"year": 2019,
+"copd": {
+"actual": 9.3,
+"prediction": 8.242889,
+"risk_index": 0.341786338713571
+}
+},
+"18163": {
+"year": 2019,
+"copd": {
+"actual": 8.1,
+"prediction": 8.320099,
+"risk_index": 0.34755333330943183
+}
+},
+"18165": {
+"year": 2019,
+"copd": {
+"actual": 8.7,
+"prediction": 8.621964,
+"risk_index": 0.370100332709503
+}
+},
+"18171": {
+"year": 2019,
+"copd": {
+"actual": 9.4,
+"prediction": 8.491048,
+"risk_index": 0.3603219119801712
+}
+},
+"19017": {
+"year": 2019,
+"copd": {
+"actual": 5.8,
+"prediction": 5.490363,
+"risk_index": 0.13619376564057337
+}
+},
+"19021": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 5.793098,
+"risk_index": 0.1588057473654522
+}
+},
+"19023": {
+"year": 2019,
+"copd": {
+"actual": 5.9,
+"prediction": 6.126415,
+"risk_index": 0.1837019698458111
+}
+},
+"19025": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 6.7833667,
+"risk_index": 0.2327712212852817
+}
+},
+"19053": {
+"year": 2019,
+"copd": {
+"actual": 6.8,
+"prediction": 8.516108,
+"risk_index": 0.36219370170394105
+}
+},
+"19055": {
+"year": 2019,
+"copd": {
+"actual": 7.3,
+"prediction": 6.269102,
+"risk_index": 0.19435959396055769
+}
+},
+"19069": {
+"year": 2019,
+"copd": {
+"actual": 7.5,
+"prediction": 6.3736534,
+"risk_index": 0.20216878135583904
+}
+},
+"19075": {
+"year": 2019,
+"copd": {
+"actual": 6.3,
+"prediction": 6.3762045,
+"risk_index": 0.20235932895218017
+}
+},
+"19083": {
+"year": 2019,
+"copd": {
+"actual": 7.2,
+"prediction": 7.1150117,
+"risk_index": 0.2575425581942861
+}
+},
+"19107": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 7.741739,
+"risk_index": 0.3043542788545424
+}
+},
+"19119": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 5.5412054,
+"risk_index": 0.1399913028254016
+}
+},
+"19123": {
+"year": 2019,
+"copd": {
+"actual": 7.3,
+"prediction": 6.8857865,
+"risk_index": 0.24042119451555155
+}
+},
+"19131": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 6.5458727,
+"risk_index": 0.21503224169003046
+}
+},
+"19141": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 6.4630475,
+"risk_index": 0.20884583473754909
+}
+},
+"19147": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 6.6047072,
+"risk_index": 0.21942672742439345
+}
+},
+"19175": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 7.427007,
+"risk_index": 0.28084621327826415
+}
+},
+"19197": {
+"year": 2019,
+"copd": {
+"actual": 5.9,
+"prediction": 6.753408,
+"risk_index": 0.23053353625744835
+}
+},
+"20001": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 8.238234,
+"risk_index": 0.3414386459296864
+}
+},
+"20025": {
+"year": 2019,
+"copd": {
+"actual": 7.0,
+"prediction": 7.264754,
+"risk_index": 0.26872715908629174
+}
+},
+"20035": {
+"year": 2019,
+"copd": {
+"actual": 7.3,
+"prediction": 7.180147,
+"risk_index": 0.2624076653449112
+}
+},
+"20043": {
+"year": 2019,
+"copd": {
+"actual": 6.8,
+"prediction": 7.226413,
+"risk_index": 0.26586338056278574
+}
+},
+"20057": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 6.4088316,
+"risk_index": 0.2047963229863546
+}
+},
+"20065": {
+"year": 2019,
+"copd": {
+"actual": 6.5,
+"prediction": 7.5148945,
+"risk_index": 0.2874107351995659
+}
+},
+"20129": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 8.0625105,
+"risk_index": 0.3283134487419422
+}
+},
+"20131": {
+"year": 2019,
+"copd": {
+"actual": 7.1,
+"prediction": 5.997086,
+"risk_index": 0.17404208584000788
+}
+},
+"20141": {
+"year": 2019,
+"copd": {
+"actual": 6.4,
+"prediction": 6.80002,
+"risk_index": 0.23401509502059117
+}
+},
+"20171": {
+"year": 2019,
+"copd": {
+"actual": 6.9,
+"prediction": 5.7825937,
+"risk_index": 0.1580211567511108
+}
+},
+"20173": {
+"year": 2019,
+"copd": {
+"actual": 5.8,
+"prediction": 5.6794906,
+"risk_index": 0.1503201462535524
+}
+},
+"20195": {
+"year": 2019,
+"copd": {
+"actual": 7.9,
+"prediction": 6.482115,
+"risk_index": 0.2102700306895835
+}
+},
+"20199": {
+"year": 2019,
+"copd": {
+"actual": 7.0,
+"prediction": 6.3625493,
+"risk_index": 0.20133939028354406
+}
+},
+"20207": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 8.719246,
+"risk_index": 0.37736655170023636
+}
+},
+"21001": {
+"year": 2019,
+"copd": {
+"actual": 11.2,
+"prediction": 12.302566,
+"risk_index": 0.6450130621942096
+}
+},
+"21005": {
+"year": 2019,
+"copd": {
+"actual": 10.1,
+"prediction": 10.068629,
+"risk_index": 0.4781551084771608
+}
+},
+"21009": {
+"year": 2019,
+"copd": {
+"actual": 12.7,
+"prediction": 11.10449,
+"risk_index": 0.555525977393919
+}
+},
+"21011": {
+"year": 2019,
+"copd": {
+"actual": 11.1,
+"prediction": 11.554438,
+"risk_index": 0.5891336407071989
+}
+},
+"21017": {
+"year": 2019,
+"copd": {
+"actual": 9.5,
+"prediction": 9.694518,
+"risk_index": 0.45021188719426936
+}
+},
+"21019": {
+"year": 2019,
+"copd": {
+"actual": 11.6,
+"prediction": 10.827746,
+"risk_index": 0.5348553239495868
+}
+},
+"21075": {
+"year": 2019,
+"copd": {
+"actual": 12.1,
+"prediction": 12.001806,
+"risk_index": 0.6225485978158768
+}
+},
+"21099": {
+"year": 2019,
+"copd": {
+"actual": 11.8,
+"prediction": 11.16374,
+"risk_index": 0.5599514977903022
+}
+},
+"21109": {
+"year": 2019,
+"copd": {
+"actual": 12.7,
+"prediction": 14.683991,
+"risk_index": 0.8228872378896849
+}
+},
+"21111": {
+"year": 2019,
+"copd": {
+"actual": 8.8,
+"prediction": 7.6090612,
+"risk_index": 0.29444426518285877
+}
+},
+"21113": {
+"year": 2019,
+"copd": {
+"actual": 8.6,
+"prediction": 8.4187355,
+"risk_index": 0.3549207230575812
+}
+},
+"21121": {
+"year": 2019,
+"copd": {
+"actual": 13.5,
+"prediction": 15.285714,
+"risk_index": 0.8678313291888055
+}
+},
+"21129": {
+"year": 2019,
+"copd": {
+"actual": 17.4,
+"prediction": 17.055222,
+"risk_index": 1.0
+}
+},
+"21139": {
+"year": 2019,
+"copd": {
+"actual": 10.2,
+"prediction": 9.377291,
+"risk_index": 0.4265174642612151
+}
+},
+"21147": {
+"year": 2019,
+"copd": {
+"actual": 13.9,
+"prediction": 12.476075,
+"risk_index": 0.6579728532230038
+}
+},
+"21155": {
+"year": 2019,
+"copd": {
+"actual": 12.7,
+"prediction": 11.352505,
+"risk_index": 0.5740507949653786
+}
+},
+"21163": {
+"year": 2019,
+"copd": {
+"actual": 8.6,
+"prediction": 9.156465,
+"risk_index": 0.41002345637848575
+}
+},
+"21191": {
+"year": 2019,
+"copd": {
+"actual": 9.7,
+"prediction": 10.26005,
+"risk_index": 0.492452788473719
+}
+},
+"21195": {
+"year": 2019,
+"copd": {
+"actual": 14.3,
+"prediction": 12.461915,
+"risk_index": 0.6569152098675136
+}
+},
+"21205": {
+"year": 2019,
+"copd": {
+"actual": 11.0,
+"prediction": 11.165101,
+"risk_index": 0.5600531540478461
+}
+},
+"21233": {
+"year": 2019,
+"copd": {
+"actual": 12.9,
+"prediction": 10.159532,
+"risk_index": 0.48494486511163215
+}
+},
+"22013": {
+"year": 2019,
+"copd": {
+"actual": 9.7,
+"prediction": 10.250952,
+"risk_index": 0.49177323767935116
+}
+},
+"22023": {
+"year": 2019,
+"copd": {
+"actual": 8.2,
+"prediction": 8.8856945,
+"risk_index": 0.3897989775516691
+}
+},
+"22033": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 7.0156226,
+"risk_index": 0.2501189550005617
+}
+},
+"22039": {
+"year": 2019,
+"copd": {
+"actual": 11.3,
+"prediction": 10.183089,
+"risk_index": 0.4867043922673723
+}
+},
+"22073": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 8.733503,
+"risk_index": 0.3784314402114809
+}
+},
+"22097": {
+"year": 2019,
+"copd": {
+"actual": 10.5,
+"prediction": 9.576157,
+"risk_index": 0.44137122863500666
+}
+},
+"22103": {
+"year": 2019,
+"copd": {
+"actual": 7.1,
+"prediction": 6.9331393,
+"risk_index": 0.24395808535480645
+}
+},
+"22105": {
+"year": 2019,
+"copd": {
+"actual": 8.9,
+"prediction": 8.57835,
+"risk_index": 0.3668427015438008
+}
+},
+"22117": {
+"year": 2019,
+"copd": {
+"actual": 11.1,
+"prediction": 9.662389,
+"risk_index": 0.4478120974083554
+}
+},
+"22119": {
+"year": 2019,
+"copd": {
+"actual": 11.8,
+"prediction": 11.155217,
+"risk_index": 0.5593148950841693
+}
+},
+"23005": {
+"year": 2019,
+"copd": {
+"actual": 6.8,
+"prediction": 6.4455256,
+"risk_index": 0.20753708324669023
+}
+},
+"23017": {
+"year": 2019,
+"copd": {
+"actual": 8.6,
+"prediction": 8.495998,
+"risk_index": 0.3606916390006286
+}
+},
+"24005": {
+"year": 2019,
+"copd": {
+"actual": 5.6,
+"prediction": 5.4235764,
+"risk_index": 0.13120531904977017
+}
+},
+"24009": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 5.7282963,
+"risk_index": 0.1539655575752361
+}
+},
+"24017": {
+"year": 2019,
+"copd": {
+"actual": 5.9,
+"prediction": 4.8580513,
+"risk_index": 0.08896493314737929
+}
+},
+"24033": {
+"year": 2019,
+"copd": {
+"actual": 4.7,
+"prediction": 5.286772,
+"risk_index": 0.1209870800199817
+}
+},
+"24041": {
+"year": 2019,
+"copd": {
+"actual": 5.5,
+"prediction": 6.7499814,
+"risk_index": 0.23027759552849902
+}
+},
+"25017": {
+"year": 2019,
+"copd": {
+"actual": 4.2,
+"prediction": 4.31441,
+"risk_index": 0.04835909919858118
+}
+},
+"26013": {
+"year": 2019,
+"copd": {
+"actual": 10.9,
+"prediction": 8.96994,
+"risk_index": 0.3960914700167071
+}
+},
+"26021": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 8.198162,
+"risk_index": 0.33844557498751143
+}
+},
+"26037": {
+"year": 2019,
+"copd": {
+"actual": 7.5,
+"prediction": 6.7142124,
+"risk_index": 0.22760592567097612
+}
+},
+"26039": {
+"year": 2019,
+"copd": {
+"actual": 11.3,
+"prediction": 8.72766,
+"risk_index": 0.37799501294268645
+}
+},
+"26049": {
+"year": 2019,
+"copd": {
+"actual": 8.6,
+"prediction": 8.982119,
+"risk_index": 0.397001147871687
+}
+},
+"26053": {
+"year": 2019,
+"copd": {
+"actual": 11.6,
+"prediction": 9.807163,
+"risk_index": 0.45862560441031297
+}
+},
+"26055": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 7.9706683,
+"risk_index": 0.3214535410736095
+}
+},
+"26065": {
+"year": 2019,
+"copd": {
+"actual": 6.8,
+"prediction": 7.2299886,
+"risk_index": 0.2661304504485125
+}
+},
+"26069": {
+"year": 2019,
+"copd": {
+"actual": 9.0,
+"prediction": 10.5919075,
+"risk_index": 0.5172399975022886
+}
+},
+"26079": {
+"year": 2019,
+"copd": {
+"actual": 9.2,
+"prediction": 9.49762,
+"risk_index": 0.4355051173207324
+}
+},
+"26093": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 5.871226,
+"risk_index": 0.16464130951783415
+}
+},
+"26099": {
+"year": 2019,
+"copd": {
+"actual": 8.5,
+"prediction": 7.0530343,
+"risk_index": 0.25291332194424726
+}
+},
+"26115": {
+"year": 2019,
+"copd": {
+"actual": 9.0,
+"prediction": 7.1466494,
+"risk_index": 0.2599056516397655
+}
+},
+"26117": {
+"year": 2019,
+"copd": {
+"actual": 9.9,
+"prediction": 8.747691,
+"risk_index": 0.3794911749521371
+}
+},
+"26127": {
+"year": 2019,
+"copd": {
+"actual": 10.1,
+"prediction": 8.427795,
+"risk_index": 0.3555973981973454
+}
+},
+"26139": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 5.5866694,
+"risk_index": 0.1433871147967293
+}
+},
+"26147": {
+"year": 2019,
+"copd": {
+"actual": 9.6,
+"prediction": 7.719981,
+"risk_index": 0.30272912319573214
+}
+},
+"26157": {
+"year": 2019,
+"copd": {
+"actual": 10.6,
+"prediction": 8.187212,
+"risk_index": 0.3376276940028634
+}
+},
+"26161": {
+"year": 2019,
+"copd": {
+"actual": 5.5,
+"prediction": 4.907727,
+"risk_index": 0.09267532679387072
+}
+},
+"27001": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 8.450445,
+"risk_index": 0.35728917941216537
+}
+},
+"27015": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 5.6561303,
+"risk_index": 0.14857531107860503
+}
+},
+"27021": {
+"year": 2019,
+"copd": {
+"actual": 8.2,
+"prediction": 6.875309,
+"risk_index": 0.2396386056555835
+}
+},
+"27055": {
+"year": 2019,
+"copd": {
+"actual": 5.0,
+"prediction": 7.0256906,
+"risk_index": 0.25087095735247367
+}
+},
+"27057": {
+"year": 2019,
+"copd": {
+"actual": 5.6,
+"prediction": 6.6622314,
+"risk_index": 0.2237233438022099
+}
+},
+"27059": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 5.089335,
+"risk_index": 0.10624005098199499
+}
+},
+"27067": {
+"year": 2019,
+"copd": {
+"actual": 6.3,
+"prediction": 6.1570706,
+"risk_index": 0.18599170795658523
+}
+},
+"27073": {
+"year": 2019,
+"copd": {
+"actual": 5.4,
+"prediction": 6.3668375,
+"risk_index": 0.20165968592175113
+}
+},
+"27099": {
+"year": 2019,
+"copd": {
+"actual": 5.8,
+"prediction": 6.680078,
+"risk_index": 0.22505634789176424
+}
+},
+"27115": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 7.025999,
+"risk_index": 0.25089399246623306
+}
+},
+"27121": {
+"year": 2019,
+"copd": {
+"actual": 5.2,
+"prediction": 5.740603,
+"risk_index": 0.1548847736404204
+}
+},
+"27133": {
+"year": 2019,
+"copd": {
+"actual": 5.2,
+"prediction": 6.438259,
+"risk_index": 0.2069943239806589
+}
+},
+"27137": {
+"year": 2019,
+"copd": {
+"actual": 5.6,
+"prediction": 7.106122,
+"risk_index": 0.2568785658117084
+}
+},
+"27159": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 8.882272,
+"risk_index": 0.38954334306126204
+}
+},
+"28057": {
+"year": 2019,
+"copd": {
+"actual": 8.1,
+"prediction": 9.088841,
+"risk_index": 0.40497246243274704
+}
+},
+"28081": {
+"year": 2019,
+"copd": {
+"actual": 7.6,
+"prediction": 7.776352,
+"risk_index": 0.3069396043816312
+}
+},
+"28099": {
+"year": 2019,
+"copd": {
+"actual": 10.6,
+"prediction": 10.019073,
+"risk_index": 0.4744536555022551
+}
+},
+"28109": {
+"year": 2019,
+"copd": {
+"actual": 7.6,
+"prediction": 9.92878,
+"risk_index": 0.46770946118747647
+}
+},
+"28141": {
+"year": 2019,
+"copd": {
+"actual": 10.9,
+"prediction": 11.1553545,
+"risk_index": 0.559325165279182
+}
+},
+"28147": {
+"year": 2019,
+"copd": {
+"actual": 10.5,
+"prediction": 9.342303,
+"risk_index": 0.4239041291113644
+}
+},
+"28161": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 8.646737,
+"risk_index": 0.37195068573531903
+}
+},
+"29005": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 7.0951157,
+"risk_index": 0.2560564796490297
+}
+},
+"29011": {
+"year": 2019,
+"copd": {
+"actual": 9.4,
+"prediction": 9.65736,
+"risk_index": 0.44743646969403633
+}
+},
+"29043": {
+"year": 2019,
+"copd": {
+"actual": 7.9,
+"prediction": 7.35047,
+"risk_index": 0.27512948661872016
+}
+},
+"29053": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 8.543294,
+"risk_index": 0.3642242873156891
+}
+},
+"29057": {
+"year": 2019,
+"copd": {
+"actual": 12.7,
+"prediction": 11.013477,
+"risk_index": 0.5487280046034375
+}
+},
+"29085": {
+"year": 2019,
+"copd": {
+"actual": 13.7,
+"prediction": 12.70064,
+"risk_index": 0.6747461357177514
+}
+},
+"29095": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 7.2519455,
+"risk_index": 0.26777046241123564
+}
+},
+"29101": {
+"year": 2019,
+"copd": {
+"actual": 7.4,
+"prediction": 6.8314075,
+"risk_index": 0.23635950044576381
+}
+},
+"29113": {
+"year": 2019,
+"copd": {
+"actual": 7.9,
+"prediction": 7.4266047,
+"risk_index": 0.2808161645549652
+}
+},
+"29117": {
+"year": 2019,
+"copd": {
+"actual": 9.9,
+"prediction": 9.306309,
+"risk_index": 0.4212156534801844
+}
+},
+"29125": {
+"year": 2019,
+"copd": {
+"actual": 8.9,
+"prediction": 9.513762,
+"risk_index": 0.4367108008690601
+}
+},
+"29159": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 9.312091,
+"risk_index": 0.42164752451700954
+}
+},
+"29161": {
+"year": 2019,
+"copd": {
+"actual": 8.8,
+"prediction": 8.652572,
+"risk_index": 0.37238651546549445
+}
+},
+"29163": {
+"year": 2019,
+"copd": {
+"actual": 8.9,
+"prediction": 9.346296,
+"risk_index": 0.4242023755745334
+}
+},
+"29177": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 7.3176503,
+"risk_index": 0.27267810684229526
+}
+},
+"29185": {
+"year": 2019,
+"copd": {
+"actual": 12.6,
+"prediction": 11.015362,
+"risk_index": 0.5488687996405207
+}
+},
+"29187": {
+"year": 2019,
+"copd": {
+"actual": 9.0,
+"prediction": 10.090807,
+"risk_index": 0.4798116349134644
+}
+},
+"29189": {
+"year": 2019,
+"copd": {
+"actual": 5.9,
+"prediction": 6.7807665,
+"risk_index": 0.2325770062956669
+}
+},
+"29199": {
+"year": 2019,
+"copd": {
+"actual": 11.7,
+"prediction": 8.2786455,
+"risk_index": 0.34445707491700184
+}
+},
+"29205": {
+"year": 2019,
+"copd": {
+"actual": 10.9,
+"prediction": 9.992492,
+"risk_index": 0.4724682587485629
+}
+},
+"29215": {
+"year": 2019,
+"copd": {
+"actual": 10.5,
+"prediction": 10.637567,
+"risk_index": 0.5206504118236162
+}
+},
+"30039": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 7.1006346,
+"risk_index": 0.2564686991345251
+}
+},
+"30049": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 5.826505,
+"risk_index": 0.1613009939457387
+}
+},
+"30053": {
+"year": 2019,
+"copd": {
+"actual": 10.2,
+"prediction": 9.366997,
+"risk_index": 0.4257485814433186
+}
+},
+"30069": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 7.5719647,
+"risk_index": 0.29167344126075867
+}
+},
+"30071": {
+"year": 2019,
+"copd": {
+"actual": 8.9,
+"prediction": 8.413117,
+"risk_index": 0.35450106421628025
+}
+},
+"30099": {
+"year": 2019,
+"copd": {
+"actual": 8.1,
+"prediction": 7.2548556,
+"risk_index": 0.2679878245531009
+}
+},
+"30103": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 7.6190424,
+"risk_index": 0.2951897842407555
+}
+},
+"30109": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 6.8221517,
+"risk_index": 0.23566816320213776
+}
+},
+"30111": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 6.369478,
+"risk_index": 0.20185691101215872
+}
+},
+"31007": {
+"year": 2019,
+"copd": {
+"actual": 5.1,
+"prediction": 6.5957046,
+"risk_index": 0.21875430227805626
+}
+},
+"31039": {
+"year": 2019,
+"copd": {
+"actual": 5.6,
+"prediction": 6.1083546,
+"risk_index": 0.18235299653666617
+}
+},
+"31043": {
+"year": 2019,
+"copd": {
+"actual": 5.7,
+"prediction": 5.8792524,
+"risk_index": 0.16524082001419754
+}
+},
+"31045": {
+"year": 2019,
+"copd": {
+"actual": 5.1,
+"prediction": 7.0458837,
+"risk_index": 0.25237922698819026
+}
+},
+"31057": {
+"year": 2019,
+"copd": {
+"actual": 6.7,
+"prediction": 8.302777,
+"risk_index": 0.34625951281481326
+}
+},
+"31085": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 6.9632974,
+"risk_index": 0.24621066403271644
+}
+},
+"31097": {
+"year": 2019,
+"copd": {
+"actual": 6.5,
+"prediction": 6.4041376,
+"risk_index": 0.20444571720170276
+}
+},
+"31101": {
+"year": 2019,
+"copd": {
+"actual": 7.5,
+"prediction": 6.7658973,
+"risk_index": 0.23146639114160947
+}
+},
+"31115": {
+"year": 2019,
+"copd": {
+"actual": 7.2,
+"prediction": 7.2401476,
+"risk_index": 0.26688924980221473
+}
+},
+"31119": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 6.003674,
+"risk_index": 0.17453415889268925
+}
+},
+"31135": {
+"year": 2019,
+"copd": {
+"actual": 5.1,
+"prediction": 5.812978,
+"risk_index": 0.16029063083347078
+}
+},
+"31141": {
+"year": 2019,
+"copd": {
+"actual": 5.0,
+"prediction": 5.6766677,
+"risk_index": 0.1501092972826334
+}
+},
+"31147": {
+"year": 2019,
+"copd": {
+"actual": 8.1,
+"prediction": 7.655483,
+"risk_index": 0.2979116174653368
+}
+},
+"31153": {
+"year": 2019,
+"copd": {
+"actual": 4.3,
+"prediction": 5.740623,
+"risk_index": 0.1548862674869677
+}
+},
+"31173": {
+"year": 2019,
+"copd": {
+"actual": 8.6,
+"prediction": 6.450779,
+"risk_index": 0.20792947191927014
+}
+},
+"31175": {
+"year": 2019,
+"copd": {
+"actual": 7.1,
+"prediction": 6.582917,
+"risk_index": 0.21779916667264207
+}
+},
+"32005": {
+"year": 2019,
+"copd": {
+"actual": 7.9,
+"prediction": 5.9798093,
+"risk_index": 0.17275164890781894
+}
+},
+"32009": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 8.965734,
+"risk_index": 0.3957773140878094
+}
+},
+"32019": {
+"year": 2019,
+"copd": {
+"actual": 7.3,
+"prediction": 6.9272165,
+"risk_index": 0.24351569763828837
+}
+},
+"32027": {
+"year": 2019,
+"copd": {
+"actual": 6.9,
+"prediction": 7.9483514,
+"risk_index": 0.31978663987303496
+}
+},
+"32031": {
+"year": 2019,
+"copd": {
+"actual": 5.9,
+"prediction": 6.114695,
+"risk_index": 0.18282657576909198
+}
+},
+"32510": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 7.381753,
+"risk_index": 0.2774660866956831
+}
+},
+"33019": {
+"year": 2019,
+"copd": {
+"actual": 6.7,
+"prediction": 7.3589816,
+"risk_index": 0.2757652378323211
+}
+},
+"35006": {
+"year": 2019,
+"copd": {
+"actual": 7.1,
+"prediction": 6.435781,
+"risk_index": 0.20680923639344814
+}
+},
+"35007": {
+"year": 2019,
+"copd": {
+"actual": 5.4,
+"prediction": 6.5935593,
+"risk_index": 0.21859406482815985
+}
+},
+"35015": {
+"year": 2019,
+"copd": {
+"actual": 5.4,
+"prediction": 6.0904846,
+"risk_index": 0.1810182446466515
+}
+},
+"35023": {
+"year": 2019,
+"copd": {
+"actual": 5.6,
+"prediction": 7.1067758,
+"risk_index": 0.2569273996553397
+}
+},
+"35037": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 7.2917805,
+"risk_index": 0.27074583127182505
+}
+},
+"35051": {
+"year": 2019,
+"copd": {
+"actual": 6.8,
+"prediction": 9.578899,
+"risk_index": 0.4415760349966418
+}
+},
+"36047": {
+"year": 2019,
+"copd": {
+"actual": 5.8,
+"prediction": 5.7631226,
+"risk_index": 0.1565668149757519
+}
+},
+"36055": {
+"year": 2019,
+"copd": {
+"actual": 7.0,
+"prediction": 6.615491,
+"risk_index": 0.22023219454423337
+}
+},
+"36095": {
+"year": 2019,
+"copd": {
+"actual": 9.1,
+"prediction": 7.674032,
+"risk_index": 0.2992970854456323
+}
+},
+"37005": {
+"year": 2019,
+"copd": {
+"actual": 12.4,
+"prediction": 10.620528,
+"risk_index": 0.5193777292576419
+}
+},
+"37015": {
+"year": 2019,
+"copd": {
+"actual": 8.8,
+"prediction": 9.91882,
+"risk_index": 0.46696552560691995
+}
+},
+"37047": {
+"year": 2019,
+"copd": {
+"actual": 10.8,
+"prediction": 9.94944,
+"risk_index": 0.4692526046708398
+}
+},
+"37051": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 6.710041,
+"risk_index": 0.22729435409660528
+}
+},
+"37055": {
+"year": 2019,
+"copd": {
+"actual": 7.6,
+"prediction": 8.003698,
+"risk_index": 0.32392060623878116
+}
+},
+"37081": {
+"year": 2019,
+"copd": {
+"actual": 6.9,
+"prediction": 6.914215,
+"risk_index": 0.24254458534405082
+}
+},
+"37085": {
+"year": 2019,
+"copd": {
+"actual": 7.2,
+"prediction": 7.6269155,
+"risk_index": 0.29577784440333377
+}
+},
+"37095": {
+"year": 2019,
+"copd": {
+"actual": 10.8,
+"prediction": 9.828516,
+"risk_index": 0.4602205096765404
+}
+},
+"37115": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 10.003055,
+"risk_index": 0.4732572338025206
+}
+},
+"37151": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 8.570646,
+"risk_index": 0.3662672718537799
+}
+},
+"37171": {
+"year": 2019,
+"copd": {
+"actual": 8.6,
+"prediction": 9.727758,
+"risk_index": 0.45269466015588583
+}
+},
+"38003": {
+"year": 2019,
+"copd": {
+"actual": 5.6,
+"prediction": 6.4741864,
+"risk_index": 0.2096778251028364
+}
+},
+"38053": {
+"year": 2019,
+"copd": {
+"actual": 5.7,
+"prediction": 6.081441,
+"risk_index": 0.18034275711489234
+}
+},
+"38055": {
+"year": 2019,
+"copd": {
+"actual": 5.6,
+"prediction": 6.1194715,
+"risk_index": 0.18318334367075148
+}
+},
+"38063": {
+"year": 2019,
+"copd": {
+"actual": 5.6,
+"prediction": 7.8497124,
+"risk_index": 0.3124190633940671
+}
+},
+"38071": {
+"year": 2019,
+"copd": {
+"actual": 5.7,
+"prediction": 6.038926,
+"risk_index": 0.17716721281696438
+}
+},
+"38075": {
+"year": 2019,
+"copd": {
+"actual": 6.7,
+"prediction": 5.704017,
+"risk_index": 0.15215208015144022
+}
+},
+"38101": {
+"year": 2019,
+"copd": {
+"actual": 5.1,
+"prediction": 4.9608836,
+"risk_index": 0.09664571696268728
+}
+},
+"39013": {
+"year": 2019,
+"copd": {
+"actual": 10.8,
+"prediction": 9.945484,
+"risk_index": 0.46895712182378346
+}
+},
+"39021": {
+"year": 2019,
+"copd": {
+"actual": 9.9,
+"prediction": 8.278544,
+"risk_index": 0.3444494936457743
+}
+},
+"39039": {
+"year": 2019,
+"copd": {
+"actual": 7.9,
+"prediction": 7.765128,
+"risk_index": 0.30610125769928515
+}
+},
+"39045": {
+"year": 2019,
+"copd": {
+"actual": 7.6,
+"prediction": 7.8673763,
+"risk_index": 0.31373842119541184
+}
+},
+"39063": {
+"year": 2019,
+"copd": {
+"actual": 7.4,
+"prediction": 7.579788,
+"risk_index": 0.2922577817454342
+}
+},
+"39089": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 7.552449,
+"risk_index": 0.29021576820759926
+}
+},
+"39101": {
+"year": 2019,
+"copd": {
+"actual": 9.7,
+"prediction": 9.822797,
+"risk_index": 0.4597933442563392
+}
+},
+"39127": {
+"year": 2019,
+"copd": {
+"actual": 10.0,
+"prediction": 9.886985,
+"risk_index": 0.46458769536525135
+}
+},
+"39135": {
+"year": 2019,
+"copd": {
+"actual": 10.0,
+"prediction": 8.570204,
+"risk_index": 0.3662342578450845
+}
+},
+"39143": {
+"year": 2019,
+"copd": {
+"actual": 8.1,
+"prediction": 9.221088,
+"risk_index": 0.4148502986498017
+}
+},
+"39159": {
+"year": 2019,
+"copd": {
+"actual": 6.9,
+"prediction": 6.422451,
+"risk_index": 0.20581358766967106
+}
+},
+"39171": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 9.042552,
+"risk_index": 0.4015150292913431
+}
+},
+"40009": {
+"year": 2019,
+"copd": {
+"actual": 8.2,
+"prediction": 7.3177104,
+"risk_index": 0.2726825958511699
+}
+},
+"40027": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 5.928633,
+"risk_index": 0.1689291719548834
+}
+},
+"40039": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 6.750428,
+"risk_index": 0.23031095312190028
+}
+},
+"40079": {
+"year": 2019,
+"copd": {
+"actual": 11.3,
+"prediction": 9.202095,
+"risk_index": 0.413431667276156
+}
+},
+"40089": {
+"year": 2019,
+"copd": {
+"actual": 11.7,
+"prediction": 9.944957,
+"risk_index": 0.46891775896726207
+}
+},
+"40105": {
+"year": 2019,
+"copd": {
+"actual": 10.9,
+"prediction": 10.059825,
+"risk_index": 0.47749751722703837
+}
+},
+"40111": {
+"year": 2019,
+"copd": {
+"actual": 9.6,
+"prediction": 10.431981,
+"risk_index": 0.5052947150099311
+}
+},
+"40117": {
+"year": 2019,
+"copd": {
+"actual": 10.4,
+"prediction": 9.508971,
+"risk_index": 0.4363529499286539
+}
+},
+"40147": {
+"year": 2019,
+"copd": {
+"actual": 8.7,
+"prediction": 7.865563,
+"risk_index": 0.31360298159820066
+}
+},
+"41003": {
+"year": 2019,
+"copd": {
+"actual": 5.0,
+"prediction": 5.265681,
+"risk_index": 0.11941174414352398
+}
+},
+"41009": {
+"year": 2019,
+"copd": {
+"actual": 6.3,
+"prediction": 6.5671678,
+"risk_index": 0.21662282227050333
+}
+},
+"41017": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 6.08064,
+"risk_index": 0.18028292856067288
+}
+},
+"41021": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 8.32793,
+"risk_index": 0.34813824892502804
+}
+},
+"41041": {
+"year": 2019,
+"copd": {
+"actual": 6.4,
+"prediction": 7.7700114,
+"risk_index": 0.3064660102107399
+}
+},
+"41053": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 5.894188,
+"risk_index": 0.16635639473879196
+}
+},
+"41065": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 7.5153627,
+"risk_index": 0.2874457061472383
+}
+},
+"42003": {
+"year": 2019,
+"copd": {
+"actual": 5.7,
+"prediction": 6.7942514,
+"risk_index": 0.2335842248609528
+}
+},
+"42007": {
+"year": 2019,
+"copd": {
+"actual": 6.8,
+"prediction": 8.413218,
+"risk_index": 0.35450860814134416
+}
+},
+"42009": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 8.1932335,
+"risk_index": 0.3380774538520924
+}
+},
+"42041": {
+"year": 2019,
+"copd": {
+"actual": 5.7,
+"prediction": 5.7808924,
+"risk_index": 0.15789408269456454
+}
+},
+"42055": {
+"year": 2019,
+"copd": {
+"actual": 6.9,
+"prediction": 7.4466734,
+"risk_index": 0.28231514246515754
+}
+},
+"42073": {
+"year": 2019,
+"copd": {
+"actual": 9.1,
+"prediction": 9.025247,
+"risk_index": 0.40022247856628973
+}
+},
+"42079": {
+"year": 2019,
+"copd": {
+"actual": 6.9,
+"prediction": 8.088189,
+"risk_index": 0.3302314356701873
+}
+},
+"42085": {
+"year": 2019,
+"copd": {
+"actual": 7.3,
+"prediction": 8.907762,
+"risk_index": 0.39144725048579887
+}
+},
+"42089": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 7.0444207,
+"risk_index": 0.2522699521132551
+}
+},
+"42093": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 7.2131157,
+"risk_index": 0.2648701742781136
+}
+},
+"42113": {
+"year": 2019,
+"copd": {
+"actual": 10.2,
+"prediction": 9.310549,
+"risk_index": 0.4215323489482125
+}
+},
+"42131": {
+"year": 2019,
+"copd": {
+"actual": 8.5,
+"prediction": 8.365425,
+"risk_index": 0.35093883773958306
+}
+},
+"44003": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 6.3109736,
+"risk_index": 0.1974870812150589
+}
+},
+"45049": {
+"year": 2019,
+"copd": {
+"actual": 10.3,
+"prediction": 10.795696,
+"risk_index": 0.5324614348575347
+}
+},
+"45051": {
+"year": 2019,
+"copd": {
+"actual": 9.5,
+"prediction": 7.6012836,
+"risk_index": 0.29386333813754384
+}
+},
+"45089": {
+"year": 2019,
+"copd": {
+"actual": 8.6,
+"prediction": 9.956624,
+"risk_index": 0.4697891943506308
+}
+},
+"46043": {
+"year": 2019,
+"copd": {
+"actual": 6.9,
+"prediction": 6.849733,
+"risk_index": 0.23772827469089325
+}
+},
+"46057": {
+"year": 2019,
+"copd": {
+"actual": 5.0,
+"prediction": 5.994317,
+"risk_index": 0.1738352627855338
+}
+},
+"46061": {
+"year": 2019,
+"copd": {
+"actual": 5.0,
+"prediction": 6.1643734,
+"risk_index": 0.1865371710848672
+}
+},
+"46075": {
+"year": 2019,
+"copd": {
+"actual": 6.5,
+"prediction": 8.176748,
+"risk_index": 0.33684611348931476
+}
+},
+"46101": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 5.667663,
+"risk_index": 0.1494367152824087
+}
+},
+"46135": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 6.427422,
+"risk_index": 0.20618488322900308
+}
+},
+"47023": {
+"year": 2019,
+"copd": {
+"actual": 10.2,
+"prediction": 8.652542,
+"risk_index": 0.3723842746956736
+}
+},
+"47029": {
+"year": 2019,
+"copd": {
+"actual": 11.5,
+"prediction": 12.643707,
+"risk_index": 0.6704936774438731
+}
+},
+"47031": {
+"year": 2019,
+"copd": {
+"actual": 10.4,
+"prediction": 9.151401,
+"risk_index": 0.40964521443270874
+}
+},
+"47033": {
+"year": 2019,
+"copd": {
+"actual": 11.5,
+"prediction": 9.561523,
+"risk_index": 0.4402781811163455
+}
+},
+"47037": {
+"year": 2019,
+"copd": {
+"actual": 7.0,
+"prediction": 6.132421,
+"risk_index": 0.18415057196396603
+}
+},
+"47039": {
+"year": 2019,
+"copd": {
+"actual": 10.3,
+"prediction": 10.260399,
+"risk_index": 0.4924788560959694
+}
+},
+"47067": {
+"year": 2019,
+"copd": {
+"actual": 12.5,
+"prediction": 14.555813,
+"risk_index": 0.8133133247526788
+}
+},
+"47085": {
+"year": 2019,
+"copd": {
+"actual": 9.6,
+"prediction": 10.808774,
+"risk_index": 0.5334382611148157
+}
+},
+"47101": {
+"year": 2019,
+"copd": {
+"actual": 12.8,
+"prediction": 12.02446,
+"risk_index": 0.6242406778000061
+}
+},
+"47105": {
+"year": 2019,
+"copd": {
+"actual": 10.3,
+"prediction": 8.306348,
+"risk_index": 0.346526239115834
+}
+},
+"47113": {
+"year": 2019,
+"copd": {
+"actual": 8.5,
+"prediction": 9.0408325,
+"risk_index": 0.4013865958344388
+}
+},
+"47125": {
+"year": 2019,
+"copd": {
+"actual": 7.5,
+"prediction": 6.713549,
+"risk_index": 0.22755637478100213
+}
+},
+"47129": {
+"year": 2019,
+"copd": {
+"actual": 11.4,
+"prediction": 12.3012085,
+"risk_index": 0.6449116673598114
+}
+},
+"47131": {
+"year": 2019,
+"copd": {
+"actual": 12.5,
+"prediction": 10.579947,
+"risk_index": 0.5163466399208381
+}
+},
+"47133": {
+"year": 2019,
+"copd": {
+"actual": 13.0,
+"prediction": 13.523448,
+"risk_index": 0.7362035802123891
+}
+},
+"47149": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 6.095677,
+"risk_index": 0.18140607708726217
+}
+},
+"47153": {
+"year": 2019,
+"copd": {
+"actual": 12.2,
+"prediction": 10.576514,
+"risk_index": 0.5160902211609936
+}
+},
+"47165": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 7.756193,
+"risk_index": 0.3054338817542777
+}
+},
+"47171": {
+"year": 2019,
+"copd": {
+"actual": 10.1,
+"prediction": 11.417715,
+"risk_index": 0.5789214816328578
+}
+},
+"47179": {
+"year": 2019,
+"copd": {
+"actual": 9.4,
+"prediction": 9.391371,
+"risk_index": 0.42756913223051596
+}
+},
+"47181": {
+"year": 2019,
+"copd": {
+"actual": 12.1,
+"prediction": 10.914031,
+"risk_index": 0.541300151416286
+}
+},
+"48017": {
+"year": 2019,
+"copd": {
+"actual": 5.5,
+"prediction": 6.4451995,
+"risk_index": 0.2075127260787365
+}
+},
+"48027": {
+"year": 2019,
+"copd": {
+"actual": 5.5,
+"prediction": 6.363702,
+"risk_index": 0.2014254881292978
+}
+},
+"48051": {
+"year": 2019,
+"copd": {
+"actual": 8.1,
+"prediction": 7.755425,
+"risk_index": 0.3053765180468614
+}
+},
+"48059": {
+"year": 2019,
+"copd": {
+"actual": 7.1,
+"prediction": 8.219506,
+"risk_index": 0.34003980802279254
+}
+},
+"48069": {
+"year": 2019,
+"copd": {
+"actual": 5.7,
+"prediction": 6.2576795,
+"risk_index": 0.19350642085122963
+}
+},
+"48071": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 6.4994397,
+"risk_index": 0.21156405285348592
+}
+},
+"48075": {
+"year": 2019,
+"copd": {
+"actual": 7.2,
+"prediction": 7.583243,
+"risk_index": 0.2925158437364807
+}
+},
+"48097": {
+"year": 2019,
+"copd": {
+"actual": 6.8,
+"prediction": 7.5039515,
+"risk_index": 0.28659337706120946
+}
+},
+"48101": {
+"year": 2019,
+"copd": {
+"actual": 8.9,
+"prediction": 10.241393,
+"risk_index": 0.49105925372206805
+}
+},
+"48105": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 6.959972,
+"risk_index": 0.24596228216729643
+}
+},
+"48115": {
+"year": 2019,
+"copd": {
+"actual": 7.6,
+"prediction": 7.352397,
+"risk_index": 0.27527341873355277
+}
+},
+"48127": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 6.4821115,
+"risk_index": 0.2102697692664377
+}
+},
+"48145": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 9.263937,
+"risk_index": 0.41805079018506963
+}
+},
+"48149": {
+"year": 2019,
+"copd": {
+"actual": 6.7,
+"prediction": 7.51809,
+"risk_index": 0.28764941453166115
+}
+},
+"48161": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 9.247696,
+"risk_index": 0.4168377120963327
+}
+},
+"48163": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 5.285073,
+"risk_index": 0.12086017775578833
+}
+},
+"48177": {
+"year": 2019,
+"copd": {
+"actual": 7.3,
+"prediction": 6.695362,
+"risk_index": 0.22619794542321273
+}
+},
+"48183": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 7.783617,
+"risk_index": 0.3074822441399387
+}
+},
+"48197": {
+"year": 2019,
+"copd": {
+"actual": 9.1,
+"prediction": 9.522889,
+"risk_index": 0.4373925177409215
+}
+},
+"48199": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 7.646305,
+"risk_index": 0.2972260912847797
+}
+},
+"48201": {
+"year": 2019,
+"copd": {
+"actual": 5.5,
+"prediction": 5.5019937,
+"risk_index": 0.13706248969245882
+}
+},
+"48203": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 7.6761723,
+"risk_index": 0.29945694943389195
+}
+},
+"48223": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 7.72525,
+"risk_index": 0.30312267706861895
+}
+},
+"48243": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 7.175298,
+"risk_index": 0.2620454822495178
+}
+},
+"48247": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 7.410208,
+"risk_index": 0.27959145687085757
+}
+},
+"48249": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 6.456267,
+"risk_index": 0.20833938341184993
+}
+},
+"48251": {
+"year": 2019,
+"copd": {
+"actual": 7.0,
+"prediction": 6.75711,
+"risk_index": 0.230810047253354
+}
+},
+"48253": {
+"year": 2019,
+"copd": {
+"actual": 7.3,
+"prediction": 7.3833966,
+"risk_index": 0.27758885100494046
+}
+},
+"48269": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 8.335758,
+"risk_index": 0.34872294046364216
+}
+},
+"48277": {
+"year": 2019,
+"copd": {
+"actual": 9.4,
+"prediction": 8.769006,
+"risk_index": 0.38108324190992454
+}
+},
+"48287": {
+"year": 2019,
+"copd": {
+"actual": 6.9,
+"prediction": 7.746438,
+"risk_index": 0.3047052581008311
+}
+},
+"48291": {
+"year": 2019,
+"copd": {
+"actual": 7.9,
+"prediction": 7.2139316,
+"risk_index": 0.2649311157480108
+}
+},
+"48301": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 4.9852734,
+"risk_index": 0.09846744788865702
+}
+},
+"48305": {
+"year": 2019,
+"copd": {
+"actual": 7.2,
+"prediction": 6.927215,
+"risk_index": 0.24351558559979733
+}
+},
+"48321": {
+"year": 2019,
+"copd": {
+"actual": 6.7,
+"prediction": 6.6656585,
+"risk_index": 0.22397932187732295
+}
+},
+"48355": {
+"year": 2019,
+"copd": {
+"actual": 5.9,
+"prediction": 6.0706053,
+"risk_index": 0.17953341346326215
+}
+},
+"48369": {
+"year": 2019,
+"copd": {
+"actual": 6.5,
+"prediction": 6.619657,
+"risk_index": 0.22054336278003647
+}
+},
+"48371": {
+"year": 2019,
+"copd": {
+"actual": 5.8,
+"prediction": 5.57889,
+"risk_index": 0.14280605330522514
+}
+},
+"48377": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 6.2626653,
+"risk_index": 0.19387882185700664
+}
+},
+"48409": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 6.2689366,
+"risk_index": 0.19434723984961147
+}
+},
+"48415": {
+"year": 2019,
+"copd": {
+"actual": 6.8,
+"prediction": 6.764089,
+"risk_index": 0.23133132500603515
+}
+},
+"48443": {
+"year": 2019,
+"copd": {
+"actual": 5.6,
+"prediction": 7.062318,
+"risk_index": 0.2536067431038068
+}
+},
+"48445": {
+"year": 2019,
+"copd": {
+"actual": 7.6,
+"prediction": 7.202325,
+"risk_index": 0.2640641917812148
+}
+},
+"48455": {
+"year": 2019,
+"copd": {
+"actual": 11.1,
+"prediction": 10.018511,
+"risk_index": 0.4744116784142759
+}
+},
+"48473": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 6.2825356,
+"risk_index": 0.19536298080944972
+}
+},
+"48507": {
+"year": 2019,
+"copd": {
+"actual": 7.4,
+"prediction": 6.2174473,
+"risk_index": 0.19050138419821072
+}
+},
+"49031": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 7.8522787,
+"risk_index": 0.3126107463137843
+}
+},
+"49045": {
+"year": 2019,
+"copd": {
+"actual": 4.9,
+"prediction": 5.149282,
+"risk_index": 0.1107176319305517
+}
+},
+"49051": {
+"year": 2019,
+"copd": {
+"actual": 4.2,
+"prediction": 4.2064023,
+"risk_index": 0.04029175271222777
+}
+},
+"50025": {
+"year": 2019,
+"copd": {
+"actual": 6.3,
+"prediction": 8.242132,
+"risk_index": 0.3417297966217556
+}
+},
+"51003": {
+"year": 2019,
+"copd": {
+"actual": 5.3,
+"prediction": 5.6223326,
+"risk_index": 0.14605088220601697
+}
+},
+"51011": {
+"year": 2019,
+"copd": {
+"actual": 7.7,
+"prediction": 8.833769,
+"risk_index": 0.38592054110707175
+}
+},
+"51015": {
+"year": 2019,
+"copd": {
+"actual": 7.1,
+"prediction": 7.8917794,
+"risk_index": 0.31556114552933556
+}
+},
+"51027": {
+"year": 2019,
+"copd": {
+"actual": 11.6,
+"prediction": 13.675327,
+"risk_index": 0.7475477762002757
+}
+},
+"51057": {
+"year": 2019,
+"copd": {
+"actual": 8.4,
+"prediction": 8.785859,
+"risk_index": 0.38234203170300896
+}
+},
+"51069": {
+"year": 2019,
+"copd": {
+"actual": 7.1,
+"prediction": 6.541231,
+"risk_index": 0.21468554231409975
+}
+},
+"51091": {
+"year": 2019,
+"copd": {
+"actual": 7.5,
+"prediction": 9.43075,
+"risk_index": 0.43051044138982697
+}
+},
+"51095": {
+"year": 2019,
+"copd": {
+"actual": 6.5,
+"prediction": 6.218995,
+"risk_index": 0.1906169855132737
+}
+},
+"51105": {
+"year": 2019,
+"copd": {
+"actual": 10.8,
+"prediction": 13.348212,
+"risk_index": 0.7231147955342353
+}
+},
+"51121": {
+"year": 2019,
+"copd": {
+"actual": 7.0,
+"prediction": 6.870756,
+"risk_index": 0.23929853148909014
+}
+},
+"51161": {
+"year": 2019,
+"copd": {
+"actual": 7.4,
+"prediction": 6.99495,
+"risk_index": 0.24857487039387358
+}
+},
+"51163": {
+"year": 2019,
+"copd": {
+"actual": 10.1,
+"prediction": 8.826728,
+"risk_index": 0.38539463243009386
+}
+},
+"51183": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 8.409295,
+"risk_index": 0.3542155901410908
+}
+},
+"51185": {
+"year": 2019,
+"copd": {
+"actual": 11.3,
+"prediction": 11.237295,
+"risk_index": 0.5654454919296433
+}
+},
+"51187": {
+"year": 2019,
+"copd": {
+"actual": 7.1,
+"prediction": 7.1637454,
+"risk_index": 0.2611825916683995
+}
+},
+"51197": {
+"year": 2019,
+"copd": {
+"actual": 8.3,
+"prediction": 9.753664,
+"risk_index": 0.45462963958860664
+}
+},
+"53019": {
+"year": 2019,
+"copd": {
+"actual": 10.5,
+"prediction": 8.190239,
+"risk_index": 0.3378537876777976
+}
+},
+"53041": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 7.27259,
+"risk_index": 0.26931244816352484
+}
+},
+"53043": {
+"year": 2019,
+"copd": {
+"actual": 8.1,
+"prediction": 6.925864,
+"risk_index": 0.243414676265527
+}
+},
+"53045": {
+"year": 2019,
+"copd": {
+"actual": 8.1,
+"prediction": 6.6012797,
+"risk_index": 0.2191707194723495
+}
+},
+"53047": {
+"year": 2019,
+"copd": {
+"actual": 7.2,
+"prediction": 8.583458,
+"risk_index": 0.3672242299519818
+}
+},
+"53057": {
+"year": 2019,
+"copd": {
+"actual": 6.5,
+"prediction": 5.9095607,
+"risk_index": 0.1675046174796777
+}
+},
+"53073": {
+"year": 2019,
+"copd": {
+"actual": 5.9,
+"prediction": 5.9320025,
+"risk_index": 0.16918084775194023
+}
+},
+"53077": {
+"year": 2019,
+"copd": {
+"actual": 6.4,
+"prediction": 6.570248,
+"risk_index": 0.2168528895772534
+}
+},
+"54005": {
+"year": 2019,
+"copd": {
+"actual": 13.7,
+"prediction": 12.337658,
+"risk_index": 0.6476341653461062
+}
+},
+"54031": {
+"year": 2019,
+"copd": {
+"actual": 11.9,
+"prediction": 9.628969,
+"risk_index": 0.44531587982781323
+}
+},
+"54039": {
+"year": 2019,
+"copd": {
+"actual": 8.8,
+"prediction": 9.375811,
+"risk_index": 0.42640691961671484
+}
+},
+"54041": {
+"year": 2019,
+"copd": {
+"actual": 10.4,
+"prediction": 12.074411,
+"risk_index": 0.6279716342442211
+}
+},
+"54047": {
+"year": 2019,
+"copd": {
+"actual": 14.7,
+"prediction": 13.016439,
+"risk_index": 0.6983338980073281
+}
+},
+"54053": {
+"year": 2019,
+"copd": {
+"actual": 12.3,
+"prediction": 10.643609,
+"risk_index": 0.5211017028655561
+}
+},
+"54057": {
+"year": 2019,
+"copd": {
+"actual": 8.6,
+"prediction": 9.968621,
+"risk_index": 0.4706852782020302
+}
+},
+"54081": {
+"year": 2019,
+"copd": {
+"actual": 12.0,
+"prediction": 10.115773,
+"risk_index": 0.48167640355846203
+}
+},
+"54105": {
+"year": 2019,
+"copd": {
+"actual": 11.2,
+"prediction": 10.668894,
+"risk_index": 0.5229902983629832
+}
+},
+"55005": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 7.7941694,
+"risk_index": 0.3082704274552265
+}
+},
+"55009": {
+"year": 2019,
+"copd": {
+"actual": 5.1,
+"prediction": 5.7165155,
+"risk_index": 0.1530856222050131
+}
+},
+"55011": {
+"year": 2019,
+"copd": {
+"actual": 7.2,
+"prediction": 7.52999,
+"risk_index": 0.2885382532273061
+}
+},
+"55023": {
+"year": 2019,
+"copd": {
+"actual": 7.8,
+"prediction": 8.159207,
+"risk_index": 0.33553593537500326
+}
+},
+"55027": {
+"year": 2019,
+"copd": {
+"actual": 6.5,
+"prediction": 6.3953447,
+"risk_index": 0.203788955036414
+}
+},
+"55043": {
+"year": 2019,
+"copd": {
+"actual": 6.6,
+"prediction": 6.9959936,
+"risk_index": 0.24865281930671182
+}
+},
+"55047": {
+"year": 2019,
+"copd": {
+"actual": 6.1,
+"prediction": 7.3201056,
+"risk_index": 0.2728614989136748
+}
+},
+"55091": {
+"year": 2019,
+"copd": {
+"actual": 7.4,
+"prediction": 8.464679,
+"risk_index": 0.35835234999988047
+}
+},
+"55097": {
+"year": 2019,
+"copd": {
+"actual": 5.4,
+"prediction": 5.2683005,
+"risk_index": 0.11960740069505689
+}
+},
+"55099": {
+"year": 2019,
+"copd": {
+"actual": 6.2,
+"prediction": 8.461986,
+"risk_index": 0.3581512035622862
+}
+},
+"55103": {
+"year": 2019,
+"copd": {
+"actual": 7.9,
+"prediction": 8.105323,
+"risk_index": 0.3315112140072613
+}
+},
+"55117": {
+"year": 2019,
+"copd": {
+"actual": 5.9,
+"prediction": 5.821847,
+"risk_index": 0.160953077084872
+}
+},
+"55129": {
+"year": 2019,
+"copd": {
+"actual": 8.0,
+"prediction": 8.038126,
+"risk_index": 0.32649211368530745
+}
+},
+"55133": {
+"year": 2019,
+"copd": {
+"actual": 3.9,
+"prediction": 5.12964,
+"risk_index": 0.10925052523644604
+}
+},
+"56001": {
+"year": 2019,
+"copd": {
+"actual": 5.9,
+"prediction": 6.0040016,
+"risk_index": 0.17455862809913403
+}
+},
+"56037": {
+"year": 2019,
+"copd": {
+"actual": 6.0,
+"prediction": 6.1414905,
+"risk_index": 0.18482799402700395
+}
+},
+"56045": {
+"year": 2019,
+"copd": {
+"actual": 6.7,
+"prediction": 7.007598,
+"risk_index": 0.24951957895038754
+}
+}
+}
