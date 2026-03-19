@@ -58,8 +58,9 @@ And many others. We will however attempt to validate our predictive model by per
 
 ## Setup (for teammates)
 
-- **Python 3.8+** and Jupyter. From repo root:  
-  `pip install -r requirements.txt`
+- Activate the ERDOS data-science environment used by this repo notebooks: `erdos_ds_environment`.
+- Install project-specific dependencies once (into your active ERDOS environment):  
+  `bash scripts/load_extra_dependencies.sh`
 - Run notebooks from their directory (e.g. open `EDA/build_joint_dataset.ipynb` and run; it expects `../data/` to exist). Create **`data/`** if missing before the first run.
 
 ---

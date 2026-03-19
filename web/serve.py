@@ -14,6 +14,7 @@ keep the terminal open. Use another port: PORT=9000 python3 web/serve.py
 """
 from __future__ import annotations
 
+from http.server import HTTPServer, SimpleHTTPRequestHandler
 import os
 import sys
 
@@ -23,12 +24,6 @@ WEB_ROOT = os.path.dirname(os.path.abspath(__file__))
 def main() -> None:
     port = int(os.environ.get("PORT", "8765"))
     os.chdir(WEB_ROOT)
-
-    try:
-        from http.server import HTTPServer, SimpleHTTPRequestHandler
-    except ImportError:
-        print("Python 3 is required.", file=sys.stderr)
-        sys.exit(1)
 
     class QuietHandler(SimpleHTTPRequestHandler):
         def log_message(self, format: str, *args) -> None:

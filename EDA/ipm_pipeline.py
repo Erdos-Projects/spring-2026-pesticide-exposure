@@ -9,6 +9,20 @@ import re
 import requests
 import numpy as np
 import pandas as pd
+from io import BytesIO
+
+# Optional PDF-parsing dependencies.
+# We import them once at module import time so `_fetch_pdf_text` doesn't need to
+# import packages dynamically (keeps execution predictable and easier to debug).
+try:
+    from pdfminer.high_level import extract_text as pdf_extract_text
+except ImportError:  # pragma: no cover
+    pdf_extract_text = None
+
+try:
+    import fitz  # PyMuPDF
+except ImportError:  # pragma: no cover
+    fitz = None
 
 IPM_API_BASE = "https://ipmdata.ipmcenters.org/rest/ipmdata_ipmcenters_org_restapi"
 ANALYSIS_YEARS_IPM = [2018, 2019]
@@ -47,12 +61,99 @@ _SORTED_TITLE_CROPS = sorted(TITLE_TO_CROP.items(), key=lambda kv: len(kv[0]), r
 
 # Lexicons (ambiguous terms like organic, application, treatment, timing, pollinator, integrated, reduced-risk removed to reduce noise)
 LEXICONS = {
-    "monitoring": [r"scout(?:ing)?", r"monitor(?:ing)?", r"trap(?:ping|s)?", r"sampl(?:e|ing)", r"thresholds?", r"economic threshold", r"degree[- ]day", r"forecast(?:ing)?", r"surveillance", r"detection", r"sweep(?:ing)?", r"action threshold", r"monitoring (?:and )?scouting"],
-    "nonchemical": [r"cultural control", r"biological control", r"mechanical control", r"physical control", r"crop rotation", r"sanitation", r"resistant variet(?:y|ies)", r"pruning", r"tillage", r"mulch(?:ing)?", r"habitat management", r"natural enemies", r"pheromone disruption", r"nonchemical", r"non-chemical", r"biologicals?", r"beneficial (?:insects?|organisms?)", r"cultural practices", r"cover crop", r"intercropping"],
-    "chemical": [r"pesticides?", r"insecticides?", r"herbicides?", r"fungicides?", r"chemical control", r"spray(?:ing| schedule)?", r"active ingredient", r"pre-?emergence", r"post-?emergence", r"chemigation", r"foliar", r"soil applied", r"registered (?:pesticide|chemical)", r"chemical management", r"conventional (?:pesticide|chemical)"],
-    "decision_support": [r"thresholds?", r"action threshold", r"economic threshold", r"targeted", r"integrated pest", r"integrated management", r"beneficials?", r"application timing", r"ipm (?:practices?|approach)", r"decision[- ]?making", r"when to (?:spray|treat|apply)", r"scouting (?:for|to)"],
-    "dependency": [r"limited alternatives?", r"few effective options?", r"critical use", r"loss of registration", r"resistance concern", r"lack of nonchemical options", r"dependency", r"reliance", r"primary (?:control|tool)", r"conventional (?:control|management)"],
-    "resistance_management": [r"resistance management", r"mode of action", r"rotat(?:e|ion) of chemistr(?:y|ies)", r"anti-resistance", r"insecticide resistance", r"herbicide resistance", r"moa", r"tank[- ]?mix", r"rotate (?:modes|chemistry)"],
+    # NOTE: these are regex word-boundary delimited to reduce false positives.
+    # The previous version accidentally used a literal control character where `\b` was intended.
+    "monitoring": [
+        r"\bscout(?:ing)?\b",
+        r"\bmonitor(?:ing)?\b",
+        r"\btrap(?:ping|s)?\b",
+        r"\bsampl(?:e|ing)\b",
+        r"\bthresholds?\b",
+        r"\beconomic threshold\b",
+        r"\bdegree[- ]day\b",
+        r"\bforecast(?:ing)?\b",
+        r"\bsurveillance\b",
+        r"\bdetection\b",
+        r"\bsweep(?:ing)?\b",
+        r"\baction threshold\b",
+        r"\bmonitoring (?:and )?scouting\b",
+    ],
+    "nonchemical": [
+        r"\bcultural control\b",
+        r"\bbiological control\b",
+        r"\bmechanical control\b",
+        r"\bphysical control\b",
+        r"\bcrop rotation\b",
+        r"\bsanitation\b",
+        r"\bresistant variet(?:y|ies)\b",
+        r"\bpruning\b",
+        r"\btillage\b",
+        r"\bmulch(?:ing)?\b",
+        r"\bhabitat management\b",
+        r"\bnatural enemies\b",
+        r"\bpheromone disruption\b",
+        r"\bnonchemical\b",
+        r"\bnon-chemical\b",
+        r"\bbiologicals?\b",
+        r"\bbeneficial (?:insects?|organisms?)\b",
+        r"\bcultural practices\b",
+        r"\bcover crop\b",
+        r"\bintercropping\b",
+    ],
+    "chemical": [
+        r"\bpesticides?\b",
+        r"\binsecticides?\b",
+        r"\bherbicides?\b",
+        r"\bfungicides?\b",
+        r"\bchemical control\b",
+        r"\bspray(?:ing| schedule)?\b",
+        r"\bactive ingredient\b",
+        r"\bpre-?emergence\b",
+        r"\bpost-?emergence\b",
+        r"\bchemigation\b",
+        r"\bfoliar\b",
+        r"\bsoil applied\b",
+        r"\bregistered (?:pesticide|chemical)\b",
+        r"\bchemical management\b",
+        r"\bconventional (?:pesticide|chemical)\b",
+    ],
+    "decision_support": [
+        r"\bthresholds?\b",
+        r"\baction threshold\b",
+        r"\beconomic threshold\b",
+        r"\btargeted\b",
+        r"\bintegrated pest\b",
+        r"\bintegrated management\b",
+        r"\bbeneficials?\b",
+        r"\bapplication timing\b",
+        r"\bipm (?:practices?|approach)\b",
+        r"\bdecision[- ]?making\b",
+        r"\bwhen to (?:spray|treat|apply)\b",
+        r"\bscouting (?:for|to)\b",
+    ],
+    "dependency": [
+        r"\blimited alternatives?\b",
+        r"\bfew effective options?\b",
+        r"\bcritical use\b",
+        r"\bloss of registration\b",
+        r"\bresistance concern\b",
+        r"\black of nonchemical options\b",
+        r"\bdependency\b",
+        r"\breliance\b",
+        r"\bprimary (?:control|tool)\b",
+        r"\bconventional (?:control|management)\b",
+    ],
+    "resistance_management": [
+        r"\bresistance management\b",
+        r"\bmode of action\b",
+        r"\brotat(?:e|ion) of chemistr(?:y|ies)\b",
+        r"\banti-resistance\b",
+        r"\binsecticide resistance\b",
+        r"\bherbicide resistance\b",
+        r"\bmoa\b",
+        r"\btank[- ]?mix\b",
+        r"\brotate (?:modes|chemistry)\b",
+    ],
 }
 
 SECTION_PATTERNS = {
@@ -142,27 +243,26 @@ def _fetch_pdf_text(url):
     if not url:
         return None
     try:
-        from io import BytesIO
         r = requests.get(str(url), timeout=PDF_TIMEOUT)
         r.raise_for_status()
         raw = r.content
         if len(raw) < 500:
             return None
         text = None
-        try:
-            from pdfminer.high_level import extract_text as pdf_extract_text
-            text = pdf_extract_text(BytesIO(raw))
-        except Exception:
-            text = None
-        if not text or len(text.strip()) < 150:
+        if pdf_extract_text is not None:
             try:
-                import fitz
-                doc = fitz.open(stream=raw, filetype="pdf")
-                parts = [doc.load_page(i).get_text() for i in range(len(doc))]
-                doc.close()
-                text = "\n".join(parts) if parts else ""
+                text = pdf_extract_text(BytesIO(raw))
             except Exception:
-                pass
+                text = None
+        if not text or len(text.strip()) < 150:
+            if fitz is not None:
+                try:
+                    doc = fitz.open(stream=raw, filetype="pdf")
+                    parts = [doc.load_page(i).get_text() for i in range(len(doc))]
+                    doc.close()
+                    text = "\n".join(parts) if parts else ""
+                except Exception:
+                    pass
         if not text or len(text.strip()) < 150:
             return None
         return text.strip()
