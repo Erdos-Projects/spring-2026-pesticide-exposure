@@ -51,7 +51,7 @@ And many others. We will however attempt to validate our predictive model by per
 4. *(Future)* Model training notebook(s) that read train/validation, then export county risk for **`web/data/risk_estimates.json`**.
 
 **Documentation:**  
-- **`docs/`** — Datasheets for each data source, joint dataset datasheet, model card template, IPM integration schema. See Gebru et al. (2018) and Mitchell et al. (2019).
+- **`docs/`** — One consolidated [`docs/datasheets.md`](docs/datasheets.md) (sources + joint table), model card, IPM schema. See Gebru et al. (2018) and Mitchell et al. (2019).
 - **`web/`** — Deploy to GitHub Pages; replace **`web/data/risk_estimates.json`** with model output to show real results (see `web/README.md`).
 
 ---
