@@ -1,4 +1,4 @@
-"""One-shot rebuild of model_selection.ipynb: four exposure sets in main flow, SI section removed."""
+"""One-shot rebuild of model_selection.ipynb: five exposure sets (incl. full pesticide kg), SI section removed."""
 import json
 from pathlib import Path
 
@@ -7,7 +7,7 @@ EXP = (ROOT / "_exposure_defs.py").read_text()
 
 CELL5 = (
     "# --- Data splits ---\n"
-    "# Four exposure designs (Aggs_raw, Aggs_engineered, Components_raw, Components_engineered) + shared BASE_COLS.\n\n"
+    "# Five exposure designs (+ Full_pesticides_raw: every pesticide_*_kg) + shared BASE_COLS.\n\n"
     "def choose_feature_columns(train_df: pd.DataFrame, target: str) -> list:\n"
     "    drop = set(DEFAULT_DROP_COLUMNS)\n"
     "    lc = {c: str(c).lower() for c in train_df.columns}\n"
@@ -31,6 +31,9 @@ CELL5 = (
     "    for k, cols in EXPOSURE_SETS.items():\n"
     "        use = [c for c in cols if c in etr.columns]\n"
     "        X_by[k] = (etr[use].copy(), ete[use].copy())\n"
+    "    pest_kg_cols = sorted(c for c in train_df.columns if str(c).startswith(\"pesticide_\") and str(c).endswith(\"_kg\"))\n"
+    "    full_raw = [c for c in list(dict.fromkeys(pest_kg_cols + BASE_COLS)) if c in etr.columns and c in ete.columns]\n"
+    "    X_by[FULL_PESTICIDES_RAW_KEY] = (etr[full_raw].copy(), ete[full_raw].copy())\n"
     "    data[TARGET] = {\n"
     "        \"train_df\": train_df,\n"
     "        \"test_df\": test_df,\n"
@@ -55,10 +58,11 @@ CELL5 = (
 )
 
 CELL6_MD = (
-    "---\n## Models 1–7 × four exposure sets\n\n"
-    "For each target (CASTHMA, COPD) and each exposure set (**Aggs_raw**, **Aggs_engineered**, **Components_raw**, **Components_engineered**), "
+    "---\n## Models 1–7 × exposure sets\n\n"
+    "For each target (CASTHMA, COPD) and each exposure set (**Aggs_raw**, **Aggs_engineered**, **Components_raw**, **Components_engineered**, **Full_pesticides_raw**), "
     "we fit: Simple LR (1 feat), multiple Ridge (numeric), Ridge (full preprocess), tuned Ridge/Lasso/ElasticNet, XGBoost. "
-    "**Diagnostic plots / SHAP / coef tables** below use **CASTHMA** + **Aggs_engineered** by default (`PLOT_EXPOSURE_KEY`).\n"
+    "**Diagnostic plots / SHAP / coef tables** below use **CASTHMA** + **Aggs_engineered** by default (`PLOT_EXPOSURE_KEY`). "
+    "**Full_pesticides_raw** is wide (~450+ features with BASE_COLS); expect much longer runtimes (especially XGBoost grid search).\n"
 )
 
 CELL7_CODE = r'''def make_strata(y: pd.Series, n_bins: int = 5) -> pd.Series:
@@ -116,13 +120,18 @@ def run_exposure_models_all(target, exposure_name, X_tr, X_te, y_tr, y_te, folds
     feature_cols = list(X_tr.columns)
     if exposure_name == "Aggs_raw":
         pool = [c for c in AGGREGATE_KG_PROXIES if c in feature_cols]
+    elif exposure_name == "Full_pesticides_raw":
+        pool = sorted(c for c in feature_cols if str(c).startswith("pesticide_") and str(c).endswith("_kg"))
     elif exposure_name == "Aggs_engineered":
         pool = [c for c in PEST_AGGREGATE_ORDER if c in feature_cols]
     elif exposure_name == "Components_raw":
         pool = [c for c in COMPONENT_KG_RAW if c in feature_cols]
     else:
         pool = [c for c in PEST_COMPONENTS if c in feature_cols]
-    single_pest = pool[0] if pool else feature_cols[0]
+    if exposure_name == "Full_pesticides_raw" and pool:
+        single_pest = "pesticide_total_kg" if "pesticide_total_kg" in feature_cols else pool[0]
+    else:
+        single_pest = pool[0] if pool else feature_cols[0]
 
     imp_single = SimpleImputer(strategy="median")
     x_tr_s = imp_single.fit_transform(X_tr[[single_pest]])
@@ -239,8 +248,7 @@ for target in TARGETS:
         StratifiedGroupKFold(n_splits=CV_FOLDS, shuffle=True, random_state=RANDOM_STATE).split(d["X_train"], strata, d["groups"])
     )
     for ek in EXPOSURE_SET_KEYS:
-        cols = [c for c in EXPOSURE_SETS[ek] if c in etr.columns and c in ete.columns]
-        X_tr, X_te = etr[cols].copy(), ete[cols].copy()
+        X_tr, X_te = d["X_by_exposure"][ek]
         print(f"  {ek}: {X_tr.shape[1]} cols")
         summary_df, _top, bundle = run_exposure_models_all(target, ek, X_tr, X_te, y_tr, y_te, folds)
         fitted_store[(target, ek)] = bundle
@@ -306,30 +314,33 @@ FULLPIPE = (
 
 
 def main():
+    """Refresh data (cell 5), models header (6), models code (7), exposure markdown (4), intro (0). Preserves all other cells."""
     nb_path = ROOT / "model_selection.ipynb"
     nb = json.loads(nb_path.read_text())
-    new_cells = (
-        nb["cells"][:5]
-        + [{"cell_type": "code", "metadata": {}, "source": [CELL5], "outputs": [], "execution_count": None}]
-        + [{"cell_type": "markdown", "metadata": {}, "source": [CELL6_MD]}]
-        + [{"cell_type": "code", "metadata": {}, "source": [CELL7_CODE], "outputs": [], "execution_count": None}]
-        + nb["cells"][19:29]
-        + [{"cell_type": "markdown", "metadata": {}, "source": ["## Full pipeline: summary export\n\nBootstrap CIs on test RMSE for every **target × exposure_set × model**; save CSVs under `modeling/results/<TARGET>/` (prediction exports use **Aggs_engineered**).\n"]}]
-        + [{"cell_type": "code", "metadata": {}, "source": [FULLPIPE], "outputs": [], "execution_count": None}]
-        + nb["cells"][36:37]
+    if len(nb["cells"]) < 8:
+        raise SystemExit("Notebook needs at least 8 cells")
+
+    nb["cells"][5].update(
+        {"source": [CELL5], "outputs": [], "execution_count": None}
+    )
+    nb["cells"][6] = {"cell_type": "markdown", "metadata": {}, "source": [CELL6_MD]}
+    nb["cells"][7].update(
+        {"source": [CELL7_CODE], "outputs": [], "execution_count": None}
     )
 
-    # Update intro cell 0
     intro = "".join(nb["cells"][0]["source"])
     intro = intro.replace(
         "| **Feature variants** | Short table: raw vs engineered pesticide scaling. |\n",
-        "| **Exposure sets** | Four designs: **Aggs_raw**, **Aggs_engineered**, **Components_raw**, **Components_engineered** (+ shared confounders). |\n",
+        "| **Exposure sets** | Five designs (+ **Full_pesticides_raw**). |\n",
     )
-    intro = intro.replace("| **Model 1** | Simple LR — reports **raw vs engineered** (one feature). |\n", "")
-    intro = intro.replace("| **Model 2** | Multiple Ridge numeric — **both variants**. |\n", "")
-    intro = intro.replace("| **Model 3** | Full preprocess Ridge — **both variants** (downstream uses raw). |\n", "")
-    intro = intro.replace("| **Models 4–5** | Tuned Ridge/Lasso/EN — **both variants** (coef plots: raw). |\n", "")
-    intro = intro.replace("| **Model 6** | XGBoost — **both variants** (SHAP: raw). |\n", "")
+    for line in (
+        "| **Model 1** | Simple LR — reports **raw vs engineered** (one feature). |\n",
+        "| **Model 2** | Multiple Ridge numeric — **both variants**. |\n",
+        "| **Model 3** | Full preprocess Ridge — **both variants** (downstream uses raw). |\n",
+        "| **Models 4–5** | Tuned Ridge/Lasso/EN — **both variants** (coef plots: raw). |\n",
+        "| **Model 6** | XGBoost — **both variants** (SHAP: raw). |\n",
+    ):
+        intro = intro.replace(line, "")
     intro = intro.replace(
         "| **Metrics / plots / SHAP** | Test metrics table: **all models × raw & engineered** (bootstrap RMSE CIs). Plots/SHAP use **raw** tuned fits. |\n",
         "| **Models × exposures** | All seven model families on each exposure set; combined table. Plots/SHAP use **CASTHMA + Aggs_engineered**. |\n",
@@ -342,10 +353,17 @@ def main():
         "| **SI** | Four pesticide blocks: **Aggs_raw**, **Aggs_engineered**, **Components_raw**, **Components_engineered** (+ `BASE_COLS`); column-overlap table; **SI v2** trains all models on each. |\n",
         "",
     )
-    new_cells[0]["source"] = [intro]
+    intro = intro.replace(
+        "| **Data** | Four **exposure sets** (see below) + engineered county-level intensities. |\n",
+        "| **Data** | Five **exposure sets** (see below), including **Full_pesticides_raw** (all `pesticide_*_kg`). |\n",
+    )
+    intro = intro.replace(
+        "| **Models × exposures** | Seven model families × **Aggs_raw**, **Aggs_engineered**, **Components_raw**, **Components_engineered** for CASTHMA & COPD. |\n",
+        "| **Models × exposures** | Seven model families × five exposure sets (incl. **Full_pesticides_raw**) for CASTHMA & COPD. |\n",
+    )
+    nb["cells"][0]["source"] = [intro]
 
-    # Remove stale markdown cell 4 (Feature variants raw vs eng) — replace
-    new_cells[4] = {
+    nb["cells"][4] = {
         "cell_type": "markdown",
         "metadata": {},
         "source": [
@@ -356,13 +374,13 @@ def main():
             "| **Aggs_raw** | County kg rollups (respiratory, total, class totals). |\n"
             "| **Aggs_engineered** | Those kg + log1p(per-capita) & log1p(per-cropland-acre) per rollup. |\n"
             "| **Components_raw** | OP, carbamate, pyrethroid kg only. |\n"
-            "| **Components_engineered** | Six log-intensity features for those classes. |\n",
+            "| **Components_engineered** | Six log-intensity features for those classes. |\n"
+            "| **Full_pesticides_raw** | Every **pesticide_*_kg** column (~400+ compounds + class/total rollups) + BASE_COLS; raw kg. |\n",
         ],
     }
 
-    nb["cells"] = new_cells
     nb_path.write_text(json.dumps(nb, indent=1))
-    print("Wrote", nb_path, "cells:", len(new_cells))
+    print("Wrote", nb_path, "cells:", len(nb["cells"]))
 
 
 if __name__ == "__main__":

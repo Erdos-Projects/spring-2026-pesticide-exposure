@@ -83,4 +83,6 @@ EXPOSURE_SETS = {
     "Components_raw": list(dict.fromkeys(COMPONENT_KG_RAW + BASE_COLS)),
     "Components_engineered": list(dict.fromkeys(PEST_COMPONENTS + BASE_COLS)),
 }
-EXPOSURE_SET_KEYS = list(EXPOSURE_SETS.keys())
+# Full_pesticides_raw is built per-split in the data cell (all pesticide_*_kg + BASE_COLS).
+FULL_PESTICIDES_RAW_KEY = "Full_pesticides_raw"
+EXPOSURE_SET_KEYS = list(EXPOSURE_SETS.keys()) + [FULL_PESTICIDES_RAW_KEY]
