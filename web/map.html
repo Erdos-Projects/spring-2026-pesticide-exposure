@@ -26,17 +26,66 @@
       <p>
         Choropleth uses <strong>XGBoost</strong> predicted county prevalence (CDC PLACES targets). Toggle outcome to recolor counties; popups show predicted vs. observed for both outcomes where available.
       </p>
+      <div class="cta" style="margin-top: 0.75rem;">
+        <h2 style="margin-top: 0;">How to interpret “risk percentile”</h2>
+        <p>
+          Each county gets a <strong>risk rank</strong> and <strong>risk percentile</strong> based on its <strong>predicted prevalence</strong> for the selected outcome
+          (Asthma / COPD), compared to all other counties in the map dataset for that year.
+        </p>
+        <ul>
+          <li><strong>Higher risk percentile</strong> = higher predicted prevalence (e.g., <strong>95th percentile</strong> means the county’s prediction is higher than ~95% of counties).</li>
+          <li><strong>Risk rank #1</strong> = highest predicted prevalence (highest relative risk on this map).</li>
+          <li><strong>This is a relative comparison</strong> across counties, not an absolute probability of exposure or a clinical diagnosis.</li>
+        </ul>
+      </div>
       <div class="map-toolbar">
         <label class="map-toolbar-label" for="outcome-select">Color map by</label>
         <select id="outcome-select" class="map-select">
           <option value="casthma">Asthma (CASTHMA)</option>
           <option value="copd">COPD</option>
         </select>
+
+        <div class="map-state">
+          <label class="sr-only" for="state-select">State</label>
+          <select id="state-select" class="map-select">
+            <option value="">Jump to state…</option>
+          </select>
+        </div>
+
+        <div class="map-search">
+          <label class="sr-only" for="county-search">Search county</label>
+          <input id="county-search" class="map-search-input" type="text" placeholder="Search: County, State (e.g., Apache County, AZ) or an address/city" autocomplete="off" />
+          <label class="map-checkbox">
+            <input id="use-geocode" type="checkbox" />
+            Address/city (online)
+          </label>
+          <button id="county-search-btn" class="map-btn" type="button">Search</button>
+        </div>
+
+        <div class="map-download">
+          <button id="download-json" class="map-btn" type="button">Download JSON</button>
+          <button id="download-csv" class="map-btn" type="button">Download CSV</button>
+        </div>
       </div>
     </div>
-    <div class="container map-wrap">
-      <div id="map"></div>
-      <div class="map-legend"></div>
+    <div class="container map-layout">
+      <div class="map-main">
+        <div id="map"></div>
+        <div class="map-legend"></div>
+      </div>
+      <aside class="map-sidebar" aria-labelledby="what-next-heading">
+        <h2 id="what-next-heading" class="map-sidebar-heading">Concerned about pesticides affecting your community?</h2>
+        <p class="map-sidebar-intro">
+          Pesticide exposure is not distributed equally. Some communities face greater environmental burdens due to where people live, work, and go to school. Use these resources to learn about exposure, explore health data, understand your rights and protections, and find ways to support safer, more transparent environmental policy in your community.
+        </p>
+        <ul class="map-sidebar-resources">
+          <li><span class="map-resource-label">Exposure basics</span> — <a class="map-resource-link" href="https://npic.orst.edu/" target="_blank" rel="noopener noreferrer">https://npic.orst.edu/</a></li>
+          <li><span class="map-resource-label">Health data</span> — <a class="map-resource-link" href="https://www.cdc.gov/environmental-health-tracking/php/data-research/pesticide-exposure.html" target="_blank" rel="noopener noreferrer">https://www.cdc.gov/environmental-health-tracking/php/data-research/pesticide-exposure.html</a></li>
+          <li><span class="map-resource-label">Safety tips</span> — <a class="map-resource-link" href="https://www.epa.gov/pesticide-incidents/pesticide-safety-tips" target="_blank" rel="noopener noreferrer">https://www.epa.gov/pesticide-incidents/pesticide-safety-tips</a></li>
+          <li><span class="map-resource-label">Find your state agency</span> — <a class="map-resource-link" href="https://npic.orst.edu/reg/state_agencies.html" target="_blank" rel="noopener noreferrer">https://npic.orst.edu/reg/state_agencies.html</a></li>
+          <li><span class="map-resource-label">Report an incident</span> — <a class="map-resource-link" href="https://www.epa.gov/pesticide-incidents" target="_blank" rel="noopener noreferrer">https://www.epa.gov/pesticide-incidents</a></li>
+        </ul>
+      </aside>
     </div>
   </main>
 
