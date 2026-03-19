@@ -66,8 +66,6 @@ And many others. We will however attempt to validate our predictive model by per
 
 ## TO DO / ideas
 
-- PCA or other dimensionality reduction.
-- Additional lit review digestion.
 - Model card and data cards (templates in `docs/`; fill when model is trained).
 - Note in write-up: the paucity of public, county-level data on this topic as of 2020.
 
