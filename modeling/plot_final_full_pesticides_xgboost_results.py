@@ -15,8 +15,13 @@ from __future__ import annotations
 
 import argparse
 import csv
-from pathlib import Path
 import math
+from pathlib import Path
+
+try:
+    import matplotlib.pyplot as plt
+except ModuleNotFoundError:  # pragma: no cover
+    plt = None
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -114,13 +119,11 @@ def main() -> None:
         / "predictions_validation_holdout.csv",
     }
 
-    try:
-        import matplotlib.pyplot as plt  # type: ignore
-    except ModuleNotFoundError as e:
+    if plt is None:
         raise SystemExit(
             "matplotlib is required to generate the plot. "
             "Install it in the environment you use for modeling notebooks."
-        ) from e
+        )
 
     fig, axes = plt.subplots(2, 2, figsize=(13, 10))
 

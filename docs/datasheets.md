@@ -1,17 +1,17 @@
 # Datasheet: Joint U.S. County–Year Dataset (2018–2019)
 
-**Pesticide exposure, land use, demographics, IPM-related indices, and respiratory health at county resolution**
+**Pesticide exposure, land use, demographics, crop-practice related indices, and respiratory health at county resolution**
 
 *This datasheet follows the question template in Gebru et al., [“Datasheets for Datasets”](https://arxiv.org/abs/1803.09010) (FAT/ML 2018). A copy of the paper is in the course materials at `Ethics in AI/Pesticide Project/datasheets for datasets.pdf`.*
 
-The **dataset documented here** is the merged table used for modeling: one row per U.S. county per calendar year for **2018 and 2019**, stored as `data/joint_county_year_2018_2019.csv` after running `EDA/build_joint_dataset.ipynb`. Upstream sources (USGS, CDC PLACES, Census ACS, USDA CDL, CDC NCHS urban–rural, National IPM Database–derived features) are described where they affect composition, collection, and ethics.
+The **dataset documented here** is the merged table used for modeling: one row per U.S. county per calendar year for **2018 and 2019**, stored as `data/joint_county_year_2018_2019.csv` after running `EDA/build_joint_dataset.ipynb`. Upstream sources (USGS, CDC PLACES, Census ACS, USDA CDL, CDC NCHS urban–rural, National experimental crop-practice Database–derived features) are described where they affect composition, collection, and ethics.
 
 ---
 
 ## Motivation for Dataset Creation
 
 **Why was the dataset created? (e.g., were there specific tasks in mind, or a specific gap that needed to be filled?)**  
-To support **county-level modeling** of associations between **agricultural pesticide use**, **cropland composition**, **demographic and behavioral confounders**, **IPM-related (text-derived) indices weighted by local crop mix**, and **respiratory-related health outcomes** (asthma and COPD prevalence). The gap addressed is the lack of a single, documented, reproducible join of public federal datasets at **county×year** resolution aligned to PLACES release years.
+To support **county-level modeling** of associations between **agricultural pesticide use**, **cropland composition**, **demographic and behavioral confounders**, **crop-practice related (text-derived) indices weighted by local crop mix**, and **respiratory-related health outcomes** (asthma and COPD prevalence). The gap addressed is the lack of a single, documented, reproducible join of public federal datasets at **county×year** resolution aligned to PLACES release years.
 
 **What (other) tasks could the dataset be used for? Are there obvious tasks for which it should not be used?**  
 *Could be used for:* exploratory mapping; regression or ML with geographic or temporal holdouts; sensitivity analyses on feature sets; teaching data documentation and ecological/epidemiologic limits.  
@@ -21,7 +21,7 @@ To support **county-level modeling** of associations between **agricultural pest
 Used internally in this repository for EDA (`EDA/joint_eda.ipynb`), train/validation/test construction (`modeling/train_test_split.ipynb`, `modeling/train_test_split_stratify.ipynb`), and model selection/evaluation notebooks under `modeling/`. Published benchmark links are **to be added** when available.
 
 **Who funded the creation of the dataset? If there is an associated grant, provide the grant number.**  
-The **joint file** is assembled by this project (Ohio State / course context—confirm locally). **Upstream sources** are federal/public: USGS, CDC, U.S. Census Bureau, USDA NASS (CDL), CDC NCHS; IPM document pipeline uses the National IPM Database (IPM Centers). Grant numbers for this merge, if any, should be recorded by the project PI.
+The **joint file** is assembled by this project (Ohio State / course context—confirm locally). **Upstream sources** are federal/public: USGS, CDC, U.S. Census Bureau, USDA NASS (CDL), CDC NCHS; experimental crop-practice document pipeline uses the National experimental crop-practice Database (experimental crop-practice Centers). Grant numbers for this merge, if any, should be recorded by the project PI.
 
 **Any other comments?**  
 The scientific object is **associations at aggregate level**, not proof of harm from pesticides for any person or place.
@@ -49,10 +49,10 @@ Attributes include:
 | Demographics | Population, median age, income, race/ethnicity shares | ACS 5-year, county |
 | Urban–rural | `nchs_urban_rural` (6-level) | CDC NCHS |
 | Cropland | Cropland acres, % cropland, major crop acres, diversity | USDA CDL (2019 in pipeline; repeated across years in joint) |
-| IPM / crop structure | Acre- and value-weighted IPM breadth & chemical reliance, coverage/quality/age of docs, crop concentration, specialty share, ag value | National IPM Database + CDL (+ NASS value when present); see [`schema_ipm_integration.md`](schema_ipm_integration.md) |
+| Crop structure (experimental scores archived) | Acre- and value-weighted experimental crop-practice breadth & chemical reliance, coverage/quality/age of docs, crop concentration, specialty share, ag value | Archived experimental scoring notes + CDL (+ NASS value when present); see [`../EDA/ipm-testing/schema_ipm_integration.md`](../EDA/ipm-testing/schema_ipm_integration.md) |
 | Health | `CASTHMA`, `COPD`, `CSMOKING`, `OBESITY`, `DIABETES` (prevalence %) | CDC PLACES, merged on FIPS **and** YEAR |
 
-Detailed formulas for IPM-weighted fields are in [`schema_ipm_integration.md`](schema_ipm_integration.md). Compound-level pesticide column names match USGS compound strings after preprocessing in the build notebook.
+Detailed formulas for archived experimental weighted fields are in [`../EDA/ipm-testing/schema_ipm_integration.md`](../EDA/ipm-testing/schema_ipm_integration.md). Compound-level pesticide column names match USGS compound strings after preprocessing in the build notebook.
 
 **Is there a label/target associated with instances?**  
 **Primary modeling targets:** `CASTHMA` (current asthma), `COPD`. **Confounders / covariates:** `CSMOKING`, `OBESITY`, `DIABETES`, demographics, urban–rural, cropland, pesticide totals/classes.
@@ -61,10 +61,10 @@ Detailed formulas for IPM-weighted fields are in [`schema_ipm_integration.md`](s
 County-level **race/ethnicity shares** and **smoking/obesity/diabetes** come from modeled or survey-based sources; they describe **populations**, not individuals. PLACES includes uncertainty by area size; small counties may be less stable.
 
 **Is everything included or does the data rely on external resources?**  
-The CSV is **self-contained** for columns written by the notebook. **Provenance** depends on continued availability of **ScienceBase** (USGS), **CDC**, **Census API**, **CropScape**, **IPM API** for reproduction. Archived copies of raw pulls (e.g. `pesticide_*.tsv`) may live under `data/` per [`data/README.md`](../data/README.md).
+The CSV is **self-contained** for columns written by the notebook. **Provenance** depends on continued availability of **ScienceBase** (USGS), **CDC**, **Census API**, **CropScape**, **experimental crop-practice API** for reproduction. Archived copies of raw pulls (e.g. `pesticide_*.tsv`) may live under `data/` per [`data/README.md`](../data/README.md).
 
 **Are there licenses, fees or rights associated with any of the data?**  
-U.S. government sources used here are generally **public domain** or open; **no fees** for typical API/download use. IPM Database terms should be verified at time of use.
+U.S. government sources used here are generally **public domain** or open; **no fees** for typical API/download use. experimental crop-practice Database terms should be verified at time of use.
 
 **Are there recommended data splits or evaluation measures?**  
 **Recommended:** **Spatial** train/validation/test (e.g., by county or state) to reduce leakage across adjacent areas—implemented in `modeling/train_test_split.ipynb` (~60/20/20) with optional `split_mapping.csv` for reproducibility. **Measures:** task-dependent (e.g., RMSE, MAE, R² for regression; appropriate calibration checks for prevalence modeling). See [`modeling/README.md`](../modeling/README.md).
@@ -89,7 +89,7 @@ The joint dataset does not use a single sensor; it **integrates**:
 | **Census ACS** | Ongoing household survey; **5-year** county estimates. [ACS](https://www.census.gov/programs-surveys/acs), [API](https://api.census.gov/data/2019/acs/acs5). |
 | **USDA CDL** | Satellite classification → county acreage via **CropScape** / GetCDLStat. [CropScape](https://nassgeodata.gmu.edu/CropScape/). |
 | **CDC NCHS** | County urban–rural scheme from Census-linked definitions. [NCHS documentation](https://www.cdc.gov/nchs/data-analysis-tools/urban-rural.html). |
-| **IPM features** | Documents from **National IPM Database**; scores from metadata/PDF text heuristics per [`schema_ipm_integration.md`](schema_ipm_integration.md). |
+| **Experimental crop-practice features (archived)** | Documents from an archived experimental source; scores from metadata/PDF text heuristics per [`../EDA/ipm-testing/schema_ipm_integration.md`](../EDA/ipm-testing/schema_ipm_integration.md). |
 
 **Who was involved in the data collection process? How were they compensated?**  
 Federal agencies and contractors produce upstream data. **This merge** is performed by the project authors in Jupyter notebooks; no crowdworkers for the joint CSV itself.
@@ -107,7 +107,7 @@ Largely **inferred or modeled** at county level (pesticide, PLACES); **survey-es
 Population is **U.S. counties with available merges**. Pesticide data targets agriculturally relevant counties; inclusion is **deterministic** from source coverage, not a random sample of counties.
 
 **Is there information missing from the dataset and why?**  
-Yes: API failures, **suppressed** Census values (disclosure avoidance), counties without CDL stats, missing IPM doc match for some crops → NaNs. Optional NASS value columns may be missing where value not fetched.
+Yes: API failures, **suppressed** Census values (disclosure avoidance), counties without CDL stats, missing experimental crop-practice doc match for some crops → NaNs. Optional NASS value columns may be missing where value not fetched.
 
 **Are there known errors, noise, or redundancies?**  
 USGS low/high bounds imply uncertainty; PLACES has CIs; CDL misclassification; ecological bias; duplicate conceptual information across correlated pesticide/crop variables.
@@ -120,7 +120,7 @@ Ecological fallacy: county associations **do not** imply individual risk.
 ## Data Preprocessing
 
 **What preprocessing/cleaning was done?**  
-Including but not limited to: FIPS zero-padding and string format; pesticide `EPEST_MEAN_KG` from low/high; aggregation by chemical class (e.g., Shekhar et al.–style groupings); ACS null sentinels → NaN; CDL category grouping; PLACES long→wide; left joins in documented order; IPM recency weighting and county–year collapse per schema doc.
+Including but not limited to: FIPS zero-padding and string format; pesticide `EPEST_MEAN_KG` from low/high; aggregation by chemical class (e.g., Shekhar et al.–style groupings); ACS null sentinels → NaN; CDL category grouping; PLACES long→wide; left joins in documented order; experimental crop-practice recency weighting and county–year collapse per schema doc.
 
 **Was the “raw” data saved in addition to the preprocessed data?**  
 Yes where practical: e.g. `pesticide_2016_17.tsv`, `pesticide_2018.tsv`, `pesticide_2019.tsv` under `data/` when downloaded locally; see [`data/README.md`](../data/README.md).
@@ -145,7 +145,7 @@ Primary distribution: **this Git repository** (path `data/joint_county_year_2018
 Tied to repository releases; document version date in commit or release notes.
 
 **What license is it distributed under? Are there copyrights on the data?**  
-Repository license applies to **code and documentation**. **Underlying U.S. federal data** are generally not copyrighted; **verify** IPM Database and any third-party assets separately.
+Repository license applies to **code and documentation**. **Underlying U.S. federal data** are generally not copyrighted; **verify** experimental crop-practice Database and any third-party assets separately.
 
 **Are there fees or access/export restrictions?**  
 None inherent to the joint CSV; API rate limits may apply when reproducing from sources.
@@ -213,7 +213,7 @@ Dataset is **U.S. county-level**; **GDPR** is not the primary frame. If combined
 No PII in the distributed joint table as designed.
 
 **Inappropriate or offensive content?**  
-None by design; IPM text processing ingests **technical agriculture documents**—source text may contain routine pesticide terminology.
+None by design; experimental text processing ingests **technical agriculture documents**—source text may contain routine pesticide terminology.
 
 **Any other comments?**  
 Pair this document with **[`model_card.md`](model_card.md)** for deployed models. Course reference: Gebru et al., *Datasheets for Datasets* (`datasheets for datasets.pdf` in **Ethics in AI / Pesticide Project**).
@@ -231,4 +231,4 @@ Pair this document with **[`model_card.md`](model_card.md)** for deployed models
 | USDA CropScape | <https://nassgeodata.gmu.edu/CropScape/> |
 | CDC NCHS urban–rural | <https://www.cdc.gov/nchs/data-analysis-tools/urban-rural.html> |
 | Repo data files | [`data/README.md`](../data/README.md) |
-| IPM schema | [`schema_ipm_integration.md`](schema_ipm_integration.md) |
+| archived schema notes | [`../EDA/ipm-testing/schema_ipm_integration.md`](../EDA/ipm-testing/schema_ipm_integration.md) |

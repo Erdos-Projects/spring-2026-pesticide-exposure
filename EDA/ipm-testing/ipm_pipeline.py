@@ -6,10 +6,11 @@ Used by EDA/build_joint_dataset.ipynb Section 3b and EDA/ipm_data_load_troublesh
 # Expected runtime: ~5-15 min with PDF/HTML fallback (API + per-doc fetches). Coverage-first mode keeps all docs,
 # then lets aggregation / match tiers decide how to back off when exact crop-state matches are sparse.
 import re
-import requests
+from io import BytesIO
+
 import numpy as np
 import pandas as pd
-from io import BytesIO
+import requests
 
 # Optional PDF-parsing dependencies.
 # We import them once at module import time so `_fetch_pdf_text` doesn't need to

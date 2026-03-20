@@ -20,8 +20,10 @@ import sys
 from pathlib import Path
 from typing import Any, Literal
 
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from sklearn.base import clone
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import ElasticNet, Lasso, LinearRegression, Ridge
@@ -29,6 +31,11 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import GridSearchCV, StratifiedGroupKFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
+
+try:
+    from xgboost import XGBRegressor
+except ModuleNotFoundError:  # pragma: no cover
+    XGBRegressor = None
 
 # Make `from modeling...` work when running this file directly.
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -285,7 +292,11 @@ def build_and_fit_search(
         return search, {"best_params": search.best_params_, "best_alpha": search.best_params_["model__alpha"]}
 
     if model_family == "XGBoost (tuned)":
-        from xgboost import XGBRegressor  # local import so non-XGBoost users can still use other model families
+        if XGBRegressor is None:
+            raise ModuleNotFoundError(
+                "xgboost is required for model family 'XGBoost (tuned)'. "
+                "Install it in the environment used for modeling."
+            )
 
         preproc = build_preprocessor(X_train)
         xgb_pipe = Pipeline(
@@ -375,8 +386,6 @@ def compute_oof_predictions_for_best_estimator(
     folds: list[tuple[np.ndarray, np.ndarray]],
     exposure_set: str,
 ) -> np.ndarray:
-    from sklearn.base import clone
-
     oof_pred = np.full(len(y), np.nan, dtype=float)
 
     for train_idx, val_idx in folds:
@@ -442,8 +451,6 @@ def save_figures(figures: list[tuple[Any, str]], out_dir: Path) -> None:
         fig.savefig(out_dir / f"{safe}.png", dpi=150, bbox_inches="tight")
         # Close to avoid memory leaks on repeated runs.
         try:
-            import matplotlib.pyplot as plt
-
             plt.close(fig)
         except Exception:
             pass
