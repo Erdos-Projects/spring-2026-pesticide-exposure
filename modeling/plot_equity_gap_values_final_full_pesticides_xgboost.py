@@ -2,7 +2,8 @@
 """
 Equity gap plot for final validation (external_holdout) predictions.
 
-Generates a compact SVG showing MAE "gap" (group MAE - overall MAE) for
+Generates a compact SVG (tight canvas height, centered title) showing MAE "gap"
+(group MAE - overall MAE) for
 key groups for:
   - Asthma: CASTHMA
   - COPD: COPD
@@ -248,46 +249,27 @@ def render_svg(
     out_svg: Path,
     panels: list[tuple[str, list[dict[str, object]]]],
     canvas_width: int,
-    canvas_height: int,
+    canvas_height: int | None = None,
 ) -> None:
+    """Write SVG. If ``canvas_height`` is None, height is computed from content (no extra bottom margin)."""
     width = canvas_width
-    height = canvas_height
     margin = 40
 
     # Compute global scale per-panel for readability.
     panel_w = (width - 3 * margin) // 2
+    n_stats = len(panels[0][1])
+    bar_h = 46
+    top_y = 110
 
     def fmt_gap(x: float) -> str:
         if x is None or (isinstance(x, float) and math.isnan(x)):
             return "n/a"
         return f"{x:+.3f}"
 
-    svg_parts: list[str] = []
-    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
-    svg_parts.append(
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">'
-    )
-    svg_parts.append(
-        """
-  <style>
-    .title { font: 700 18px Arial, Helvetica, sans-serif; fill: #111827; }
-    .subtitle { font: 400 12px Arial, Helvetica, sans-serif; fill: #374151; }
-    .panelTitle { font: 700 14px Arial, Helvetica, sans-serif; fill: #111827; }
-    .label { font: 400 12px Arial, Helvetica, sans-serif; fill: #111827; }
-    .muted { font: 400 11px Arial, Helvetica, sans-serif; fill: #6b7280; }
-    .num { font: 700 12px Arial, Helvetica, sans-serif; fill: #111827; }
-  </style>
-        """.strip()
-    )
-
-    svg_parts.append(f'<text x="{margin}" y="30" class="title">Equity gap (Final validation holdout): MAE gaps by key groups</text>')
-    svg_parts.append(f'<text x="{margin}" y="52" class="subtitle">Gap = group MAE - overall MAE (within each condition). Poverty proxy uses median income tertiles.</text>')
-
+    body_parts: list[str] = []
     proxies_note = "Proxies: income tertiles; metro vs non-metro; Majority-BIPOC (pct_white<50%)."
 
     # Baseline y start and bar layout
-    bar_h = 46
-    top_y = 110
     left_x = margin
     right_x = margin + panel_w + margin
 
@@ -295,11 +277,11 @@ def render_svg(
         x0 = left_x if pi == 0 else right_x
         y0 = top_y
 
-        svg_parts.append(
+        body_parts.append(
             f'<rect x="{x0 - 10}" y="{y0 - 25}" width="{panel_w + 20}" height="{bar_h * len(stats) + 120}" rx="14" fill="#ffffff" stroke="#e5e7eb"/>'
         )
-        svg_parts.append(f'<text x="{x0}" y="{y0}" class="panelTitle">{title}</text>')
-        svg_parts.append(
+        body_parts.append(f'<text x="{x0}" y="{y0}" class="panelTitle">{title}</text>')
+        body_parts.append(
             f'<text x="{x0}" y="{y0 + 20}" class="muted">Positive gap = worse error for that group</text>'
         )
 
@@ -325,7 +307,7 @@ def render_svg(
 
             # Axis baseline
             if i == 0:
-                svg_parts.append(
+                body_parts.append(
                     f'<line x1="{baseline_x}" y1="{y0 + 40}" x2="{baseline_x}" y2="{y0 + 40 + bar_h*len(stats)}" stroke="#9ca3af" stroke-dasharray="4 4"/>'
                 )
 
@@ -339,23 +321,53 @@ def render_svg(
                     x_bar = baseline_x - bar_w
                     fill = "#10b981"
 
-                svg_parts.append(
+                body_parts.append(
                     f'<rect x="{x_bar}" y="{y - 14}" width="{bar_w}" height="28" rx="8" fill="{fill}" opacity="0.9"/>'
                 )
 
             # Labels
-            svg_parts.append(f'<text x="{x0 + 10}" y="{y + 4}" class="label">{group}</text>')
-            svg_parts.append(
+            body_parts.append(f'<text x="{x0 + 10}" y="{y + 4}" class="label">{group}</text>')
+            body_parts.append(
                 f'<text x="{x0 + panel_w - 10}" y="{y + 4}" class="num" text-anchor="end">gap={fmt_gap(gap_f)} (n={n})</text>'
             )
 
-        svg_parts.append(
+        body_parts.append(
             f'<text x="{x0}" y="{y0 + 55 + len(stats)*bar_h + 18}" class="muted">{proxies_note}</text>'
         )
 
-    svg_parts.append("</svg>")
+    # Tight canvas: panel card bottom vs. footnote line (both panels share same vertical extent).
+    footnote_y = top_y + 55 + n_stats * bar_h + 18
+    panel_card_bottom = top_y - 25 + bar_h * n_stats + 120
+    content_bottom = max(footnote_y + 22, panel_card_bottom + 8)
+    height = int(content_bottom + 28) if canvas_height is None else int(canvas_height)
+
+    style_block = """
+  <style>
+    .title { font: 700 18px Arial, Helvetica, sans-serif; fill: #111827; }
+    .subtitle { font: 400 12px Arial, Helvetica, sans-serif; fill: #374151; }
+    .panelTitle { font: 700 14px Arial, Helvetica, sans-serif; fill: #111827; }
+    .label { font: 400 12px Arial, Helvetica, sans-serif; fill: #111827; }
+    .muted { font: 400 11px Arial, Helvetica, sans-serif; fill: #6b7280; }
+    .num { font: 700 12px Arial, Helvetica, sans-serif; fill: #111827; }
+  </style>
+    """.strip()
+    cx = width // 2
+    title_lines = [
+        f'<text x="{cx}" y="30" class="title" text-anchor="middle">Equity gap (Final validation holdout): MAE gaps by key groups</text>',
+        f'<text x="{cx}" y="52" class="subtitle" text-anchor="middle">Gap = group MAE - overall MAE (within each condition). Poverty proxy uses median income tertiles.</text>',
+    ]
+    full_svg = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">\n'
+        f"{style_block}\n"
+        + "\n".join(title_lines)
+        + "\n"
+        + "\n".join(body_parts)
+        + "\n</svg>"
+    )
+
     out_svg.parent.mkdir(parents=True, exist_ok=True)
-    out_svg.write_text("\n".join(svg_parts), encoding="utf-8")
+    out_svg.write_text(full_svg, encoding="utf-8")
 
 
 def main() -> None:
@@ -375,9 +387,10 @@ def main() -> None:
         # Embed overall MAE by prepending a pseudo-label stat (not rendered as a bar).
         panels.append((f"{target} (overall MAE={overall_mae:.3f})", group_stats))
 
-    # Wide layout (original) + square layout (avoid Quick Look thumbnail cropping).
-    render_svg(out_svg=OUT_SVG, panels=panels, canvas_width=1040, canvas_height=700)
-    render_svg(out_svg=OUT_SVG_SQUARE, panels=panels, canvas_width=900, canvas_height=900)
+    # Wide layout with tight height (no large blank band under the panels).
+    render_svg(out_svg=OUT_SVG, panels=panels, canvas_width=1040, canvas_height=None)
+    # Legacy filename: same graphic (square canvas was only for old PNG thumbnails).
+    render_svg(out_svg=OUT_SVG_SQUARE, panels=panels, canvas_width=1040, canvas_height=None)
     print(f"Saved: {OUT_SVG}")
     print(f"Saved: {OUT_SVG_SQUARE}")
 
