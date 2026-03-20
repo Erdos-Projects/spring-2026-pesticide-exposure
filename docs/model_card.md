@@ -9,11 +9,34 @@
 ## Model Details
 
 **Model type:** Gradient-boosted decision trees (**XGBoost Regressor**)  
-**Final feature set:** `Full_pesticides_raw` (all `pesticide_*_kg` columns + shared baseline covariates)  
+**Final feature set:** `Full_pesticides_raw` — see **Feature inventory** below.  
 **Model version:** `final_full_pesticides_xgboost`  
 **Date created:** March 2026  
-**Developers:** *TBD*  
-**Point of contact:** *TBD*
+**Developers:** Allison Londeree; CJ Concepcion; Matthew Hamil; Ryan Bausback; Sunyoung Park  
+**Point of contact:** Allison Londeree
+
+### Feature inventory (`Full_pesticides_raw`)
+
+Defined in code as: every column whose name matches `pesticide_*_kg`, plus shared baseline covariates `BASE_COLS` from `modeling/_exposure_defs.py` (intersection with columns present after `engineer_signal_isolation_features`).
+
+**1. Pesticide mass features (kg, county–year)** — **445** columns  
+
+One column per active ingredient / rollup in the USGS-style naming convention: `pesticide_<slug>_kg`. The **complete sorted list** (as in `data/train_CASTHMA.csv`) is in:
+
+- [`full_pesticides_raw_pesticide_kg_columns.txt`](full_pesticides_raw_pesticide_kg_columns.txt)
+
+Rollups included in that set (non-exhaustive examples; see file for full list) include class and summary columns such as `pesticide_total_kg`, `pesticide_respiratory_kg`, and chemical-class totals (e.g. `pesticide_organophosphate_kg`, `pesticide_carbamate_kg`, `pesticide_pyrethroid_kg`, …) **plus** all compound-level `pesticide_*_kg` fields.
+
+**2. Baseline covariates (`BASE_COLS`) — 16 columns**
+
+| Group | Column names |
+|-------|----------------|
+| Demographics | `population`, `median_age`, `median_income`, `pct_white`, `pct_black`, `pct_asian`, `pct_hispanic`, `rural_binary` |
+| Health confounders (PLACES) | `CSMOKING`, `OBESITY`, `DIABETES` |
+| Cropland structure | `cropland_diversity`, `county_crop_concentration`, `pct_cropland` |
+| Time | `YEAR` |
+
+*`rural_binary` is derived in preprocessing as `(nchs_urban_rural >= 5).astype(int)` before modeling.*
 
 **Implementation + artifacts:**  
 - Training/model-selection notebook: `modeling/model_selection.ipynb`  
@@ -63,11 +86,11 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 ## Metrics
 
 **Model performance metrics (final model):**  
-- Regression metrics: RMSE, MAE, R²  
-- Reported on both cross-validation/OOF and external holdout validation.
+- **RMSE**, **MAE**, **R²** on county-level prevalence (regression).  
+- **Cross-validation (OOF):** out-of-fold predictions on the training split using the same `StratifiedGroupKFold` setup as hyperparameter tuning (see `modeling/model_selection.ipynb` and `model_summary_exposure_sets.csv`).  
+- **External holdout:** metrics on the held-out validation split (`data/validation.csv` + `split_mapping.csv`), exported under `validation_eval_Full_pesticides_raw__XGBoost_(tuned)/`.
 
-**Decision thresholds:**  
-- *TBD* (if model is used for binary classification or risk tiers)
+**Decision thresholds:** **Not applicable.** The shipped model predicts continuous prevalence (%), not classes. Any future risk tiers or map binning should document cutoffs separately.
 
 **Variation across groups:**  
 - Equity/stability summaries are generated for final XGBoost outputs, including subgroup gap views in `modeling/results/`.
