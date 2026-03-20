@@ -522,8 +522,7 @@ main.model-specifics-page.container {
   text-align: center;
 }
 
-.model-specifics-page .model-figure img,
-.model-specifics-page .model-figure svg.equity-gap-chart {
+.model-specifics-page .model-figure img {
   display: block;
   width: auto;
   max-width: 100%;
@@ -532,6 +531,22 @@ main.model-specifics-page.container {
   margin-left: auto;
   margin-right: auto;
   object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-sizing: border-box;
+}
+
+/* Inline equity SVG: explicit width/aspect avoids collapse when embedded in HTML */
+.model-specifics-page .model-figure svg.equity-gap-chart {
+  display: block;
+  width: 100%;
+  max-width: 1040px;
+  height: auto;
+  aspect-ratio: 1040 / 559;
+  max-height: min(72vh, 640px);
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--surface);

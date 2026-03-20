@@ -1,6 +1,8 @@
 # spring-2026-pesticide-exposure
 Team project: spring-2026-pesticide-exposure
 
+**Live site (GitHub Pages):** [Pesticide Exposure & Respiratory Health](https://erdos-projects.github.io/spring-2026-pesticide-exposure/index.html) — overview, interactive county map, and model specifics.
+
 # Problem:
 Agricultural pesticide use varies widely by crop and region and may contribute to localized increases in preventable healthcare utilization (e.g., asthma, respiratory distress). Public health agencies and Medicaid programs need data-driven tools to target preventative interventions, such as evidence-based prevention planning under constrained budgets.
 

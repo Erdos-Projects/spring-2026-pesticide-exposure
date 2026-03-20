@@ -36,7 +36,7 @@
 <rect x="256.8764705882355" y="427" width="22.323529411764554" height="28" rx="8" fill="#10b981" opacity="0.9"/>
 <text x="50" y="445" class="eqg-label">Majority-white</text>
 <text x="490" y="445" class="eqg-num" text-anchor="end">gap=-0.029 (n=544)</text>
-<text x="40" y="505" class="eqg-muted">Proxies: income tertiles; metro vs non-metro; Majority-BIPOC (pct_white<50%).</text>
+<text x="40" y="505" class="eqg-muted">Proxies: income tertiles; metro vs non-metro; Majority-BIPOC (pct_white&lt;50%).</text>
 <rect x="530" y="85" width="480" height="448" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
 <text x="540" y="110" class="eqg-panelTitle">COPD (overall MAE=0.430)</text>
 <text x="540" y="130" class="eqg-muted">Positive gap = worse error for that group</text>
@@ -62,5 +62,5 @@
 <rect x="756.8764705882354" y="427" width="22.323529411764675" height="28" rx="8" fill="#10b981" opacity="0.9"/>
 <text x="550" y="445" class="eqg-label">Majority-white</text>
 <text x="990" y="445" class="eqg-num" text-anchor="end">gap=-0.025 (n=544)</text>
-<text x="540" y="505" class="eqg-muted">Proxies: income tertiles; metro vs non-metro; Majority-BIPOC (pct_white<50%).</text>
+<text x="540" y="505" class="eqg-muted">Proxies: income tertiles; metro vs non-metro; Majority-BIPOC (pct_white&lt;50%).</text>
 </svg>

@@ -273,7 +273,8 @@ def render_svg(
         return f"{x:+.3f}"
 
     body_parts: list[str] = []
-    proxies_note = "Proxies: income tertiles; metro vs non-metro; Majority-BIPOC (pct_white<50%)."
+    # Use entity so inline SVG in HTML is valid (raw "<" would start a bogus tag).
+    proxies_note = "Proxies: income tertiles; metro vs non-metro; Majority-BIPOC (pct_white&lt;50%)."
 
     # Baseline y start and bar layout
     left_x = margin
