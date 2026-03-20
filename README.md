@@ -38,7 +38,7 @@ And many others. We will however attempt to validate our predictive model by per
 
 | Path | Purpose |
 |------|---------|
-| **`data/`** | Generated data: joint CSV, train/validation/test splits, split mapping. See `data/README.md`. |
+| **`data/`** | Generated data: joint CSV, train/test splits. See `data/README.md`. |
 | **`EDA/`** | Build and explore the joint dataset. See `EDA/README.md`. |
 | **`modeling/`** | Train/validation/test split and (future) model training. See `modeling/README.md`. |
 | **`docs/`** | Datasheets (Gebru-style), model card (Mitchell-style), IPM schema. |
@@ -47,7 +47,7 @@ And many others. We will however attempt to validate our predictive model by per
 **Notebooks (in order):**
 1. **`EDA/build_joint_dataset.ipynb`** — Fetches USGS pesticide, CDC PLACES, Census ACS, NCHS, CDL; builds IPM/crop layers in memory; joins and saves **`data/joint_county_year_2018_2019.csv`**. Run from `EDA/` (paths use `../data/`).
 2. **`EDA/joint_eda.ipynb`** — Loads the joint CSV; exploratory analysis (missingness, correlations, maps).
-3. **`modeling/train_test_split.ipynb`** — Loads joint CSV; 60/20/20 spatial split (by state or county); writes **`data/train.csv`**, **`data/validation.csv`**, **`data/test.csv`**, **`data/split_mapping.csv`**. Run from `modeling/` (paths use `../data/`).
+3. **`modeling/train_test_split_stratify.ipynb`** — Loads joint CSV; 60/20/20 spatial split (by county), stratify on target; writes **`data/train.csv`**, **`data/test.csv`**. Run from `modeling/` (paths use `../data/`).
 4. *(Future)* Model training notebook(s) that read train/validation, then export county risk for **`web/data/risk_estimates.json`**.
 
 **Documentation:**  
