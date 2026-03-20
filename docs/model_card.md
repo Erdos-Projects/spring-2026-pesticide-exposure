@@ -2,17 +2,51 @@
 
 *Following Mitchell et al. (2019) "Model Cards for Model Reporting"*
 
-> **Status:** Template / placeholder. No model has been trained yet. This card will be updated when modeling is complete.
+> **Status:** Active. Final model selected and evaluated.
 
 ---
 
 ## Model Details
 
-**Model type:** *TBD* (e.g., linear regression, random forest, gradient boosting)  
-**Model version:** *TBD*  
-**Date created:** *TBD*  
-**Developers:** *TBD*  
-**Point of contact:** *TBD*
+**Model type:** Gradient-boosted decision trees (**XGBoost Regressor**)  
+**Final feature set:** `Full_pesticides_raw` — see **Feature inventory** below.  
+**Model version:** `final_full_pesticides_xgboost`  
+**Date created:** March 2026  
+**Developers:** Allison Londeree; CJ Concepcion; Matthew Hamil; Ryan Bausback; Sunyoung Park  
+**Point of contact:** Allison Londeree
+
+### Feature inventory (`Full_pesticides_raw`)
+
+Defined in code as: every column whose name matches `pesticide_*_kg`, plus shared baseline covariates `BASE_COLS` from `modeling/_exposure_defs.py` (intersection with columns present after `engineer_signal_isolation_features`).
+
+**1. Pesticide mass features (kg, county–year)** — **445** columns  
+
+One column per active ingredient / rollup in the USGS-style naming convention: `pesticide_<slug>_kg`. The **complete sorted list** (as in `data/train_CASTHMA.csv`) is in:
+
+- [`full_pesticides_raw_pesticide_kg_columns.txt`](full_pesticides_raw_pesticide_kg_columns.txt)
+
+Rollups included in that set (non-exhaustive examples; see file for full list) include class and summary columns such as `pesticide_total_kg`, `pesticide_respiratory_kg`, and chemical-class totals (e.g. `pesticide_organophosphate_kg`, `pesticide_carbamate_kg`, `pesticide_pyrethroid_kg`, …) **plus** all compound-level `pesticide_*_kg` fields.
+
+**2. Baseline covariates (`BASE_COLS`) — 16 columns**
+
+| Group | Column names |
+|-------|----------------|
+| Demographics | `population`, `median_age`, `median_income`, `pct_white`, `pct_black`, `pct_asian`, `pct_hispanic`, `rural_binary` |
+| Health confounders (PLACES) | `CSMOKING`, `OBESITY`, `DIABETES` |
+| Cropland structure | `cropland_diversity`, `county_crop_concentration`, `pct_cropland` |
+| Time | `YEAR` |
+
+*`rural_binary` is derived in preprocessing as `(nchs_urban_rural >= 5).astype(int)` before modeling.*
+
+**Implementation + artifacts:**  
+- Training/model-selection notebook: `modeling/model_selection.ipynb`  
+- External validation script: `modeling/validate_model_accuracy.py`  
+- Prediction outputs:  
+  - `modeling/results/CASTHMA/xgboost_predictions_Full_pesticides_raw.csv`  
+  - `modeling/results/COPD/xgboost_predictions_Full_pesticides_raw.csv`  
+- External holdout evaluation outputs:  
+  - `modeling/results/CASTHMA/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/metrics.csv`  
+  - `modeling/results/COPD/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/metrics.csv`
 
 ---
 
@@ -51,15 +85,15 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 
 ## Metrics
 
-**Model performance metrics:**  
-- *TBD* (e.g., MSE, MAE, R² for regression; RMSE for county-level predictions)  
-- *TBD* (e.g., correlation with held-out PLACES estimates)
+**Model performance metrics (final model):**  
+- **RMSE**, **MAE**, **R²** on county-level prevalence (regression).  
+- **Cross-validation (OOF):** out-of-fold predictions on the training split using the same `StratifiedGroupKFold` setup as hyperparameter tuning (see `modeling/model_selection.ipynb` and `model_summary_exposure_sets.csv`).  
+- **External holdout:** metrics on the held-out validation split (`data/validation.csv` + `split_mapping.csv`), exported under `validation_eval_Full_pesticides_raw__XGBoost_(tuned)/`.
 
-**Decision thresholds:**  
-- *TBD* (if model is used for binary classification or risk tiers)
+**Decision thresholds:** **Not applicable.** The shipped model predicts continuous prevalence (%), not classes. Any future risk tiers or map binning should document cutoffs separately.
 
 **Variation across groups:**  
-- *TBD* (performance by region, county size, demographic composition)
+- Equity/stability summaries are generated for final XGBoost outputs, including subgroup gap views in `modeling/results/`.
 
 ---
 
@@ -72,8 +106,13 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 - US Census ACS 5-year (2019)
 
 **Evaluation data:**  
-- *TBD* (e.g., temporal holdout by year, or spatial holdout by region)  
-- See datasheets in `docs/` for dataset details.
+- Cross-validation (OOF) model comparisons across exposure sets from:  
+  - `modeling/results/CASTHMA/model_summary_exposure_sets.csv`  
+  - `modeling/results/COPD/model_summary_exposure_sets.csv`  
+- External holdout validation from:  
+  - `modeling/results/CASTHMA/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/`  
+  - `modeling/results/COPD/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/`  
+- See [`datasheets.md`](datasheets.md) for dataset summary and source links.
 
 ---
 
@@ -94,13 +133,25 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 
 ## Quantitative Analyses
 
-*To be filled when model is trained.*
+### Final selected model: XGBoost + `Full_pesticides_raw`
 
-| Metric        | Overall | By region | By county size |
-|---------------|---------|-----------|----------------|
-| MSE / RMSE    | *TBD*   | *TBD*     | *TBD*          |
-| R²            | *TBD*   | *TBD*     | *TBD*          |
-| Correlation   | *TBD*   | *TBD*     | *TBD*          |
+**Cross-validation / OOF (from `model_summary_exposure_sets.csv`):**
+
+| Target | RMSE | MAE | R² |
+|--------|------|-----|----|
+| CASTHMA | 0.3453 | 0.2614 | 0.8791 |
+| COPD | 0.7240 | 0.5479 | 0.9015 |
+
+**External holdout validation (from `validation_eval_Full_pesticides_raw__XGBoost_(tuned)/metrics.csv`):**
+
+| Target | RMSE | MAE | R² | RMSE 95% CI | N |
+|--------|------|-----|----|-------------|---|
+| CASTHMA | 0.3888 | 0.2872 | 0.8354 | [0.3658, 0.4097] | 1219 |
+| COPD | 0.7650 | 0.5744 | 0.8854 | [0.7284, 0.8030] | 1219 |
+
+**Best hyperparameters on external holdout run:**
+- CASTHMA: `{'model__learning_rate': 0.1, 'model__max_depth': 5, 'model__n_estimators': 200}`
+- COPD: `{'model__learning_rate': 0.05, 'model__max_depth': 5, 'model__n_estimators': 200}`
 
 ---
 

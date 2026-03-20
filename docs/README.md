@@ -1,17 +1,11 @@
 # Documentation
 
-Datasheets and model documentation for the pesticide–respiratory project.
-
 | Document | Purpose |
 |----------|---------|
-| **Datasheets (Gebru et al.)** | |
-| `datasheet_joint_dataset.md` | Joint county–year dataset: construction, variables, and use. |
-| `datasheet_usgs_pesticide.md` | USGS pesticide use estimates. |
-| `datasheet_cdc_places.md` | CDC PLACES county-level health indicators. |
-| `datasheet_usda_cropland.md` | USDA Cropland Data Layer. |
-| `datasheet_census_acs.md` | Census ACS 5-year demographics. |
-| **Model & schema** | |
-| `model_card.md` | Model card template (Mitchell et al.); fill when a model is trained. |
-| `schema_ipm_integration.md` | IPM integration: county–crop–year → county–year tables and how they feed the joint dataset. |
+| [`datasheets.md`](datasheets.md) | **Datasheet (Gebru et al. 2018):** full Q&A for the joint county×year dataset—motivation, composition, collection, preprocessing, distribution, maintenance, legal/ethical; links to sources. |
+| [`model_card.md`](model_card.md) | Model card (Mitchell et al.): final XGBoost + `Full_pesticides_raw`. |
+| [`full_pesticides_raw_pesticide_kg_columns.txt`](full_pesticides_raw_pesticide_kg_columns.txt) | Complete sorted list of `pesticide_*_kg` columns used in `Full_pesticides_raw` (from `train_CASTHMA.csv` header). |
+| [`../EDA/ipm-testing/schema_ipm_integration.md`](../EDA/ipm-testing/schema_ipm_integration.md) | Archived experimental schema notes in `EDA/ipm-testing`. |
+| [`../EDA/ipm-testing/ipm_data_load_troubleshoot.ipynb`](../EDA/ipm-testing/ipm_data_load_troubleshoot.ipynb) | Archived experimental notebook in `EDA/ipm-testing`. |
 
-All paths to data files (e.g. `data/joint_county_year_2018_2019.csv`) are relative to the **repository root**.
+Paths like `data/...` are relative to the **repository root**.

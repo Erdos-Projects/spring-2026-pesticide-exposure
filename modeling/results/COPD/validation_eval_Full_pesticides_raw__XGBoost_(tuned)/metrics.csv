@@ -1,0 +1,2 @@
+target,exposure_set,model,validation_mode,rmse,mae,r2,rmse_ci_low,rmse_ci_high,n_rows,best_params_str
+COPD,Full_pesticides_raw,XGBoost (tuned),external_holdout,0.7649640174247337,0.5743818903086713,0.8853775226664857,0.7284264129992091,0.8030199200272486,1219,"{'model__learning_rate': 0.05, 'model__max_depth': 5, 'model__n_estimators': 200}"

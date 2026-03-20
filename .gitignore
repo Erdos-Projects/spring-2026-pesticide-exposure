@@ -17,6 +17,10 @@ env/
 *.swp
 *.swo
 
-# Optional: uncomment to avoid committing large data
+# Large / regenerated data — keep local only (build via EDA notebooks / scripts)
+data/joint_county_year_2018_2019.csv
+data/pesticide_*.tsv
+
+# Optional: uncomment to ignore all CSVs under data/
 # data/*.csv
 # !data/README.md

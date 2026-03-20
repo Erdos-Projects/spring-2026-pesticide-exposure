@@ -11,7 +11,7 @@ Notebooks here build and explore the **county–year** joint dataset used for mo
    - Census ACS demographics
    - NCHS urban–rural codes
    - USDA CDL / CropScape cropland
-   - IPM document–derived indices (in memory)
+   - Optional experimental crop-practice indices (in `ipm-testing`)
 
    **Output:** `../data/joint_county_year_2018_2019.csv`
 

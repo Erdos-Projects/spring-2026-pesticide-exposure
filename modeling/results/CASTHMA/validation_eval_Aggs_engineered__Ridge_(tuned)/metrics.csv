@@ -1,0 +1,2 @@
+target,exposure_set,model,validation_mode,rmse,mae,r2,rmse_ci_low,rmse_ci_high,n_rows,best_alpha
+CASTHMA,Aggs_engineered,Ridge (tuned),cv_oof,0.5784990727343652,0.45871613474753214,0.6549472005257013,0.5628803702010683,0.5932454200753481,4871,3.1622776601683795

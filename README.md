@@ -2,10 +2,10 @@
 Team project: spring-2026-pesticide-exposure
 
 # Problem:
-Agricultural pesticide use varies widely by crop and region and may contribute to localized increases in preventable healthcare utilization (e.g., asthma, respiratory distress). Public health agencies and Medicaid programs need data-driven tools to target preventative interventions, such as Integrated Pest Management (IPM), under constrained budgets.
+Agricultural pesticide use varies widely by crop and region and may contribute to localized increases in preventable healthcare utilization (e.g., asthma, respiratory distress). Public health agencies and Medicaid programs need data-driven tools to target preventative interventions, such as evidence-based prevention planning under constrained budgets.
 
 # Objective:
-Build a county/region-level predictive risk model to identify regions in the United States where pesticide exposure is associated with elevated healthcare burden, enabling targeted, high-ROI public health and IPM investments.  Real world stakeholders include insurers, policy makers, hospital systems, public health departments.
+Build a county/region-level predictive risk model to identify regions in the United States where pesticide exposure is associated with elevated healthcare burden, enabling targeted, high-ROI public health investments.  Real world stakeholders include insurers, policy makers, hospital systems, public health departments.
 
 # Modeling Approach:
 Our predictive model will forecast the respiratory illnesses present in each geographic region from pesticide usage, as well as crop data and weather patterns. To make the map, we might categorize each region into bins based on several thresholds such as "high risk", "low risk", etc. which can then be used to create the risk map which could be presented to stakeholders to inform decisionmaking. If our model struggles with MSE regression, then we could potentially categorize the target variables in this way first, and then train a categorical regression such as logistic regression instead. 
@@ -41,25 +41,26 @@ And many others. We will however attempt to validate our predictive model by per
 | **`data/`** | Generated data: joint CSV, train/test splits. See `data/README.md`. |
 | **`EDA/`** | Build and explore the joint dataset. See `EDA/README.md`. |
 | **`modeling/`** | Train/validation/test split and (future) model training. See `modeling/README.md`. |
-| **`docs/`** | Datasheets (Gebru-style), model card (Mitchell-style), IPM schema. |
+| **`docs/`** | Datasheets (Gebru-style) and model card (Mitchell-style). |
 | **`web/`** | Static site + interactive county risk map for GitHub Pages. See `web/README.md`. |
 
 **Notebooks (in order):**
-1. **`EDA/build_joint_dataset.ipynb`** — Fetches USGS pesticide, CDC PLACES, Census ACS, NCHS, CDL; builds IPM/crop layers in memory; joins and saves **`data/joint_county_year_2018_2019.csv`**. Run from `EDA/` (paths use `../data/`).
+1. **`EDA/build_joint_dataset.ipynb`** — Fetches USGS pesticide, CDC PLACES, Census ACS, NCHS, CDL; builds crop-composition layers in memory; joins and saves **`data/joint_county_year_2018_2019.csv`**. Run from `EDA/` (paths use `../data/`).
 2. **`EDA/joint_eda.ipynb`** — Loads the joint CSV; exploratory analysis (missingness, correlations, maps).
 3. **`modeling/train_test_split_stratify.ipynb`** — Loads joint CSV; 60/20/20 spatial split (by county), stratify on target; writes **`data/train.csv`**, **`data/test.csv`**. Run from `modeling/` (paths use `../data/`).
 4. *(Future)* Model training notebook(s) that read train/validation, then export county risk for **`web/data/risk_estimates.json`**.
 
 **Documentation:**  
-- **`docs/`** — Datasheets for each data source, joint dataset datasheet, model card template, IPM integration schema. See Gebru et al. (2018) and Mitchell et al. (2019).
+- **`docs/`** — One consolidated [`docs/datasheets.md`](docs/datasheets.md) (sources + joint table) and model card. See Gebru et al. (2018) and Mitchell et al. (2019).
 - **`web/`** — Deploy to GitHub Pages; replace **`web/data/risk_estimates.json`** with model output to show real results (see `web/README.md`).
 
 ---
 
 ## Setup (for teammates)
 
-- **Python 3.8+** and Jupyter. From repo root:  
-  `pip install -r requirements.txt`
+- Activate the ERDOS data-science environment used by this repo notebooks: `erdos_ds_environment`.
+- Install project-specific dependencies once (into your active ERDOS environment):  
+  `bash scripts/load_extra_dependencies.sh`
 - Run notebooks from their directory (e.g. open `EDA/build_joint_dataset.ipynb` and run; it expects `../data/` to exist). Create **`data/`** if missing before the first run.
 
 ---

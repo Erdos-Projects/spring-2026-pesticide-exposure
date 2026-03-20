@@ -1,0 +1,10 @@
+1. Overall: R² = 0.655; RMSE = 0.578, MAE = 0.459. Model explains a substantial share of variance.
+2. Bias: Mean residual = -0.000. Residuals are roughly centered.
+3. Residuals: Residual spread does not strongly depend on predicted value.
+4. Subgroups: No subgroup columns provided.
+5. Trust: Use metrics, residual plots, and subgroup results to judge whether the model is stable and fair enough for deployment.
+
+• Investigate top-error rows for outliers or data issues.
+• If heteroskedasticity is present, consider transforms or robust metrics.
+• If subgroups differ sharply, consider stratified models or fairness constraints.
+• Re-evaluate on a fresh holdout if possible.
