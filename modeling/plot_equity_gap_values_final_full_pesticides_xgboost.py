@@ -273,12 +273,19 @@ def render_svg(
     left_x = margin
     right_x = margin + panel_w + margin
 
+    # Footnote sits just below the bar block; card must extend past text descenders (11px muted).
+    footnote_y = top_y + 55 + n_stats * bar_h + 18
+    card_top = top_y - 25
+    min_card_for_bars = bar_h * n_stats + 120
+    min_card_for_footnote = int(footnote_y - card_top + 28)
+    card_height = max(min_card_for_bars, min_card_for_footnote)
+
     for pi, (title, stats) in enumerate(panels):
         x0 = left_x if pi == 0 else right_x
         y0 = top_y
 
         body_parts.append(
-            f'<rect x="{x0 - 10}" y="{y0 - 25}" width="{panel_w + 20}" height="{bar_h * len(stats) + 120}" rx="14" fill="#ffffff" stroke="#e5e7eb"/>'
+            f'<rect x="{x0 - 10}" y="{card_top}" width="{panel_w + 20}" height="{card_height}" rx="14" fill="#ffffff" stroke="#e5e7eb"/>'
         )
         body_parts.append(f'<text x="{x0}" y="{y0}" class="panelTitle">{title}</text>')
         body_parts.append(
@@ -332,14 +339,13 @@ def render_svg(
             )
 
         body_parts.append(
-            f'<text x="{x0}" y="{y0 + 55 + len(stats)*bar_h + 18}" class="muted">{proxies_note}</text>'
+            f'<text x="{x0}" y="{footnote_y}" class="muted">{proxies_note}</text>'
         )
 
-    # Tight canvas: panel card bottom vs. footnote line (both panels share same vertical extent).
-    footnote_y = top_y + 55 + n_stats * bar_h + 18
-    panel_card_bottom = top_y - 25 + bar_h * n_stats + 120
-    content_bottom = max(footnote_y + 22, panel_card_bottom + 8)
-    height = int(content_bottom + 28) if canvas_height is None else int(canvas_height)
+    # Tight canvas: end just below the cards (footnote is inside the card); small outer margin only.
+    panel_card_bottom = card_top + card_height
+    content_bottom = panel_card_bottom + 14
+    height = int(content_bottom + 12) if canvas_height is None else int(canvas_height)
 
     style_block = """
   <style>

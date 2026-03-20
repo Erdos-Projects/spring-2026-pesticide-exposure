@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="563" viewBox="0 0 1040 563">
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="559" viewBox="0 0 1040 559">
 <style>
     .title { font: 700 18px Arial, Helvetica, sans-serif; fill: #111827; }
     .subtitle { font: 400 12px Arial, Helvetica, sans-serif; fill: #374151; }
@@ -10,7 +10,7 @@
   </style>
 <text x="520" y="30" class="title" text-anchor="middle">Equity gap (Final validation holdout): MAE gaps by key groups</text>
 <text x="520" y="52" class="subtitle" text-anchor="middle">Gap = group MAE - overall MAE (within each condition). Poverty proxy uses median income tertiles.</text>
-<rect x="30" y="85" width="480" height="442" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
+<rect x="30" y="85" width="480" height="448" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
 <text x="40" y="110" class="panelTitle">CASTHMA (overall MAE=0.274)</text>
 <text x="40" y="130" class="muted">Positive gap = worse error for that group</text>
 <line x1="279.20000000000005" y1="150" x2="279.20000000000005" y2="472" stroke="#9ca3af" stroke-dasharray="4 4"/>
@@ -36,7 +36,7 @@
 <text x="50" y="445" class="label">Majority-white</text>
 <text x="490" y="445" class="num" text-anchor="end">gap=-0.029 (n=544)</text>
 <text x="40" y="505" class="muted">Proxies: income tertiles; metro vs non-metro; Majority-BIPOC (pct_white<50%).</text>
-<rect x="530" y="85" width="480" height="442" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
+<rect x="530" y="85" width="480" height="448" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
 <text x="540" y="110" class="panelTitle">COPD (overall MAE=0.430)</text>
 <text x="540" y="130" class="muted">Positive gap = worse error for that group</text>
 <line x1="779.2" y1="150" x2="779.2" y2="472" stroke="#9ca3af" stroke-dasharray="4 4"/>
