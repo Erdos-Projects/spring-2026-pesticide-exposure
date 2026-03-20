@@ -365,6 +365,8 @@ def render_svg(
     full_svg = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">\n'
+        # Opaque backdrop so title/subtitle (dark text) stay visible on dark-themed sites (e.g. model-specifics).
+        f'<rect x="0" y="0" width="{width}" height="{height}" fill="#ffffff"/>\n'
         f"{style_block}\n"
         + "\n".join(title_lines)
         + "\n"
