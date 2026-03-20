@@ -199,19 +199,6 @@ main p {
   flex-wrap: wrap;
 }
 
-.map-checkbox {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  user-select: none;
-}
-
-.map-checkbox input {
-  accent-color: var(--accent);
-}
-
 .map-search-input {
   background: var(--surface);
   color: var(--text);
@@ -368,6 +355,15 @@ main p {
   color: var(--text);
 }
 
+.map-legend-meta {
+  margin: 0.65rem 0 0 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
 .info-panel {
   padding: 0.5rem 0.75rem;
   background: var(--surface);
@@ -513,6 +509,26 @@ main p {
   border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--surface);
+}
+
+/* Model specifics: keep large PNGs readable without dominating the viewport */
+main.model-specifics-page.container {
+  max-width: min(100vw - 2.5rem, 52rem);
+}
+
+.model-specifics-page .model-figure {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.model-specifics-page .model-figure img {
+  width: auto;
+  max-width: 100%;
+  max-height: min(72vh, 640px);
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
 }
 
 .model-figure figcaption {

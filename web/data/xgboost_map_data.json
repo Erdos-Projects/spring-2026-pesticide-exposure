@@ -1,4 +1,13 @@
 {
+"_meta": {
+"year": 2019,
+"prediction_sources": {
+"casthma": "modeling/results/CASTHMA/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/predictions_all_counties.csv",
+"copd": "modeling/results/COPD/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/predictions_all_counties.csv"
+},
+"legend_note": "Final tuned XGBoost (Full_pesticides_raw), 2019 layer \u2014 same external-holdout pipeline as the model card when built from predictions_all_counties.csv (see build script for fallbacks).",
+"pipeline_detail": "County predictions from validate_model_accuracy.py (external_holdout); prefers predictions_all_counties.csv under validation_eval_*__XGBoost_(tuned)/ per target, else xgboost_predictions_Full_pesticides_raw.csv, else xgboost_predictions.csv."
+},
 "01001": {
 "year": 2019,
 "casthma": {

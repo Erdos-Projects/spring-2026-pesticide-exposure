@@ -7,8 +7,9 @@ Static site: **project overview** and **interactive county-level risk map**. Hos
 - **index.html** — About the project, objectives, data sources, link to map
 - **model-specifics.html** — Model summary, links to datasheet & model card on GitHub, fit & equity plots (`assets/model/*.png`)
 - **map.html** + **map.js** — US county choropleth; colors by `risk_index`, popup with county details
-- **data/xgboost_map_data.json** — Built from XGBoost prediction CSVs (see below)
-- **scripts/build_xgboost_map_data.py** — Regenerates map data (prefers **full-county** exports)
+- **data/xgboost_map_data.json** — Built from XGBoost prediction CSVs (see below); includes **`_meta`** (source paths + short legend note)
+- **data/validation_map_data.json** — Same file as above (rewritten by the build script so `map.html?source=validation` never drifts)
+- **scripts/build_xgboost_map_data.py** — Regenerates both JSON files (prefers **full-county** exports from the external-holdout validation pipeline)
 
 ## XGBoost map data (default)
 

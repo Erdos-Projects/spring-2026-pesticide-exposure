@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Model specifics — Pesticide Exposure &amp; Respiratory Health</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Pesticide Exposure &amp; Respiratory Health</h1>
+      <p class="tagline">Risk levels for COPD and asthma across the U.S., based on pesticide data.</p>
+      <nav class="main-nav">
+        <a href="index.html">About</a>
+        <a href="map.html">Interactive Map</a>
+        <a href="model-specifics.html" aria-current="page">Model specifics</a>
+        <a href="https://github.com/Erdos-Projects/spring-2026-pesticide-exposure" target="_blank" rel="noopener">Repository</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container model-specifics-page">
+    <section class="intro">
+      <h2>Model specifics</h2>
+      <p>
+        This page summarizes the <strong>final county-level models</strong> used for the interactive map: gradient-boosted regressors (XGBoost) on the
+        <strong>Full_pesticides_raw</strong> feature set (all <code>pesticide_*_kg</code> fields plus baseline covariates). Outcomes are CDC PLACES
+        <strong>CASTHMA</strong> and <strong>COPD</strong> prevalence (%). Full documentation lives in the repository
+        <a href="https://github.com/Erdos-Projects/spring-2026-pesticide-exposure/tree/main/docs" target="_blank" rel="noopener"><code>docs/</code></a>.
+      </p>
+    </section>
+
+    <section id="specifications" class="model-section">
+      <h2>Specifications</h2>
+      <table class="spec-table">
+        <tbody>
+          <tr><th scope="row">Algorithm</th><td>XGBoost regressor (tuned via grouped CV)</td></tr>
+          <tr><th scope="row">Feature set</th><td><code>Full_pesticides_raw</code> — 445 <code>pesticide_*_kg</code> columns + 16 baseline covariates (demographics, PLACES confounders, cropland, <code>YEAR</code>)</td></tr>
+          <tr><th scope="row">Targets</th><td>Asthma (<code>CASTHMA</code>), COPD (<code>COPD</code>) — county prevalence %</td></tr>
+          <tr><th scope="row">Split</th><td>Spatial / grouped scheme with train, validation (holdout), and test; map uses predictions for all counties with features (2019 layer)</td></tr>
+          <tr><th scope="row">Hyperparameters (holdout tuning)</th><td>CASTHMA: <code>learning_rate=0.1</code>, <code>max_depth=5</code>, <code>n_estimators=200</code> · COPD: <code>learning_rate=0.05</code>, <code>max_depth=5</code>, <code>n_estimators=200</code></td></tr>
+          <tr><th scope="row">Code &amp; notebooks</th><td><code>modeling/model_selection.ipynb</code>, <code>modeling/validate_model_accuracy.py</code></td></tr>
+        </tbody>
+      </table>
+      <p class="muted-note">
+        Developers: Allison Londeree, CJ Concepcion, Matthew Hamil, Ryan Bausback, Sunyoung Park. Model card (Mitchell et al.) in repo.
+      </p>
+    </section>
+
+    <section id="documentation" class="model-section">
+      <h2>Documentation (repository)</h2>
+      <ul class="doc-links">
+        <li>
+          <a href="https://github.com/Erdos-Projects/spring-2026-pesticide-exposure/blob/main/docs/datasheets.md" target="_blank" rel="noopener"><strong>Joint dataset datasheet</strong></a>
+          <span class="doc-desc">— Gebru-style documentation for the county×year table, sources, preprocessing, ethics (Markdown on GitHub).</span>
+        </li>
+        <li>
+          <a href="https://github.com/Erdos-Projects/spring-2026-pesticide-exposure/blob/main/docs/model_card.md" target="_blank" rel="noopener"><strong>Model card</strong></a>
+          <span class="doc-desc">— Intended use, metrics, limitations, quantitative tables, ethical considerations.</span>
+        </li>
+        <li>
+          <a href="https://github.com/Erdos-Projects/spring-2026-pesticide-exposure/blob/main/docs/full_pesticides_raw_pesticide_kg_columns.txt" target="_blank" rel="noopener"><strong>Pesticide feature list</strong></a>
+          <span class="doc-desc">— Complete sorted <code>pesticide_*_kg</code> column names used in <code>Full_pesticides_raw</code>.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="metrics" class="model-section">
+      <h2>Performance metrics</h2>
+      <p>Regression metrics on county-level prevalence. OOF = out-of-fold on the training split; holdout = external validation split (<em>n</em> = 1219 county-years each target).</p>
+
+      <h3 class="h3-compact">Cross-validation (OOF)</h3>
+      <table class="spec-table metrics-table">
+        <thead>
+          <tr><th>Target</th><th>RMSE</th><th>MAE</th><th>R²</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CASTHMA</td><td>0.345</td><td>0.261</td><td>0.879</td></tr>
+          <tr><td>COPD</td><td>0.724</td><td>0.548</td><td>0.902</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="h3-compact">External holdout validation</h3>
+      <table class="spec-table metrics-table">
+        <thead>
+          <tr><th>Target</th><th>RMSE</th><th>MAE</th><th>R²</th><th>RMSE 95% CI</th><th><em>n</em></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>CASTHMA</td><td>0.389</td><td>0.287</td><td>0.835</td><td>[0.366, 0.410]</td><td>1219</td></tr>
+          <tr><td>COPD</td><td>0.765</td><td>0.574</td><td>0.885</td><td>[0.728, 0.803]</td><td>1219</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="fit-plots" class="model-section">
+      <h2>Fit: predicted vs. actual</h2>
+      <p>
+        Four panels: <strong>CASTHMA</strong> and <strong>COPD</strong>, each with <strong>cross-validation (OOF)</strong> and <strong>final validation (holdout)</strong>.
+        Points near the 45° line indicate close agreement between model predictions and CDC PLACES prevalence. Regenerate with
+        <code>python modeling/plot_final_full_pesticides_xgboost_results.py</code>.
+      </p>
+      <figure class="model-figure">
+        <img src="assets/model/final_full_pesticides_xgboost_cv_vs_external_holdout.png" alt="2x2 scatter plots: actual vs predicted prevalence for CASTHMA and COPD under cross-validation and holdout validation" loading="lazy" />
+        <figcaption>Final XGBoost (<code>Full_pesticides_raw</code>): predicted vs. actual prevalence (%).</figcaption>
+      </figure>
+    </section>
+
+    <section id="equity-plots" class="model-section">
+      <h2>Equity &amp; stability views</h2>
+      <p>
+        Exploratory views of prediction error by subgroup (e.g. income, urban–rural, race proxy) and stability across CV vs. holdout. These support discussion in the model card; they are <strong>not</strong> causal fairness audits.
+        Regenerate with <code>python modeling/plot_equity_gap_values_final_full_pesticides_xgboost.py</code> and related notebooks as documented in <code>modeling/</code>.
+      </p>
+      <figure class="model-figure">
+        <img src="assets/model/equity_gap_values_final_full_pesticides_xgboost.png" alt="Bar chart of MAE gap by subgroup for final XGBoost validation predictions" loading="lazy" />
+        <figcaption>MAE gap (subgroup vs. overall) — final validation holdout, Full pesticides XGBoost.</figcaption>
+      </figure>
+      <figure class="model-figure">
+        <img src="assets/model/equity_stability_summary_final_full_pesticides_xgboost.png" alt="Summary chart comparing equity metrics across cross-validation and holdout" loading="lazy" />
+        <figcaption>Stability summary: CV (OOF) vs. external holdout for the same model family.</figcaption>
+      </figure>
+    </section>
+
+    <section class="disclaimer model-section">
+      <h2>Disclaimer</h2>
+      <p>
+        Estimates are <strong>ecological</strong> and <strong>associative</strong>. They are for planning and research, not individual diagnosis or legal use.
+        See the <a href="https://github.com/Erdos-Projects/spring-2026-pesticide-exposure/blob/main/docs/model_card.md" target="_blank" rel="noopener">model card</a> for full limitations and ethical considerations.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Spring 2026 — Model figures under <code>web/assets/model/</code>; source exports in <code>modeling/results/</code>.</p>
+    </div>
+  </footer>
+</body>
+</html>

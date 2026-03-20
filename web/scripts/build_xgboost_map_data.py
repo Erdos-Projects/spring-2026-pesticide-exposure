@@ -25,7 +25,9 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 TARGET_DIR = {"casthma": "CASTHMA", "copd": "COPD"}
 OUTPUT = REPO_ROOT / "web/data/xgboost_map_data.json"
+OUTPUT_VALIDATION_ALIAS = REPO_ROOT / "web/data/validation_map_data.json"
 DISPLAY_YEAR = 2019
+META_KEY = "_meta"
 
 
 def _prediction_csv_candidates(target_folder: str) -> list[Path]:
@@ -85,9 +87,11 @@ def min_max_norm(values: list[float]) -> list[float]:
 def main() -> None:
     merged: dict[str, dict] = {}
     norms_by_outcome: dict[str, dict[str, float]] = {}
+    sources: dict[str, str] = {}
 
     for key, folder in TARGET_DIR.items():
         csv_path = _pick_csv(folder)
+        sources[key] = str(csv_path.relative_to(REPO_ROOT))
         rows = load_year(csv_path, DISPLAY_YEAR)
         fips_list = [f for f, v in rows.items() if math.isfinite(v["prediction"])]
         if not fips_list:
@@ -106,10 +110,31 @@ def main() -> None:
                 "risk_index": norms_by_outcome[key][fips],
             }
 
+    payload: dict = {
+        META_KEY: {
+            "year": DISPLAY_YEAR,
+            "prediction_sources": sources,
+            "legend_note": (
+                "Final tuned XGBoost (Full_pesticides_raw), 2019 layer — same external-holdout "
+                "pipeline as the model card when built from predictions_all_counties.csv "
+                "(see build script for fallbacks)."
+            ),
+            "pipeline_detail": (
+                "County predictions from validate_model_accuracy.py (external_holdout); "
+                "prefers predictions_all_counties.csv under validation_eval_*__XGBoost_(tuned)/ "
+                "per target, else xgboost_predictions_Full_pesticides_raw.csv, else "
+                "xgboost_predictions.csv."
+            ),
+        }
+    }
+    payload.update(merged)
+
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT, "w", encoding="utf-8") as f:
-        json.dump(merged, f, indent=0)
-    print(f"Wrote {len(merged)} counties to {OUTPUT} (year {DISPLAY_YEAR})")
+    text = json.dumps(payload, indent=0)
+    OUTPUT.write_text(text, encoding="utf-8")
+    OUTPUT_VALIDATION_ALIAS.write_text(text, encoding="utf-8")
+    print(f"Wrote {len(merged)} counties + metadata to {OUTPUT} (year {DISPLAY_YEAR})")
+    print(f"Mirrored to {OUTPUT_VALIDATION_ALIAS} (keeps ?source=validation in sync)")
 
 
 if __name__ == "__main__":

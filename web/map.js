@@ -1,6 +1,8 @@
 /**
- * County map: XGBoost predicted prevalence (2019) from data/xgboost_map_data.json.
- * Regenerate data: python web/scripts/build_xgboost_map_data.py
+ * County map: county predictions for 2019 from data/xgboost_map_data.json (default) or
+ * data/validation_map_data.json (?source=validation). Both are built by
+ * web/scripts/build_xgboost_map_data.py from validate_model_accuracy exports
+ * (prefer predictions_all_counties.csv — same tuned XGBoost as external holdout metrics).
  */
 (function () {
   const COUNTIES_GEOJSON_URL =
@@ -46,6 +48,11 @@
   const layerByFips = {};
   let currentOutcome = 'casthma';
   const stats = { casthma: { min: 0, max: 0 }, copd: { min: 0, max: 0 } };
+  const META_KEY = '_meta';
+
+  function countyFipsKeys(data) {
+    return Object.keys(data || {}).filter(function (k) { return k !== META_KEY; });
+  }
 
   function addRiskRanks(data) {
     // Adds per-outcome rank + percentile based on predicted prevalence across counties.
@@ -53,7 +60,7 @@
     // percentile: 0..100 where 100 = highest predicted prevalence
     ['casthma', 'copd'].forEach(function (outcome) {
       const preds = [];
-      Object.keys(data).forEach(function (fips) {
+      countyFipsKeys(data).forEach(function (fips) {
         const o = data[fips] && data[fips][outcome];
         if (o && typeof o.prediction === 'number' && isFinite(o.prediction)) {
           preds.push({ fips: fips, pred: o.prediction });
@@ -77,7 +84,7 @@
   function computeStats(data) {
     ['casthma', 'copd'].forEach(function (outcome) {
       const preds = [];
-      Object.keys(data).forEach(function (fips) {
+      countyFipsKeys(data).forEach(function (fips) {
         const o = data[fips][outcome];
         if (o && typeof o.prediction === 'number') preds.push(o.prediction);
       });
@@ -124,11 +131,28 @@
     if (!el) return;
     const s = stats[currentOutcome];
     const label = OUTCOME_LABELS[currentOutcome];
+    const meta = riskByFips && riskByFips[META_KEY];
+    let provenance = '';
+    const note = meta && (meta.legend_note || meta.pipeline_detail || meta.pipeline);
+    if (note) {
+      provenance =
+        '<p class="map-legend-meta"><strong>Model / validation data:</strong> ' +
+        escapeHtml(note) + '</p>';
+    }
     el.innerHTML =
       '<strong>' + label + '</strong> (2019). Colors are ranked within counties with a model: ' +
       'lighter = higher predicted prevalence (among counties with estimates). Range this year: <strong>' +
       s.min.toFixed(1) + '%</strong> – <strong>' + s.max.toFixed(1) + '%</strong>. ' +
-      'Click a county for predicted vs. observed (CDC PLACES) and its risk rank/percentile (relative to other counties).';
+      'Click a county for predicted vs. observed (CDC PLACES) and its risk rank/percentile (relative to other counties).' +
+      provenance;
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
   }
 
   function bindPopup(feature, layer) {
@@ -200,7 +224,7 @@
       'copd_actual', 'copd_prediction', 'copd_risk_index', 'copd_risk_rank', 'copd_risk_percentile'
     ];
     const lines = [header.join(',')];
-    Object.keys(data).sort().forEach(function (fips) {
+    countyFipsKeys(data).sort().forEach(function (fips) {
       const row = data[fips] || {};
       const y = row.year != null ? row.year : '';
       const ca = row.casthma || {};
@@ -299,7 +323,13 @@
     url.searchParams.set('addressdetails', '1');
     url.searchParams.set('limit', '1');
 
-    const res = await fetch(url.toString(), { headers: { 'Accept': 'application/json' } });
+    const res = await fetch(url.toString(), {
+      headers: {
+        Accept: 'application/json',
+        // Nominatim usage policy: identify the application
+        'User-Agent': 'spring-2026-pesticide-exposure-map/1.0 (educational; GitHub Erdos-Projects/spring-2026-pesticide-exposure)'
+      }
+    });
     if (!res.ok) return null;
     const arr = await res.json();
     if (!Array.isArray(arr) || !arr.length) return null;
@@ -380,22 +410,28 @@
     if (select) currentOutcome = select.value;
     updateLegend();
 
-    // Search wiring
+    // Search wiring — always uses OpenStreetMap Nominatim (online), then maps hit to US county FIPS.
     const input = document.getElementById('county-search');
     const btn = document.getElementById('county-search-btn');
-    const useGeocode = document.getElementById('use-geocode');
     async function runSearch() {
-      const q = input && input.value ? input.value : '';
-      let fips = findFipsFromQuery(q, geojson);
-      if (!fips && useGeocode && useGeocode.checked) {
-        try {
-          fips = await geocodeToCountyFips(q, geojson);
-        } catch (e) {
-          fips = null;
-        }
+      const q = input && input.value ? input.value.trim() : '';
+      if (!q) {
+        if (input) input.setCustomValidity('Enter an address, city, or place to search.');
+        if (input) input.reportValidity();
+        return;
+      }
+      let fips = null;
+      try {
+        fips = await geocodeToCountyFips(q, geojson);
+      } catch (e) {
+        console.warn('Geocode failed:', e);
       }
       if (!fips) {
-        if (input) input.setCustomValidity('No match found. Try "County, ST" (e.g., Apache County, AZ) or enable Address/city search.');
+        if (input) {
+          input.setCustomValidity(
+            'No U.S. county match. Try a fuller query (e.g. city and state) or another spelling. Search uses OpenStreetMap online.'
+          );
+        }
         if (input) input.reportValidity();
         return;
       }

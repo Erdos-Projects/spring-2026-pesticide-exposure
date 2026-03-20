@@ -25,7 +25,7 @@
     <div class="container map-header">
       <h1>County map — asthma &amp; COPD risk</h1>
       <p>
-        Colors show <strong>relative risk levels</strong> for the selected outcome using county predictions from a model trained on <strong>pesticide use</strong> (plus demographics, cropland, and health covariates), aligned to <strong>2019</strong> CDC PLACES-style outcomes. Toggle Asthma or COPD to recolor; popups show predicted vs. observed where available.
+        Colors show <strong>relative risk levels</strong> for the selected outcome using <strong>2019</strong> county predictions from the <strong>final tuned XGBoost</strong> (Full_pesticides_raw features), produced by the same <strong>external holdout validation</strong> pipeline as the model card when the site data is built from <code>predictions_all_counties.csv</code> (see map legend for the exact layer note). Toggle Asthma or COPD to recolor; popups show predicted vs. observed (CDC PLACES) where available.
       </p>
       <div class="cta" style="margin-top: 0.75rem;">
         <h2 style="margin-top: 0;">How to interpret “risk percentile”</h2>
@@ -54,12 +54,8 @@
         </div>
 
         <div class="map-search">
-          <label class="sr-only" for="county-search">Search county</label>
-          <input id="county-search" class="map-search-input" type="text" placeholder="Search: County, State (e.g., Apache County, AZ) or an address/city" autocomplete="off" />
-          <label class="map-checkbox">
-            <input id="use-geocode" type="checkbox" />
-            Address/city (online)
-          </label>
+          <label class="sr-only" for="county-search">Search location (online)</label>
+          <input id="county-search" class="map-search-input" type="text" placeholder="Address, city, or place (OpenStreetMap search)" autocomplete="off" />
           <button id="county-search-btn" class="map-btn" type="button">Search</button>
         </div>
 
