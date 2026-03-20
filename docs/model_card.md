@@ -2,17 +2,28 @@
 
 *Following Mitchell et al. (2019) "Model Cards for Model Reporting"*
 
-> **Status:** Template / placeholder. No model has been trained yet. This card will be updated when modeling is complete.
+> **Status:** Active. Final model selected and evaluated.
 
 ---
 
 ## Model Details
 
-**Model type:** *TBD* (e.g., linear regression, random forest, gradient boosting)  
-**Model version:** *TBD*  
-**Date created:** *TBD*  
+**Model type:** Gradient-boosted decision trees (**XGBoost Regressor**)  
+**Final feature set:** `Full_pesticides_raw` (all `pesticide_*_kg` columns + shared baseline covariates)  
+**Model version:** `final_full_pesticides_xgboost`  
+**Date created:** March 2026  
 **Developers:** *TBD*  
 **Point of contact:** *TBD*
+
+**Implementation + artifacts:**  
+- Training/model-selection notebook: `modeling/model_selection.ipynb`  
+- External validation script: `modeling/validate_model_accuracy.py`  
+- Prediction outputs:  
+  - `modeling/results/CASTHMA/xgboost_predictions_Full_pesticides_raw.csv`  
+  - `modeling/results/COPD/xgboost_predictions_Full_pesticides_raw.csv`  
+- External holdout evaluation outputs:  
+  - `modeling/results/CASTHMA/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/metrics.csv`  
+  - `modeling/results/COPD/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/metrics.csv`
 
 ---
 
@@ -51,15 +62,15 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 
 ## Metrics
 
-**Model performance metrics:**  
-- *TBD* (e.g., MSE, MAE, R² for regression; RMSE for county-level predictions)  
-- *TBD* (e.g., correlation with held-out PLACES estimates)
+**Model performance metrics (final model):**  
+- Regression metrics: RMSE, MAE, R²  
+- Reported on both cross-validation/OOF and external holdout validation.
 
 **Decision thresholds:**  
 - *TBD* (if model is used for binary classification or risk tiers)
 
 **Variation across groups:**  
-- *TBD* (performance by region, county size, demographic composition)
+- Equity/stability summaries are generated for final XGBoost outputs, including subgroup gap views in `modeling/results/`.
 
 ---
 
@@ -72,7 +83,12 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 - US Census ACS 5-year (2019)
 
 **Evaluation data:**  
-- *TBD* (e.g., temporal holdout by year, or spatial holdout by region)  
+- Cross-validation (OOF) model comparisons across exposure sets from:  
+  - `modeling/results/CASTHMA/model_summary_exposure_sets.csv`  
+  - `modeling/results/COPD/model_summary_exposure_sets.csv`  
+- External holdout validation from:  
+  - `modeling/results/CASTHMA/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/`  
+  - `modeling/results/COPD/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/`  
 - See [`datasheets.md`](datasheets.md) for dataset summary and source links.
 
 ---
@@ -94,13 +110,25 @@ Predict county-level prevalence of asthma (CASTHMA) and COPD from pesticide use 
 
 ## Quantitative Analyses
 
-*To be filled when model is trained.*
+### Final selected model: XGBoost + `Full_pesticides_raw`
 
-| Metric        | Overall | By region | By county size |
-|---------------|---------|-----------|----------------|
-| MSE / RMSE    | *TBD*   | *TBD*     | *TBD*          |
-| R²            | *TBD*   | *TBD*     | *TBD*          |
-| Correlation   | *TBD*   | *TBD*     | *TBD*          |
+**Cross-validation / OOF (from `model_summary_exposure_sets.csv`):**
+
+| Target | RMSE | MAE | R² |
+|--------|------|-----|----|
+| CASTHMA | 0.3453 | 0.2614 | 0.8791 |
+| COPD | 0.7240 | 0.5479 | 0.9015 |
+
+**External holdout validation (from `validation_eval_Full_pesticides_raw__XGBoost_(tuned)/metrics.csv`):**
+
+| Target | RMSE | MAE | R² | RMSE 95% CI | N |
+|--------|------|-----|----|-------------|---|
+| CASTHMA | 0.3888 | 0.2872 | 0.8354 | [0.3658, 0.4097] | 1219 |
+| COPD | 0.7650 | 0.5744 | 0.8854 | [0.7284, 0.8030] | 1219 |
+
+**Best hyperparameters on external holdout run:**
+- CASTHMA: `{'model__learning_rate': 0.1, 'model__max_depth': 5, 'model__n_estimators': 200}`
+- COPD: `{'model__learning_rate': 0.05, 'model__max_depth': 5, 'model__n_estimators': 200}`
 
 ---
 
