@@ -126,7 +126,7 @@
     const label = OUTCOME_LABELS[currentOutcome];
     el.innerHTML =
       '<strong>' + label + '</strong> (2019). Colors are ranked within counties with a model: ' +
-      'lighter = higher predicted prevalence. Range this year: <strong>' +
+      'lighter = higher predicted prevalence (among counties with estimates). Range this year: <strong>' +
       s.min.toFixed(1) + '%</strong> – <strong>' + s.max.toFixed(1) + '%</strong>. ' +
       'Click a county for predicted vs. observed (CDC PLACES) and its risk rank/percentile (relative to other counties).';
   }
@@ -148,10 +148,13 @@
         ? ('<p>Risk rank: <strong>#' + o.risk_rank + '</strong> of ' + o.n_ranked +
            ' (<strong>' + (o.risk_percentile != null ? o.risk_percentile.toFixed(0) : '—') + 'th</strong> percentile)</p>')
         : '';
+      const obs = (typeof o.actual === 'number' && isFinite(o.actual))
+        ? (o.actual.toFixed(2) + '%')
+        : '—';
       return (
         '<p><strong>' + title + '</strong> (' + year + ')</p>' +
         '<p>Predicted: ' + o.prediction.toFixed(2) + '%</p>' +
-        '<p>Observed: ' + o.actual.toFixed(2) + '%</p>' +
+        '<p>Observed (PLACES): ' + obs + '</p>' +
         rankLine
       );
     }
