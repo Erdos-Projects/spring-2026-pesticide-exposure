@@ -5,9 +5,10 @@ Static site: **project overview** and **interactive county-level risk map**. Hos
 ## Contents
 
 - **index.html** — About the project, objectives, data sources, link to map
+- **model-specifics.html** — Model summary, links to datasheet & model card on GitHub, fit & equity plots (`assets/model/*.png`)
 - **map.html** + **map.js** — US county choropleth; colors by `risk_index`, popup with county details
 - **data/xgboost_map_data.json** — Built from XGBoost prediction CSVs (see below)
-- **scripts/build_xgboost_map_data.py** — Regenerates map data from `modeling/results/*/xgboost_predictions.csv`
+- **scripts/build_xgboost_map_data.py** — Regenerates map data (prefers **full-county** exports)
 
 ## XGBoost map data (default)
 
@@ -17,7 +18,22 @@ From the repo root:
 python web/scripts/build_xgboost_map_data.py
 ```
 
-This reads `modeling/results/CASTHMA/xgboost_predictions.csv` and `modeling/results/COPD/xgboost_predictions.csv` (year **2019**), writes `web/data/xgboost_map_data.json`, and the map colors by min–max normalized predicted prevalence per outcome.
+The script prefers **`predictions_all_counties.csv`** under  
+`modeling/results/<TARGET>/validation_eval_Full_pesticides_raw__XGBoost_(tuned)/`  
+so the choropleth covers **all counties in the joint modeling frame** (~3k+ for year **2019**), not only the test split.
+
+If that file is missing, it falls back to `xgboost_predictions_Full_pesticides_raw.csv`, then `xgboost_predictions.csv`.
+
+To generate the full-county CSVs (after you have train/validation/test splits):
+
+```bash
+python modeling/validate_model_accuracy.py --target CASTHMA --exposure-set Full_pesticides_raw \
+  --model-family "XGBoost (tuned)" --validation-set external_holdout --export-all-counties
+python modeling/validate_model_accuracy.py --target COPD --exposure-set Full_pesticides_raw \
+  --model-family "XGBoost (tuned)" --validation-set external_holdout --export-all-counties
+```
+
+Then re-run `build_xgboost_map_data.py`. Counties in the Plotly US GeoJSON that lack joint/USGS features stay uncolored (no model row).
 
 ## Legacy risk data format (optional)
 

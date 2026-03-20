@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """
 Build web/data/xgboost_map_data.json from modeling XGBoost prediction CSVs.
+
+Prefers **full coverage** predictions (train + validation + test) from
+``predictions_all_counties.csv`` produced by::
+
+    python modeling/validate_model_accuracy.py --target CASTHMA --exposure-set Full_pesticides_raw \\
+        --model-family \"XGBoost (tuned)\" --validation-set external_holdout --export-all-counties
+    (repeat for COPD)
+
+Falls back to ``xgboost_predictions_Full_pesticides_raw.csv``, then ``xgboost_predictions.csv``
+(test-only) if the full export is missing.
+
 Run from repo root: python web/scripts/build_xgboost_map_data.py
 Requires: stdlib only.
 """
@@ -8,15 +19,44 @@ from __future__ import annotations
 
 import csv
 import json
+import math
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-OUTCOME_FILES = {
-    "casthma": REPO_ROOT / "modeling/results/CASTHMA/xgboost_predictions.csv",
-    "copd": REPO_ROOT / "modeling/results/COPD/xgboost_predictions.csv",
-}
+TARGET_DIR = {"casthma": "CASTHMA", "copd": "COPD"}
 OUTPUT = REPO_ROOT / "web/data/xgboost_map_data.json"
 DISPLAY_YEAR = 2019
+
+
+def _prediction_csv_candidates(target_folder: str) -> list[Path]:
+    """Ordered preference: all counties (full model universe) → full-pesticides test → default test."""
+    base = REPO_ROOT / "modeling/results" / target_folder
+    return [
+        base
+        / "validation_eval_Full_pesticides_raw__XGBoost_(tuned)"
+        / "predictions_all_counties.csv",
+        base / "xgboost_predictions_Full_pesticides_raw.csv",
+        base / "xgboost_predictions.csv",
+    ]
+
+
+def _pick_csv(target_folder: str) -> Path:
+    for p in _prediction_csv_candidates(target_folder):
+        if p.is_file():
+            return p
+    raise FileNotFoundError(
+        f"No prediction CSV found under modeling/results/{target_folder}/. "
+        "Run validate_model_accuracy with --export-all-counties or model_selection export."
+    )
+
+
+def _float_or_nan(s: str) -> float:
+    if s is None or (isinstance(s, str) and not s.strip()):
+        return float("nan")
+    try:
+        return float(s)
+    except ValueError:
+        return float("nan")
 
 
 def load_year(path: Path, year: int) -> dict[str, dict]:
@@ -29,8 +69,8 @@ def load_year(path: Path, year: int) -> dict[str, dict]:
                 continue
             fips = str(row["FIPS"]).strip().zfill(5)
             by_fips[fips] = {
-                "actual": float(row["actual"]),
-                "prediction": float(row["prediction"]),
+                "actual": _float_or_nan(row.get("actual", "")),
+                "prediction": _float_or_nan(row.get("prediction", "")),
             }
     return by_fips
 
@@ -44,20 +84,26 @@ def min_max_norm(values: list[float]) -> list[float]:
 
 def main() -> None:
     merged: dict[str, dict] = {}
-    for key, csv_path in OUTCOME_FILES.items():
-        if not csv_path.is_file():
-            raise SystemExit(f"Missing file: {csv_path}")
+    norms_by_outcome: dict[str, dict[str, float]] = {}
+
+    for key, folder in TARGET_DIR.items():
+        csv_path = _pick_csv(folder)
         rows = load_year(csv_path, DISPLAY_YEAR)
-        fips_list = list(rows.keys())
+        fips_list = [f for f, v in rows.items() if math.isfinite(v["prediction"])]
+        if not fips_list:
+            raise SystemExit(f"No finite predictions for year {DISPLAY_YEAR} in {csv_path}")
         preds = [rows[f]["prediction"] for f in fips_list]
-        norms = dict(zip(fips_list, min_max_norm(preds)))
+        norms_by_outcome[key] = dict(zip(fips_list, min_max_norm(preds)))
+        print(f"{key}: {len(fips_list)} counties from {csv_path.relative_to(REPO_ROOT)}")
+
         for fips in fips_list:
             if fips not in merged:
                 merged[fips] = {"year": DISPLAY_YEAR}
+            act = rows[fips]["actual"]
             merged[fips][key] = {
-                "actual": rows[fips]["actual"],
+                "actual": act if math.isfinite(act) else None,
                 "prediction": rows[fips]["prediction"],
-                "risk_index": norms[fips],
+                "risk_index": norms_by_outcome[key][fips],
             }
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)

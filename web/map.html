@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>County Map — XGBoost predictions</title>
+  <title>County map — asthma &amp; COPD risk (pesticide-based model)</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -11,10 +11,11 @@
   <header class="site-header">
     <div class="container">
       <h1>Pesticide Exposure &amp; Respiratory Health</h1>
-      <p class="tagline">County-level XGBoost model outputs (2019)</p>
+      <p class="tagline">Risk levels for COPD and asthma across the U.S., based on pesticide data.</p>
       <nav class="main-nav">
         <a href="index.html">About</a>
         <a href="map.html" aria-current="page">Interactive Map</a>
+        <a href="model-specifics.html">Model specifics</a>
         <a href="https://github.com/Erdos-Projects/spring-2026-pesticide-exposure" target="_blank" rel="noopener">Repository</a>
       </nav>
     </div>
@@ -22,9 +23,9 @@
 
   <main class="map-page">
     <div class="container map-header">
-      <h1>County map — predicted prevalence</h1>
+      <h1>County map — asthma &amp; COPD risk</h1>
       <p>
-        Choropleth uses <strong>XGBoost</strong> predicted county prevalence (CDC PLACES targets). Toggle outcome to recolor counties; popups show predicted vs. observed for both outcomes where available.
+        Colors show <strong>relative risk levels</strong> for the selected outcome using county predictions from a model trained on <strong>pesticide use</strong> (plus demographics, cropland, and health covariates), aligned to <strong>2019</strong> CDC PLACES-style outcomes. Toggle Asthma or COPD to recolor; popups show predicted vs. observed where available.
       </p>
       <div class="cta" style="margin-top: 0.75rem;">
         <h2 style="margin-top: 0;">How to interpret “risk percentile”</h2>
