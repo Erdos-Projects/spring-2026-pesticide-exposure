@@ -522,13 +522,20 @@ main.model-specifics-page.container {
   text-align: center;
 }
 
-.model-specifics-page .model-figure img {
+.model-specifics-page .model-figure img,
+.model-specifics-page .model-figure svg.equity-gap-chart {
+  display: block;
   width: auto;
   max-width: 100%;
+  height: auto;
   max-height: min(72vh, 640px);
   margin-left: auto;
   margin-right: auto;
   object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-sizing: border-box;
 }
 
 .model-figure figcaption {

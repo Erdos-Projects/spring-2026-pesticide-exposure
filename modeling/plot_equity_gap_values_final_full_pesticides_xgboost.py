@@ -17,6 +17,12 @@ Group definitions (based on columns available in `data/joint_county_year_2018_20
 
 This script avoids numpy/pandas/matplotlib so it can run in minimal Python
 environments; it renders SVG directly.
+
+**Website:** Model specifics embeds this chart as **inline SVG** in
+``web/model-specifics.html`` (external ``<img src="*.svg">`` is unreliable on
+some browsers / GitHub Pages). After regenerating, replace the inline
+``<svg class="equity-gap-chart" …>…</svg>`` block with the new SVG body (omit
+the XML declaration), or copy from ``web/assets/model/equity_gap_values_final_full_pesticides_xgboost.svg``.
 """
 
 from __future__ import annotations
@@ -287,9 +293,9 @@ def render_svg(
         body_parts.append(
             f'<rect x="{x0 - 10}" y="{card_top}" width="{panel_w + 20}" height="{card_height}" rx="14" fill="#ffffff" stroke="#e5e7eb"/>'
         )
-        body_parts.append(f'<text x="{x0}" y="{y0}" class="panelTitle">{title}</text>')
+        body_parts.append(f'<text x="{x0}" y="{y0}" class="eqg-panelTitle">{title}</text>')
         body_parts.append(
-            f'<text x="{x0}" y="{y0 + 20}" class="muted">Positive gap = worse error for that group</text>'
+            f'<text x="{x0}" y="{y0 + 20}" class="eqg-muted">Positive gap = worse error for that group</text>'
         )
 
         # Determine max abs gap in this panel
@@ -333,13 +339,13 @@ def render_svg(
                 )
 
             # Labels
-            body_parts.append(f'<text x="{x0 + 10}" y="{y + 4}" class="label">{group}</text>')
+            body_parts.append(f'<text x="{x0 + 10}" y="{y + 4}" class="eqg-label">{group}</text>')
             body_parts.append(
-                f'<text x="{x0 + panel_w - 10}" y="{y + 4}" class="num" text-anchor="end">gap={fmt_gap(gap_f)} (n={n})</text>'
+                f'<text x="{x0 + panel_w - 10}" y="{y + 4}" class="eqg-num" text-anchor="end">gap={fmt_gap(gap_f)} (n={n})</text>'
             )
 
         body_parts.append(
-            f'<text x="{x0}" y="{footnote_y}" class="muted">{proxies_note}</text>'
+            f'<text x="{x0}" y="{footnote_y}" class="eqg-muted">{proxies_note}</text>'
         )
 
     # Tight canvas: end just below the cards (footnote is inside the card); small outer margin only.
@@ -347,24 +353,25 @@ def render_svg(
     content_bottom = panel_card_bottom + 14
     height = int(content_bottom + 12) if canvas_height is None else int(canvas_height)
 
+    # Class names are prefixed so inline SVG on the site does not pick up global page CSS.
     style_block = """
   <style>
-    .title { font: 700 18px Arial, Helvetica, sans-serif; fill: #111827; }
-    .subtitle { font: 400 12px Arial, Helvetica, sans-serif; fill: #374151; }
-    .panelTitle { font: 700 14px Arial, Helvetica, sans-serif; fill: #111827; }
-    .label { font: 400 12px Arial, Helvetica, sans-serif; fill: #111827; }
-    .muted { font: 400 11px Arial, Helvetica, sans-serif; fill: #6b7280; }
-    .num { font: 700 12px Arial, Helvetica, sans-serif; fill: #111827; }
+    .eqg-title { font: 700 18px Arial, Helvetica, sans-serif; fill: #111827; }
+    .eqg-subtitle { font: 400 12px Arial, Helvetica, sans-serif; fill: #374151; }
+    .eqg-panelTitle { font: 700 14px Arial, Helvetica, sans-serif; fill: #111827; }
+    .eqg-label { font: 400 12px Arial, Helvetica, sans-serif; fill: #111827; }
+    .eqg-muted { font: 400 11px Arial, Helvetica, sans-serif; fill: #6b7280; }
+    .eqg-num { font: 700 12px Arial, Helvetica, sans-serif; fill: #111827; }
   </style>
     """.strip()
     cx = width // 2
     title_lines = [
-        f'<text x="{cx}" y="30" class="title" text-anchor="middle">Equity gap (Final validation holdout): MAE gaps by key groups</text>',
-        f'<text x="{cx}" y="52" class="subtitle" text-anchor="middle">Gap = group MAE - overall MAE (within each condition). Poverty proxy uses median income tertiles.</text>',
+        f'<text x="{cx}" y="30" class="eqg-title" text-anchor="middle">Equity gap (Final validation holdout): MAE gaps by key groups</text>',
+        f'<text x="{cx}" y="52" class="eqg-subtitle" text-anchor="middle">Gap = group MAE - overall MAE (within each condition). Poverty proxy uses median income tertiles.</text>',
     ]
     full_svg = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">\n'
+        f'<svg xmlns="http://www.w3.org/2000/svg" class="equity-gap-chart" width="{width}" height="{height}" viewBox="0 0 {width} {height}">\n'
         # Opaque backdrop so title/subtitle (dark text) stay visible on dark-themed sites (e.g. model-specifics).
         f'<rect x="0" y="0" width="{width}" height="{height}" fill="#ffffff"/>\n'
         f"{style_block}\n"

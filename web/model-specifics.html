@@ -112,9 +112,74 @@
         Exploratory view of prediction error by subgroup (e.g. income, urban–rural, race proxy). This supports discussion in the model card; it is <strong>not</strong> a causal fairness audit.
         Regenerate with <code>python modeling/plot_equity_gap_values_final_full_pesticides_xgboost.py</code> and related notebooks as documented in <code>modeling/</code>.
       </p>
-      <figure class="model-figure">
-        <img src="assets/model/equity_gap_values_final_full_pesticides_xgboost.svg" alt="Bar chart of MAE gap by subgroup for final XGBoost validation predictions" loading="lazy" width="1040" height="559" />
-        <figcaption>MAE gap (subgroup vs. overall) — final validation holdout, Full pesticides XGBoost.</figcaption>
+      <figure class="model-figure model-figure-equity">
+        <!-- Inline SVG: external .svg in <img> is blocked or flaky on some hosts/browsers; sync from assets/model/equity_gap_values_final_full_pesticides_xgboost.svg after regenerating. -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="equity-gap-chart" width="1040" height="559" viewBox="0 0 1040 559" role="img" aria-labelledby="equity-gap-caption">
+        <rect x="0" y="0" width="1040" height="559" fill="#ffffff"/>
+        <style>
+            .eqg-title { font: 700 18px Arial, Helvetica, sans-serif; fill: #111827; }
+            .eqg-subtitle { font: 400 12px Arial, Helvetica, sans-serif; fill: #374151; }
+            .eqg-panelTitle { font: 700 14px Arial, Helvetica, sans-serif; fill: #111827; }
+            .eqg-label { font: 400 12px Arial, Helvetica, sans-serif; fill: #111827; }
+            .eqg-muted { font: 400 11px Arial, Helvetica, sans-serif; fill: #6b7280; }
+            .eqg-num { font: 700 12px Arial, Helvetica, sans-serif; fill: #111827; }
+          </style>
+        <text x="520" y="30" class="eqg-title" text-anchor="middle">Equity gap (Final validation holdout): MAE gaps by key groups</text>
+        <text x="520" y="52" class="eqg-subtitle" text-anchor="middle">Gap = group MAE - overall MAE (within each condition). Poverty proxy uses median income tertiles.</text>
+        <rect x="30" y="85" width="480" height="448" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
+        <text x="40" y="110" class="eqg-panelTitle">CASTHMA (overall MAE=0.274)</text>
+        <text x="40" y="130" class="eqg-muted">Positive gap = worse error for that group</text>
+        <line x1="279.20000000000005" y1="150" x2="279.20000000000005" y2="472" stroke="#9ca3af" stroke-dasharray="4 4"/>
+        <rect x="279.20000000000005" y="151" width="46.85020169903519" height="28" rx="8" fill="#f59e0b" opacity="0.9"/>
+        <text x="50" y="169" class="eqg-label">Low income</text>
+        <text x="490" y="169" class="eqg-num" text-anchor="end">gap=+0.060 (n=204)</text>
+        <rect x="249.60679929944172" y="197" width="29.593200700558334" height="28" rx="8" fill="#10b981" opacity="0.9"/>
+        <text x="50" y="215" class="eqg-label">Mid income</text>
+        <text x="490" y="215" class="eqg-num" text-anchor="end">gap=-0.038 (n=203)</text>
+        <rect x="261.7122098305928" y="243" width="17.487790169407194" height="28" rx="8" fill="#10b981" opacity="0.9"/>
+        <text x="50" y="261" class="eqg-label">High income</text>
+        <text x="490" y="261" class="eqg-num" text-anchor="end">gap=-0.022 (n=203)</text>
+        <rect x="279.20000000000005" y="289" width="1.3394396728318692" height="28" rx="8" fill="#f59e0b" opacity="0.9"/>
+        <text x="50" y="307" class="eqg-label">Urban (metro)</text>
+        <text x="490" y="307" class="eqg-num" text-anchor="end">gap=+0.002 (n=230)</text>
+        <rect x="278.38928651381286" y="335" width="0.81071348618717" height="28" rx="8" fill="#10b981" opacity="0.9"/>
+        <text x="50" y="353" class="eqg-label">Rural (non-metro)</text>
+        <text x="490" y="353" class="eqg-num" text-anchor="end">gap=-0.001 (n=380)</text>
+        <rect x="279.20000000000005" y="381" width="184.0" height="28" rx="8" fill="#f59e0b" opacity="0.9"/>
+        <text x="50" y="399" class="eqg-label">Majority-BIPOC</text>
+        <text x="490" y="399" class="eqg-num" text-anchor="end">gap=+0.236 (n=66)</text>
+        <rect x="256.8764705882355" y="427" width="22.323529411764554" height="28" rx="8" fill="#10b981" opacity="0.9"/>
+        <text x="50" y="445" class="eqg-label">Majority-white</text>
+        <text x="490" y="445" class="eqg-num" text-anchor="end">gap=-0.029 (n=544)</text>
+        <text x="40" y="505" class="eqg-muted">Proxies: income tertiles; metro vs non-metro; Majority-BIPOC (pct_white<50%).</text>
+        <rect x="530" y="85" width="480" height="448" rx="14" fill="#ffffff" stroke="#e5e7eb"/>
+        <text x="540" y="110" class="eqg-panelTitle">COPD (overall MAE=0.430)</text>
+        <text x="540" y="130" class="eqg-muted">Positive gap = worse error for that group</text>
+        <line x1="779.2" y1="150" x2="779.2" y2="472" stroke="#9ca3af" stroke-dasharray="4 4"/>
+        <rect x="779.2" y="151" width="79.58580120560306" height="28" rx="8" fill="#f59e0b" opacity="0.9"/>
+        <text x="550" y="169" class="eqg-label">Low income</text>
+        <text x="990" y="169" class="eqg-num" text-anchor="end">gap=+0.088 (n=204)</text>
+        <rect x="736.3963386211914" y="197" width="42.80366137880868" height="28" rx="8" fill="#10b981" opacity="0.9"/>
+        <text x="550" y="215" class="eqg-label">Mid income</text>
+        <text x="990" y="215" class="eqg-num" text-anchor="end">gap=-0.047 (n=203)</text>
+        <rect x="742.0258118914045" y="243" width="37.17418810859556" height="28" rx="8" fill="#10b981" opacity="0.9"/>
+        <text x="550" y="261" class="eqg-label">High income</text>
+        <text x="990" y="261" class="eqg-num" text-anchor="end">gap=-0.041 (n=203)</text>
+        <rect x="778.3280668655702" y="289" width="0.8719331344298347" height="28" rx="8" fill="#10b981" opacity="0.9"/>
+        <text x="550" y="307" class="eqg-label">Urban (metro)</text>
+        <text x="990" y="307" class="eqg-num" text-anchor="end">gap=-0.001 (n=230)</text>
+        <rect x="779.2" y="335" width="0.5277490024181811" height="28" rx="8" fill="#f59e0b" opacity="0.9"/>
+        <text x="550" y="353" class="eqg-label">Rural (non-metro)</text>
+        <text x="990" y="353" class="eqg-num" text-anchor="end">gap=+0.001 (n=380)</text>
+        <rect x="779.2" y="381" width="184.0" height="28" rx="8" fill="#f59e0b" opacity="0.9"/>
+        <text x="550" y="399" class="eqg-label">Majority-BIPOC</text>
+        <text x="990" y="399" class="eqg-num" text-anchor="end">gap=+0.203 (n=66)</text>
+        <rect x="756.8764705882354" y="427" width="22.323529411764675" height="28" rx="8" fill="#10b981" opacity="0.9"/>
+        <text x="550" y="445" class="eqg-label">Majority-white</text>
+        <text x="990" y="445" class="eqg-num" text-anchor="end">gap=-0.025 (n=544)</text>
+        <text x="540" y="505" class="eqg-muted">Proxies: income tertiles; metro vs non-metro; Majority-BIPOC (pct_white<50%).</text>
+        </svg>
+        <figcaption id="equity-gap-caption">MAE gap (subgroup vs. overall) — final validation holdout, Full pesticides XGBoost.</figcaption>
       </figure>
     </section>
 
