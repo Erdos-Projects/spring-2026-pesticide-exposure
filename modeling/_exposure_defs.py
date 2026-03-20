@@ -1,3 +1,12 @@
+from __future__ import annotations
+
+# Standalone exposure-set definitions + feature engineering helpers.
+# This file used to be embedded into a notebook cell; add imports so it can
+# be safely imported from scripts (e.g. validate_model_accuracy.py).
+
+import numpy as np
+import pandas as pd
+
 # Embedded into model_selection data cell — four exposure designs + engineer
 
 def engineer_signal_isolation_features(df: pd.DataFrame) -> pd.DataFrame:
