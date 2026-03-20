@@ -101,20 +101,21 @@ LEXICONS = {
         r"\bintercropping\b",
     ],
     "chemical": [
-        r"\bpesticides?\b",
-        r"\binsecticides?\b",
-        r"\bherbicides?\b",
-        r"\bfungicides?\b",
-        r"\bchemical control\b",
+        # Stems are more tolerant to OCR/hyphenation artifacts (e.g., "insecti-\ncides").
+        r"\bpesticid(?:e|es)?\b",
+        r"\binsecticid(?:e|es)?\b",
+        r"\bherbicid(?:e|es)?\b",
+        r"\bfungicid(?:e|es)?\b",
+        r"\bchemical\s*control\b",
         r"\bspray(?:ing| schedule)?\b",
-        r"\bactive ingredient\b",
+        r"\bactive\s*ingredient\b",
         r"\bpre-?emergence\b",
         r"\bpost-?emergence\b",
         r"\bchemigation\b",
         r"\bfoliar\b",
         r"\bsoil applied\b",
         r"\bregistered (?:pesticide|chemical)\b",
-        r"\bchemical management\b",
+        r"\bchemical\s*management\b",
         r"\bconventional (?:pesticide|chemical)\b",
     ],
     "decision_support": [
@@ -122,8 +123,8 @@ LEXICONS = {
         r"\baction threshold\b",
         r"\beconomic threshold\b",
         r"\btargeted\b",
-        r"\bintegrated pest\b",
-        r"\bintegrated management\b",
+        r"\bintegrated\s*pest\b",
+        r"\bintegrated\s*management\b",
         r"\bbeneficials?\b",
         r"\bapplication timing\b",
         r"\bipm (?:practices?|approach)\b",
@@ -134,25 +135,46 @@ LEXICONS = {
     "dependency": [
         r"\blimited alternatives?\b",
         r"\bfew effective options?\b",
+        r"\bfew (?:registered|labeled) (?:options?|products?)\b",
+        r"\bno effective (?:options?|alternatives?)\b",
+        r"\bno (?:registered|labeled) (?:options?|products?)\b",
+        r"\bonly (?:one|a few) (?:effective )?(?:option|product|material|tool)s?\b",
         r"\bcritical use\b",
         r"\bloss of registration\b",
-        r"\bresistance concern\b",
+        r"\b(?:de-?registration|deregistration|cancel(?:led|lation) of registration)\b",
+        r"\bsection\s*18\b",
+        r"\bsection\s*24\(c\)\b",
+        r"\b(?:special local need|sln)\\b",
+        r"\bregistration (?:of|for)\\b",
+        r"\bneed(?:ed)? registration\\b",
+        r"\bresistance\s*concern\b",
         r"\black of nonchemical options\b",
         r"\bdependency\b",
         r"\breliance\b",
+        r"\brely on\b",
+        r"\bdepends? on\b",
         r"\bprimary (?:control|tool)\b",
         r"\bconventional (?:control|management)\b",
     ],
     "resistance_management": [
-        r"\bresistance management\b",
+        r"\bresistance\s*management\b",
         r"\bmode of action\b",
-        r"\brotat(?:e|ion) of chemistr(?:y|ies)\b",
+        r"\brotat(?:e|ion)\s*of\s*chemistr(?:y|ies)\b",
         r"\banti-resistance\b",
-        r"\binsecticide resistance\b",
-        r"\bherbicide resistance\b",
+        r"\b(?:insecticide|herbicide|fungicide) resistance\b",
+        r"\bresistan(?:ce|t)\b",
         r"\bmoa\b",
         r"\btank[- ]?mix\b",
-        r"\brotate (?:modes|chemistry)\b",
+        r"\brotate\s*(?:modes|chemistr(?:y|ies))\b",
+        # Common resistance-management guidance language:
+        r"\bdo not apply (?:more than )?\d+ (?:applications?|sprays?)\b",
+        r"\blimit (?:the )?number of (?:applications?|sprays?)\\b",
+        r"\bavoid (?:development of )?resistance\\b",
+        r"\bdo not make consecutive applications\\b",
+        r"\bconsecutive applications\\b",
+        # IRAC/FRAC/HRAC group language is often present even when \"resistance\" isn't.
+        r"\b(?:irac|frac|hrac)\b",
+        r"\bgroup\s*\d+\b",
     ],
 }
 
@@ -162,7 +184,18 @@ SECTION_PATTERNS = {
     "cultural_controls": [r"cultural control", r"cultural practices", r"cultural management", r"nonchemical"],
     "biological_controls": [r"biological control", r"natural enemies", r"biologicals", r"biocontrol"],
     "physical_controls": [r"physical control", r"mechanical control", r"physical and mechanical"],
-    "chemical_controls": [r"chemical control", r"pesticides", r"herbicides", r"insecticides", r"fungicides", r"chemical management", r"pest management (?:strategies|practices)", r"weed management", r"insect management", r"disease management"],
+    "chemical_controls": [
+        r"chemical\s*control",
+        r"pesticid(?:e|es)?",
+        r"herbicid(?:e|es)?",
+        r"insecticid(?:e|es)?",
+        r"fungicid(?:e|es)?",
+        r"chemical\s*management",
+        r"pest management (?:strategies|practices)",
+        r"weed management",
+        r"insect management",
+        r"disease management",
+    ],
     "research_priorities": [r"research priorities", r"regulatory priorities", r"education priorities", r"priorities", r"transition priorities", r"worker (?:activities|protection)", r"pollinator"],
 }
 
@@ -198,7 +231,8 @@ def _parse_doc_year(sourcedate):
     if pd.isna(sourcedate):
         return np.nan
     s = str(sourcedate).strip()
-    m = re.search(r"(19|20)\d{2}", s)
+    # Correct word-boundary usage (previous version used a literal control char).
+    m = re.search(r"\b(19|20)\d{2}\b", s)
     return int(m.group(0)) if m else np.nan
 
 def _crop_family(crop):
@@ -216,6 +250,27 @@ def _bounded(x, lo=0.0, hi=1.0):
 
 def _normalize_rate(count, denom):
     return count / denom if denom > 0 else 0.0
+
+def _normalize_extracted_text(text):
+    """Make extracted document text more regex-friendly.
+
+    PDF extraction and HTML->text conversion often introduce OCR artifacts:
+    - soft hyphens (U+00AD)
+    - hyphenated line breaks: "insecti-\\n cides"
+    - irregular whitespace/newlines
+    """
+    if text is None:
+        return None
+    t = str(text)
+    # Remove soft hyphen (often used for line wrapping).
+    t = t.replace("\u00ad", "")
+    # Repair hyphenation across line breaks.
+    t = re.sub(r"([A-Za-z])[-\u2010\u2011]\s*\n\s*([A-Za-z])", r"\1\2", t)
+    # Collapse newlines into spaces.
+    t = re.sub(r"\r\n|\r|\n", " ", t)
+    # Collapse repeated whitespace.
+    t = re.sub(r"\s+", " ", t).strip()
+    return t
 
 def _metadata_priors(doc_type, doc_year, crop):
     monitoring = nonchemical = chemical = decision_support = dependency = resistance_management = 0.0
@@ -237,7 +292,35 @@ def _metadata_priors(doc_type, doc_year, crop):
     return {"monitoring_prior": _bounded(monitoring), "nonchemical_prior": _bounded(nonchemical), "chemical_prior": _bounded(chemical), "decision_support_prior": _bounded(decision_support), "dependency_prior": _bounded(dependency), "resistance_management_prior": _bounded(resistance_management)}
 
 def _fetch_structured_report_text(source_id):
-    return None
+    # Primary goal: score from HTML text (often less hyphenation/OCR-brittle than PDF extraction),
+    # and keep enough structure to split sections reliably.
+    if source_id is None:
+        return None
+    try:
+        r = requests.get(
+            "https://ipmdata.ipmcenters.org/source_report.cfm?sourceid="
+            + str(source_id)
+            + "&view=yes",
+            timeout=PDF_TIMEOUT,
+        )
+        if not r.ok or not r.text:
+            return None
+
+        html = r.text
+        # Strip scripts and HTML tags; keep text readable for section splitting.
+        html = re.sub(r"<script[^>]*>.*?</script>", " ", html, flags=re.DOTALL | re.I)
+        html = re.sub(r"<style[^>]*>.*?</style>", " ", html, flags=re.DOTALL | re.I)
+        html = re.sub(r"<[^>]+>", " ", html)
+        html = re.sub(r"\s+", " ", html).strip()
+        html = _normalize_extracted_text(html)
+
+        if not html or len(html) < 200:
+            return None
+
+        sections = _split_sections_from_text(html)
+        return {"full_text": html, "sections": sections}
+    except Exception:
+        return None
 
 def _fetch_pdf_text(url):
     if not url:
@@ -254,7 +337,7 @@ def _fetch_pdf_text(url):
                 text = pdf_extract_text(BytesIO(raw))
             except Exception:
                 text = None
-        if not text or len(text.strip()) < 150:
+        if not text or len(str(text).strip()) < 150:
             if fitz is not None:
                 try:
                     doc = fitz.open(stream=raw, filetype="pdf")
@@ -263,9 +346,10 @@ def _fetch_pdf_text(url):
                     text = "\n".join(parts) if parts else ""
                 except Exception:
                     pass
-        if not text or len(text.strip()) < 150:
+        if not text or len(str(text).strip()) < 150:
             return None
-        return text.strip()
+        text = _normalize_extracted_text(text)
+        return text.strip() if text else None
     except Exception:
         return None
 
@@ -274,6 +358,7 @@ def _split_sections_from_text(text):
         return {}
     lines = [ln.strip() for ln in str(text).splitlines() if ln.strip()]
     joined = "\n".join(lines)
+    joined = _normalize_extracted_text(joined) or joined
     lower = joined.lower()
     sections = {}
     heading_candidates = ["production practices", "monitoring", "scouting", "sampling", "threshold", "cultural control", "cultural practices", "biological control", "natural enemies", "physical control", "mechanical control", "chemical control", "pesticides", "research priorities", "regulatory priorities", "education priorities", "pest management", "weed management", "insect management", "disease management", "management strategies", "worker protection", "pollinator"]
@@ -308,6 +393,8 @@ def _score_document_text(full_text, sections, doc_type):
     sections = sections or {}
     token_denom = max(200, len(re.findall(r"\w+", full_text)))
     sec_cov = _section_presence_score(sections)
+    # Normalize just before scoring in case the caller passed raw extracted text.
+    full_text = _normalize_extracted_text(full_text) or full_text
     mon_ct = _count_lexicon_hits(full_text, COMPILED_LEXICONS["monitoring"])
     non_ct = _count_lexicon_hits(full_text, COMPILED_LEXICONS["nonchemical"])
     chem_ct = _count_lexicon_hits(full_text, COMPILED_LEXICONS["chemical"])
@@ -318,6 +405,18 @@ def _score_document_text(full_text, sections, doc_type):
     non_sec = _count_lexicon_hits(sections.get("cultural_controls", ""), COMPILED_LEXICONS["nonchemical"]) + _count_lexicon_hits(sections.get("biological_controls", ""), COMPILED_LEXICONS["nonchemical"]) + _count_lexicon_hits(sections.get("physical_controls", ""), COMPILED_LEXICONS["nonchemical"])
     chem_sec = _count_lexicon_hits(sections.get("chemical_controls", ""), COMPILED_LEXICONS["chemical"])
     pri_sec = _count_lexicon_hits(sections.get("research_priorities", ""), COMPILED_LEXICONS["dependency"])
+
+    # Blunt boolean signals: mentions any pesticide/chemical vs any non-chemical approaches.
+    mentions_pesticide = 1 if (chem_ct + chem_sec) > 0 else 0
+    mentions_nonpesticide = 1 if (non_ct + non_sec) > 0 else 0
+    if mentions_pesticide and mentions_nonpesticide:
+        pesticide_vs_nonpesticide = "both"
+    elif mentions_pesticide and not mentions_nonpesticide:
+        pesticide_vs_nonpesticide = "chemical_only"
+    elif (not mentions_pesticide) and mentions_nonpesticide:
+        pesticide_vs_nonpesticide = "nonchemical_only"
+    else:
+        pesticide_vs_nonpesticide = "neither"
     mon_rate = _normalize_rate(mon_ct + 2 * mon_sec, token_denom / 1000)
     non_rate = _normalize_rate(non_ct + 2 * non_sec, token_denom / 1000)
     chem_rate = _normalize_rate(chem_ct + 2 * chem_sec, token_denom / 1000)
@@ -334,11 +433,46 @@ def _score_document_text(full_text, sections, doc_type):
     chemical_reliance_index = _bounded(0.60 * chemical_score + 0.25 * dependency_score + 0.15 * max(0.0, chemical_score - nonchemical_score))
     if "pmsp" in str(doc_type or "").lower():
         chemical_reliance_index = _bounded(chemical_reliance_index * 0.95)
-    return {"monitoring_score": monitoring_score, "nonchemical_score": nonchemical_score, "chemical_score": chemical_score, "decision_support_score": decision_support_score, "dependency_score": dependency_score, "resistance_management_score": resistance_management_score, "section_coverage_score": sec_cov, "ipm_breadth_index": ipm_breadth_index, "chemical_reliance_index": chemical_reliance_index}
+    return {
+        "monitoring_score": monitoring_score,
+        "nonchemical_score": nonchemical_score,
+        "chemical_score": chemical_score,
+        "decision_support_score": decision_support_score,
+        "dependency_score": dependency_score,
+        "resistance_management_score": resistance_management_score,
+        "section_coverage_score": sec_cov,
+        "ipm_breadth_index": ipm_breadth_index,
+        "chemical_reliance_index": chemical_reliance_index,
+        "mentions_pesticide": mentions_pesticide,
+        "mentions_nonpesticide": mentions_nonpesticide,
+        "pesticide_vs_nonpesticide": pesticide_vs_nonpesticide,
+    }
 
 def _combine_text_scores_with_priors(text_scores, priors, text_quality):
     if text_scores is None:
-        return {"monitoring_score": priors["monitoring_prior"], "nonchemical_score": priors["nonchemical_prior"], "chemical_score": priors["chemical_prior"], "decision_support_score": priors["decision_support_prior"], "dependency_score": priors["dependency_prior"], "resistance_management_score": priors["resistance_management_prior"], "section_coverage_score": 0.0, "ipm_breadth_index": _bounded(0.30 * priors["monitoring_prior"] + 0.35 * priors["nonchemical_prior"] + 0.20 * priors["decision_support_prior"] + 0.15 * priors["resistance_management_prior"]), "chemical_reliance_index": _bounded(0.60 * priors["chemical_prior"] + 0.25 * priors["dependency_prior"] + 0.15 * max(0.0, priors["chemical_prior"] - priors["nonchemical_prior"]))}
+        return {
+            "monitoring_score": priors["monitoring_prior"],
+            "nonchemical_score": priors["nonchemical_prior"],
+            "chemical_score": priors["chemical_prior"],
+            "decision_support_score": priors["decision_support_prior"],
+            "dependency_score": priors["dependency_prior"],
+            "resistance_management_score": priors["resistance_management_prior"],
+            "section_coverage_score": 0.0,
+            "ipm_breadth_index": _bounded(
+                0.30 * priors["monitoring_prior"]
+                + 0.35 * priors["nonchemical_prior"]
+                + 0.20 * priors["decision_support_prior"]
+                + 0.15 * priors["resistance_management_prior"]
+            ),
+            "chemical_reliance_index": _bounded(
+                0.60 * priors["chemical_prior"]
+                + 0.25 * priors["dependency_prior"]
+                + 0.15 * max(0.0, priors["chemical_prior"] - priors["nonchemical_prior"])
+            ),
+            "mentions_pesticide": 0,
+            "mentions_nonpesticide": 0,
+            "pesticide_vs_nonpesticide": "neither",
+        }
     text_wt = 0.85 if text_quality == "high" else 0.70 if text_quality == "medium" else 0.50
     prior_wt = 1.0 - text_wt
     out = {}
@@ -347,6 +481,10 @@ def _combine_text_scores_with_priors(text_scores, priors, text_quality):
     out["section_coverage_score"] = text_scores["section_coverage_score"]
     out["ipm_breadth_index"] = _bounded(0.30 * out["monitoring_score"] + 0.35 * out["nonchemical_score"] + 0.20 * out["decision_support_score"] + 0.15 * out["resistance_management_score"] + 0.10 * out["section_coverage_score"])
     out["chemical_reliance_index"] = _bounded(0.60 * out["chemical_score"] + 0.25 * out["dependency_score"] + 0.15 * max(0.0, out["chemical_score"] - out["nonchemical_score"]))
+    # Carry over blunt mention flags (text-derived, no priors).
+    out["mentions_pesticide"] = int(bool(text_scores.get("mentions_pesticide")))
+    out["mentions_nonpesticide"] = int(bool(text_scores.get("mentions_nonpesticide")))
+    out["pesticide_vs_nonpesticide"] = text_scores.get("pesticide_vs_nonpesticide", "neither")
     return out
 
 def _build_region_state_lookup():
@@ -465,6 +603,9 @@ def build_crop_geo_doc_ipm(use_structured_text=USE_STRUCTURED_TEXT, use_pdf_fall
                 "section_coverage_score": scores["section_coverage_score"],
                 "ipm_breadth_index": scores["ipm_breadth_index"],
                 "chemical_reliance_index": scores["chemical_reliance_index"],
+                "mentions_pesticide": scores.get("mentions_pesticide", 0),
+                "mentions_nonpesticide": scores.get("mentions_nonpesticide", 0),
+                "pesticide_vs_nonpesticide": scores.get("pesticide_vs_nonpesticide", "neither"),
             })
     out = pd.DataFrame(rows)
     if len(out) == 0:
@@ -478,13 +619,70 @@ def build_crop_geo_doc_ipm(use_structured_text=USE_STRUCTURED_TEXT, use_pdf_fall
                 out[rescaled_col] = (out[col] - lo) / (hi - lo)
             else:
                 out[rescaled_col] = 0.5 if pd.notna(lo) else np.nan
+
+    # QA: catch silent extraction/scoring failures (e.g., chemical_* and dependency_* all zeros).
+    _qa_warn_on_ipm_score_sanity(out)
     return out
+
+def _qa_warn_on_ipm_score_sanity(df):
+    if df is None or len(df) == 0:
+        return
+    score_cols = [
+        "monitoring_score",
+        "nonchemical_score",
+        "chemical_score",
+        "decision_support_score",
+        "dependency_score",
+        "resistance_management_score",
+        "section_coverage_score",
+        "ipm_breadth_index",
+        "chemical_reliance_index",
+    ]
+    issues = []
+    for c in score_cols:
+        if c not in df.columns:
+            continue
+        series = df[c]
+        nz_share = (series.fillna(0) > 0).mean() if len(series) else 0
+        mx = series.max(skipna=True)
+        # Treat "all zeros" (or essentially zero) as a failure mode.
+        if nz_share == 0 or (mx is not None and (not np.isnan(mx)) and mx <= 1e-12):
+            issues.append(f"{c}: ALL/near-all zeros (max={mx}, nz_share={nz_share:.1%})")
+    # Also flag missingness for metadata years (can break recency priors/aggregation).
+    if "document_year" in df.columns:
+        missing_y = df["document_year"].isna().mean()
+        if missing_y >= 0.99:
+            issues.append(f"document_year: {missing_y:.1%} missing")
+    if issues:
+        print("IPM score QA WARNING:")
+        for it in issues:
+            print(" -", it)
 
 def _quality_to_numeric(q):
     return {"none": 0.0, "low": 0.25, "medium": 0.5, "high": 1.0}.get(str(q).lower(), 0.0)
 
 def _confidence_to_numeric(c):
     return {"low": 1/3, "medium": 2/3, "high": 1.0}.get(str(c).lower(), 0.0)
+
+
+def _recency_weighted_mean(series, weights):
+    """Mean of `series` using `weights`, ignoring NaNs in series (weights renormalized over valid rows).
+
+    Returns NaN if there are no valid (non-NaN) series values — unlike `(w * s).sum()` which can yield 0.0
+    when pandas skips all-NaN terms in the sum.
+    """
+    s = pd.to_numeric(series, errors="coerce")
+    w = pd.to_numeric(weights, errors="coerce").fillna(0.0)
+    valid = s.notna()
+    if not valid.any():
+        return np.nan
+    wv = w[valid]
+    sv = s[valid]
+    denom = wv.sum()
+    if denom == 0 or pd.isna(denom):
+        return np.nan
+    return float((wv * sv).sum() / denom)
+
 
 def aggregate_crop_geo_doc_ipm_to_crop_state(crop_geo_doc_ipm, analysis_years=None):
     """Aggregate by (crop, state_fips) and analysis year using recency-weighted means."""
@@ -504,10 +702,14 @@ def aggregate_crop_geo_doc_ipm_to_crop_state(crop_geo_doc_ipm, analysis_years=No
             row = {"crop": crop, "crop_family": crop_family, "state_fips": state_fips, "year": ay, "n_docs": len(g)}
             for col in ["ipm_breadth_index", "chemical_reliance_index", "ipm_breadth_index_rescaled", "chemical_reliance_index_rescaled"]:
                 if col in g.columns:
-                    row[col] = (w * g[col]).sum()
-            row["mean_text_quality"] = (w * g["_text_quality_num"]).sum()
-            row["mean_geo_confidence"] = (w * g["_geo_conf_num"]).sum()
-            row["weighted_doc_age"] = (w * (ay - g["document_year"])).sum()
+                    row[col] = _recency_weighted_mean(g[col], w)
+            for col in ["mentions_pesticide", "mentions_nonpesticide"]:
+                if col in g.columns:
+                    # Weighted share of docs mentioning the concept.
+                    row[col] = _recency_weighted_mean(g[col].fillna(0), w)
+            row["mean_text_quality"] = _recency_weighted_mean(g["_text_quality_num"], w)
+            row["mean_geo_confidence"] = _recency_weighted_mean(g["_geo_conf_num"], w)
+            row["weighted_doc_age"] = _recency_weighted_mean(ay - g["document_year"], w)
             out_list.append(row)
     out = pd.DataFrame(out_list)
     if len(out) > 0:
@@ -520,7 +722,18 @@ def aggregate_crop_geo_doc_ipm_to_crop_state(crop_geo_doc_ipm, analysis_years=No
 def aggregate_ipm_match_table(df, group_cols, tier_name):
     if df is None or len(df) == 0:
         return pd.DataFrame()
-    value_cols = ["ipm_breadth_index", "chemical_reliance_index", "ipm_breadth_index_rescaled", "chemical_reliance_index_rescaled", "mean_text_quality", "mean_geo_confidence", "weighted_doc_age"]
+    value_cols = [
+        "ipm_breadth_index",
+        "chemical_reliance_index",
+        "ipm_breadth_index_rescaled",
+        "chemical_reliance_index_rescaled",
+        "mean_text_quality",
+        "mean_geo_confidence",
+        "weighted_doc_age",
+        # Blunt pesticide vs non-pesticide mentions (acre-share friendly)
+        "mentions_pesticide",
+        "mentions_nonpesticide",
+    ]
     rows = []
     for key, g in df.groupby(group_cols):
         if not isinstance(key, tuple):
@@ -566,17 +779,46 @@ def match_county_crop_year_ipm(ccy, crop_state_ipm):
     fill_cols = [
         "ipm_breadth_index", "chemical_reliance_index", "ipm_breadth_index_rescaled", "chemical_reliance_index_rescaled",
         "mean_text_quality", "mean_geo_confidence", "weighted_doc_age", "n_docs",
+        "mentions_pesticide", "mentions_nonpesticide",
         "ipm_match_tier", "ipm_source_crop", "ipm_source_crop_family", "ipm_source_state_fips",
     ]
+    str_fill_cols = {
+        "ipm_match_tier", "ipm_source_crop", "ipm_source_crop_family", "ipm_source_state_fips",
+    }
     base = ccy.copy()
     if len(base) == 0:
         return base
+    # Normalize join keys (strip whitespace, consistent state FIPS width).
+    if "crop" in base.columns:
+        base["crop"] = base["crop"].astype(str).str.strip()
+    if "state_fips" in base.columns:
+        base["state_fips"] = (
+            base["state_fips"].astype(str).str.replace(r"\D", "", regex=True).str.zfill(2)
+        )
+    if "year" in base.columns:
+        base["year"] = pd.to_numeric(base["year"], errors="coerce").astype("Int64")
+        base = base.loc[base["year"].notna()].copy()
+        base["year"] = base["year"].astype(int)
     if "crop_family" not in base.columns:
         base["crop_family"] = base["crop"].map(_crop_family)
+    else:
+        base["crop_family"] = base["crop_family"].astype(str).str.strip()
     for col in fill_cols:
-        base[col] = np.nan
+        if col in str_fill_cols:
+            base[col] = pd.Series(pd.NA, index=base.index, dtype="object")
+        else:
+            base[col] = np.nan
     if crop_state_ipm is None or len(crop_state_ipm) == 0:
         return base
+    crop_state_ipm = crop_state_ipm.copy()
+    crop_state_ipm["crop"] = crop_state_ipm["crop"].astype(str).str.strip()
+    if "crop_family" in crop_state_ipm.columns:
+        crop_state_ipm["crop_family"] = crop_state_ipm["crop_family"].astype(str).str.strip()
+    _sf = crop_state_ipm["state_fips"].astype(str).str.strip()
+    _is_all = _sf.str.upper().eq("ALL")
+    _digits = _sf.str.replace(r"\D", "", regex=True).str.zfill(2)
+    crop_state_ipm["state_fips"] = np.where(_is_all, "ALL", _digits)
+    crop_state_ipm["year"] = pd.to_numeric(crop_state_ipm["year"], errors="coerce").astype(int)
     tables = build_ipm_match_tables(crop_state_ipm)
     match_specs = [
         ("exact_crop_state", ["crop", "state_fips", "year"], ["crop", "state_fips", "year"]),
@@ -596,3 +838,114 @@ def match_county_crop_year_ipm(ccy, crop_state_ipm):
             if col in tmp.columns:
                 base.loc[mask, col] = tmp.loc[mask, col].values
     return base
+
+def collapse_county_year(county_crop_year_df):
+    """Collapse county-crop-year rows to county-year with acre-weighted IPM.
+
+    Expected inputs (from build_joint_dataset.ipynb):
+    - keys: `FIPS`, `year`
+    - weights: `share_county_crop_acres` (and optionally `share_county_crop_value`)
+    - crop-level IPM cols: `ipm_breadth_index`, `chemical_reliance_index`, *_rescaled, plus
+      `mean_text_quality`, `mean_geo_confidence`, `weighted_doc_age`, `n_docs`, `ipm_match_tier`
+    - blunt mention flags: `mentions_pesticide`, `mentions_nonpesticide`
+    """
+    if county_crop_year_df is None or len(county_crop_year_df) == 0:
+        return pd.DataFrame()
+
+    df = county_crop_year_df.copy()
+    if "year" not in df.columns:
+        raise KeyError("collapse_county_year expects a `year` column.")
+
+    # Ensure basic types
+    df["FIPS"] = df["FIPS"].astype(str).str.zfill(5)
+    df["year"] = pd.to_numeric(df["year"], errors="coerce").astype(int)
+
+    # Default weights
+    if "share_county_crop_acres" in df.columns:
+        w_ac = pd.to_numeric(df["share_county_crop_acres"], errors="coerce")
+    elif "acres" in df.columns:
+        # compute within each county-year
+        w_ac = df["acres"] / df.groupby(["FIPS", "year"])["acres"].transform("sum")
+    else:
+        w_ac = pd.Series(np.nan, index=df.index)
+
+    w_val = None
+    if "share_county_crop_value" in df.columns:
+        w_val = pd.to_numeric(df["share_county_crop_value"], errors="coerce")
+
+    def _weighted_mean(x, w, mask):
+        if mask is None:
+            mask = pd.Series(True, index=x.index)
+        x = pd.to_numeric(x, errors="coerce")
+        w = pd.to_numeric(w, errors="coerce")
+        denom = w[mask].sum()
+        if pd.isna(denom) or denom <= 0:
+            return np.nan
+        return (w[mask] * x[mask]).sum() / denom
+
+    rows = []
+    for (fips, yr), g in df.groupby(["FIPS", "year"]):
+        row = {"FIPS": fips, "year": int(yr)}
+
+        # Composition metrics (independent of IPM match)
+        w_mask = w_ac.loc[g.index].fillna(0)
+        if "share_county_crop_acres" in g.columns and w_ac.loc[g.index].notna().any():
+            # Herfindahl across crop shares within county-year.
+            row["county_crop_concentration"] = float((w_mask ** 2).sum())
+        else:
+            row["county_crop_concentration"] = np.nan
+
+        # Specialty share from crop_family mapping
+        if "crop_family" in g.columns:
+            spec_mask = g["crop_family"].astype(str).str.lower().eq("specialty_crop")
+            row["specialty_crop_share"] = float((w_mask[spec_mask]).sum())
+        else:
+            row["specialty_crop_share"] = np.nan
+
+        if "crop_value" in g.columns and g["crop_value"].notna().any():
+            row["total_ag_value"] = float(pd.to_numeric(g["crop_value"], errors="coerce").fillna(0).sum())
+        else:
+            row["total_ag_value"] = np.nan
+
+        # IPM match mask: only count acres where IPM exists.
+        ipm_mask = pd.Series(True, index=g.index)
+        if "ipm_breadth_index" in g.columns:
+            ipm_mask = g["ipm_breadth_index"].notna()
+
+        # Acre-weighted IPM indices
+        if "ipm_breadth_index" in g.columns:
+            row["ipm_breadth_acre"] = _weighted_mean(g["ipm_breadth_index"], w_ac.loc[g.index], ipm_mask)
+        if "ipm_breadth_index_rescaled" in g.columns:
+            row["ipm_breadth_acre_rescaled"] = _weighted_mean(g["ipm_breadth_index_rescaled"], w_ac.loc[g.index], ipm_mask)
+
+        if "chemical_reliance_index" in g.columns:
+            row["chemical_reliance_acre"] = _weighted_mean(g["chemical_reliance_index"], w_ac.loc[g.index], ipm_mask)
+        if "chemical_reliance_index_rescaled" in g.columns:
+            row["chemical_reliance_acre_rescaled"] = _weighted_mean(g["chemical_reliance_index_rescaled"], w_ac.loc[g.index], ipm_mask)
+
+        # Acre share of matched-document coverage.
+        denom = pd.to_numeric(w_ac.loc[g.index], errors="coerce")[ipm_mask].sum()
+        row["ipm_doc_coverage_share"] = float(denom) if not pd.isna(denom) else np.nan
+
+        # Acre-weighted mention shares among matched crops
+        if "mentions_pesticide" in g.columns:
+            row["mentions_pesticide_acre"] = _weighted_mean(g["mentions_pesticide"], w_ac.loc[g.index], ipm_mask)
+        if "mentions_nonpesticide" in g.columns:
+            row["mentions_nonpesticide_acre"] = _weighted_mean(g["mentions_nonpesticide"], w_ac.loc[g.index], ipm_mask)
+
+        # Optional: categorical provenance tier
+        if "ipm_match_tier" in g.columns and "ipm_breadth_index" in g.columns:
+            tiers = g.loc[ipm_mask, "ipm_match_tier"].astype(str)
+            w_t = w_ac.loc[g.index][ipm_mask].fillna(0)
+            if len(tiers) > 0:
+                best = w_t.groupby(tiers).sum().sort_values(ascending=False).index[0]
+                row["ipm_primary_match_tier"] = best
+
+        # Text/geo metadata (weighted among matched crops)
+        for col in ["mean_text_quality", "mean_geo_confidence", "weighted_doc_age"]:
+            if col in g.columns:
+                row[col] = _weighted_mean(g[col], w_ac.loc[g.index], ipm_mask)
+
+        rows.append(row)
+
+    return pd.DataFrame(rows)
