@@ -42,15 +42,18 @@ And many others. We will however attempt to validate our predictive model by per
 |------|---------|
 | **`data/`** | Generated data: joint CSV, train/test splits. See `data/README.md`. |
 | **`EDA/`** | Build and explore the joint dataset. See `EDA/README.md`. |
-| **`modeling/`** | Train/validation/test split and (future) model training. See `modeling/README.md`. |
+| **`modeling/`** | Train/validation/test split and model training. See `modeling/README.md`. |
 | **`docs/`** | Datasheets (Gebru-style) and model card (Mitchell-style). |
 | **`web/`** | Static site + interactive county risk map for GitHub Pages. See `web/README.md`. |
 
 **Notebooks (in order):**
 1. **`EDA/build_joint_dataset.ipynb`** — Fetches USGS pesticide, CDC PLACES, Census ACS, NCHS, CDL; builds crop-composition layers in memory; joins and saves **`data/joint_county_year_2018_2019.csv`**. Run from `EDA/` (paths use `../data/`).
 2. **`EDA/joint_eda.ipynb`** — Loads the joint CSV; exploratory analysis (missingness, correlations, maps).
-3. **`modeling/train_test_split_stratify.ipynb`** — Loads joint CSV; 60/20/20 spatial split (by county), stratify on target; writes **`data/train.csv`**, **`data/test.csv`**. Run from `modeling/` (paths use `../data/`).
-4. *(Future)* Model training notebook(s) that read train/validation, then export county risk for **`web/data/risk_estimates.json`**.
+3. **`modeling/train_test_split_stratify.ipynb`** — Loads joint CSV; 80/20 spatial split (by county), stratify on target; writes **`data/train_CASTHMA.csv`**, **`data/test_CASTHMA.csv`**, **`data/train_COPD.csv`**, **`data/test_COPD.csv`**. Run from `modeling/` (paths use `../data/`).
+4. **`modeling/hypothesis_testing.ipynb`**, **`modeling/hypothesis_testing_XGBoost.ipynb`** — Loads **`data/train_CASTHMA.csv`**, **`data/train_COPD.csv`**, test whether including pesticide predictors improve model fit.
+5. **`modeling/model_selection.ipynb`** — Loads **`data/train_CASTHMA.csv`**, **`data/train_COPD.csv`** and trains models and then test on **`data/test_CASTHMA.csv`**, **`data/test_COPD.csv`**.
+6. **`modeling/model_evaluation.ipynb`** — Evaluate the trained model on different performance metric on holdout predictions for the test set. (see `web/README.md` for exporting county risk)
+
 
 **Documentation:**  
 - **`docs/`** — One consolidated [`docs/datasheets.md`](docs/datasheets.md) (sources + joint table) and model card. See Gebru et al. (2018) and Mitchell et al. (2019).
