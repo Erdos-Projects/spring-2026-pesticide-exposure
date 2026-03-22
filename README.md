@@ -71,8 +71,6 @@ And many others. We will however attempt to validate our predictive model by per
 ---
 
 ## TO DO / ideas
-
-- Model card and data cards (templates in `docs/`; fill when model is trained).
 - Note in write-up: the paucity of public, county-level data on this topic as of 2020.
 
 ---
