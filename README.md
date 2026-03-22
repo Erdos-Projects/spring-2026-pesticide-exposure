@@ -14,7 +14,7 @@ Our predictive model will forecast the respiratory illnesses present in each geo
 
 Our primary datasets are:
 1. CDC PLACES (County-level health indicators): https://www.cdc.gov/places/data/index.html
-2. USGS / EPA Pesticide Use Estimates: https://water.usgs.gov
+2. USGS / EPA Pesticide Use Estimates: https://water.usgs.gov/nawqa/pnsp/usage/maps/county-level/
 3. USDA Cropland Data Layer (Crop coverage): https://nassgeodata.gmu.edu/CropScape/
 
 Our target years are **2018 and 2019**, the years with CDC PLACES county-level data (releases 2020 and 2021). The joint dataset is in county–year form (one row per county per year); time (YEAR) can be used as a feature or for temporal splits. 
