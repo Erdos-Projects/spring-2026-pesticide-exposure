@@ -70,11 +70,6 @@ And many others. We will however attempt to validate our predictive model by per
 
 ---
 
-## TO DO / ideas
-- Note in write-up: the paucity of public, county-level data on this topic as of 2020.
-
----
-
 ## References (lit / data)
 
 https://pmc.ncbi.nlm.nih.gov/articles/PMC11664077/table/tbl0010/
