@@ -10,7 +10,7 @@ Agricultural pesticide use varies widely by crop and region and may contribute t
 Build a county/region-level predictive risk model to identify regions in the United States where pesticide exposure is associated with elevated healthcare burden, enabling targeted, high-ROI public health investments.  Real world stakeholders include insurers, policy makers, hospital systems, public health departments.
 
 # Modeling Approach:
-Our predictive model will forecast the respiratory illnesses present in each geographic region from pesticide usage, as well as crop data and weather patterns. To make the map, we might categorize each region into bins based on several thresholds such as "high risk", "low risk", etc. which can then be used to create the risk map which could be presented to stakeholders to inform decisionmaking. If our model struggles with MSE regression, then we could potentially categorize the target variables in this way first, and then train a categorical regression such as logistic regression instead. 
+Our predictive model forecasts the respiratory illnesses present in each geographic region from pesticide usage, as well as crop data and controlling for other factors. To make the map, we categorize each region into bins based on several thresholds such as "high risk", "low risk", etc. which generates the risk map which could be presented to stakeholders to inform decisionmaking.
 
 Our primary datasets are:
 1. CDC PLACES (County-level health indicators): https://www.cdc.gov/places/data/index.html
@@ -31,7 +31,7 @@ Association of pesticide exposure with respiratory health outcomes and rhinitis 
 
 3. Salameh P, Waked M, Baldi I, Brochard P, Saleh BA. Respiratory diseases and pesticide exposure: a case-control study in Lebanon. J Epidemiol Community Health. 2006 Mar;60(3):256-61. doi: 10.1136/jech.2005.039677. PMID: 16476757; PMCID: PMC2465555.
 
-And many others. We will however attempt to validate our predictive model by performing hypothesis testing on the coefficients and determining their statistical significance.
+And many others. We attempted to validate our predictive model by performing hypothesis testing to determining the statistical significance of including pesticides.
 
 
 ---
